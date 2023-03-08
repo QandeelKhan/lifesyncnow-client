@@ -1,13 +1,18 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import BlogpostCard from "../components/BlogpostCard";
 import "../components/css/home.css";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import NewsletterForm from "../components/NewsletterForm";
+import Sidebar from "../components/Sidebar";
 
 const Home = () => {
     return (
         <>
             <Helmet>
                 <title>
-                    Qandeel Khan - Full Stack Developer | Python, Django, React
+                    our-blog-client
                 </title>
                 <meta
                     name="description"
@@ -26,7 +31,8 @@ const Home = () => {
             </Helmet>
             <section id="home">
                 <div className="home-container">
-                    <h1>i am home</h1>
+                    <BlogpostCard/>
+                    
                 </div>
             </section>
         </>

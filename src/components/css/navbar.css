@@ -1,0 +1,137 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.navbar-toggle.active {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.navbar-toggle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #333333;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-menu.active {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 100vh; */
+  background-color: #e0c8c8;
+  z-index: 1;
+  animation-name: slide-down;
+  animation-duration: 0.5s;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbar-menu li {
+  margin: 1rem;
+}
+
+.navbar-menu a {
+  font-size: 14px;
+  color: #333333;
+  text-decoration: none;
+}
+.navbar-menu a:hover {
+  color: #119960;
+  text-decoration: 1px dotted;
+}
+
+.navbar-close {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.navbar-close.active {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+}
+
+.navbar-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #333333;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop menu */
+  .navbar-menu {
+    display: none;
+  }
+
+  /* Show toggle button */
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Show close button */
+  /* .navbar-close {
+    display: block;
+  } */
+}
