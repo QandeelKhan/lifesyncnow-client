@@ -18,8 +18,7 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    
+                    <Route index element={<Home />} />                    
                     <Route path="/skin-care-tips" element={<SkinCareTips/>} />
                     <Route path="/food-and-nutrition" element={<FoodAndNutrition/>} />
                     <Route path="/holistic-treatment" element={<HolisticTreatment/>} />
