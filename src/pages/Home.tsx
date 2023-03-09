@@ -11,9 +11,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>
-                    our-blog-client
-                </title>
+                <title>our-blog-client</title>
                 <meta
                     name="description"
                     content="Welcome to the portfolio of Qandeel Khan, a Full Stack Developer specializing in Python, Django, and React. Browse his projects, skills, and experience."
@@ -31,8 +29,7 @@ const Home = () => {
             </Helmet>
             <section id="home">
                 <div className="home-container">
-                    <BlogpostCard/>
-                    
+                    <BlogpostCard />
                 </div>
             </section>
         </>
