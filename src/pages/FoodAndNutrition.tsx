@@ -4,7 +4,7 @@ import "../components/css/foodAndNutrition.css";
 const FoodAndNutrition = () => {
     return (
         <>
-            <h2> Food And Nutritions</h2>
+            <h2> Food And Nutrition</h2>
 
             <BlogpostCard />
         </>
