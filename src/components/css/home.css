@@ -6,3 +6,9 @@
         display: flex;
         justify-content: space-between;
     }
+    .recent-container{
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+      }

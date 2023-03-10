@@ -43,13 +43,18 @@ const Home = (props: any) => {
                             />
                         ))}
                     </div>
-                    {recentData.map((recent) => (
-                        <RecentCard
-                            key={recent.id}
-                            img={recent.img}
-                            headin={recent.heading}
-                        />
-                    ))}
+                    <SectionHeading heading="Most Recent" />
+                    <div className="recent-container ">
+                        {recentData.map((recent) => (
+                            <RecentCard
+                                key={recent.id}
+                                img={recent.img}
+                                heading={recent.heading}
+                                author={recent.author}
+                            />
+                        ))}
+                    </div>
+
                     <OlderCard />
                 </div>
             </section>
