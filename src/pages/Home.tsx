@@ -4,9 +4,11 @@ import "../components/css/home.css";
 import FeaturedCard from "../components/FeaturedCard";
 import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
+import SectionHeading from "../components/SectionHeading";
 import Sidebar from "../components/Sidebar";
+import { FeaturedData } from "../data";
 
-const Home = () => {
+const Home = (props: any) => {
     return (
         <>
             <Helmet>
@@ -28,10 +30,21 @@ const Home = () => {
             </Helmet>
             <section id="home">
                 <div className="home-container">
-                    <FeaturedCard/>
-                    <RecentCard/>
-                    <OlderCard/>
-                    
+                    <SectionHeading heading="Featured" />
+
+                    <div className="featured-section ">
+                        {FeaturedData.map((feature) => (
+                            <FeaturedCard
+                                key={feature.id}
+                                img={feature.img}
+                                heading={feature.heading}
+                                paragraph={feature.paragraph}
+                                author={feature.author}
+                            />
+                        ))}
+                    </div>
+                    <RecentCard />
+                    <OlderCard />
                 </div>
             </section>
         </>

@@ -1,0 +1,8 @@
+    .home-container{
+        padding: 12px 40px;
+
+    }
+    .featured-section{
+        display: flex;
+        justify-content: space-between;
+    }
