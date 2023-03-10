@@ -28,6 +28,7 @@ const Home = (props: any) => {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Helmet>
+
             <section id="home">
                 <div className="home-container">
                     <SectionHeading heading="Featured" />
