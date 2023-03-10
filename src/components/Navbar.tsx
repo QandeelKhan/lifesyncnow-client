@@ -35,20 +35,13 @@ const Navbar = () => {
             {/* HIDDEN SEARCH BAR STARTS HERE */}
             <div
                 className={
-                    toggleBar
+                    searchBar
                         ? "hidden-search-main-container active"
                         : "hidden-search-main-container"
                 }
             >
                 <div className="search-area">
-                    <i
-                        onClick={handleSearchBar}
-                        className={
-                            toggleBar
-                                ? "fa-solid fa-xmark"
-                                : "fa-solid fa-magnifying-glass"
-                        }
-                    ></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Search Here..." />
                 </div>
             </div>
@@ -154,7 +147,14 @@ const Navbar = () => {
                     <li>
                         <Link to="/entertairment">ENTERTAIRMENT</Link>
                     </li>
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <i
+                        onClick={handleSearchBar}
+                        className={
+                            searchBar
+                                ? "fa-solid fa-xmark"
+                                : "fa-solid fa-magnifying-glass"
+                        }
+                    ></i>
                 </ul>
                 <button
                     className={`navbar-close ${menuActive ? "active" : ""}`}

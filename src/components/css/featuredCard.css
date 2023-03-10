@@ -1,73 +1,72 @@
-.featured-section{
+.featured-section {
     padding: 12px 40px;
     /* border: 1px solid yellow; */
-  }
-   
-  .featured-container{
+}
+
+.featured-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    z-index: -2;
     /* gap: 60px; */
-  }
-  .featured-card {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      overflow: hidden;
-      width: 32%;
-      /* margin: 20px 0; */
-      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+}
+.featured-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 32%;
+    /* margin: 20px 0; */
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+}
+.featured-card:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+.featured-img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    background-size: cover;
+}
+
+.featured-body {
+    padding: 10px;
+    color: #57544e;
+    /* text-align: center; */
+}
+
+.featured-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: -2;
+}
+.featured-title:hover {
+    text-decoration: underline;
+}
+
+.featured-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #252525;
+    cursor: pointer;
+}
+
+.featured-text:hover {
+    text-decoration: underline;
+}
+.featured-author {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #252525;
+}
+
+@media (max-width: 477px) {
+    .featured-card {
+        width: 100%;
     }
-  .featured-card:hover {
-      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
-      
+    .featured-section {
+        padding: 10px 14px;
     }
-    
-    .featured-img {
-      display: block;
-      height: auto;
-      max-width: 100%;
-      background-size: cover;
-    }
-    
-    .featured-body {
-      padding: 10px;
-      color: #57544e;
-      /* text-align: center; */
-  
-    }
-    
-    .featured-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-      font-weight: 300;
-      cursor: pointer;
-    }
-    .featured-title:hover{
-      text-decoration: underline;
-    }
-    
-    .featured-text {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #252525;
-      cursor: pointer;
-    }
-    
-    .featured-text:hover {
-     text-decoration: underline;
-    }
-    .featured-author {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #252525;
-    }
-    
-    @media(max-width:477px){
-     .featured-card{
-      width: 100%;
-      
-     }
-     .featured-section{
-      padding: 10px 14px;
-     }
-  }
+}

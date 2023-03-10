@@ -130,17 +130,22 @@
     transform: rotate(45deg);
 }
 /* hidden search bar starts here */
+.navbar-menu .fa-xmark {
+    font-size: 20px;
+}
 .hidden-search-main-container {
     width: 100%;
     background-color: #f9f5f2;
-    top: -100%;
+    top: 0;
     position: fixed;
-    left: 0;
+    /* right: 0; */
     transition: 850ms;
+    z-index: -1;
 }
 .hidden-search-main-container.active {
     top: 90px;
     transition: 350ms;
+    z-index: -1;
 }
 .search-area {
     width: 100%;
@@ -148,7 +153,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 40px;
+    padding: 30px 40px;
 }
 .search-area i {
     font-size: 17px;
