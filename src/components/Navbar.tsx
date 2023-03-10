@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./css/navbar.css";
@@ -29,7 +29,7 @@ const Navbar = () => {
                 }
             >
                 <div className="toggle-close-icon" onClick={handleToggleBar}>
-                    close
+                    <i className="fa-solid fa-xmark"></i>
                 </div>
                 <div className="side-bar-menu">
                     <ul>
@@ -48,35 +48,47 @@ const Navbar = () => {
                             <a href="/">WELL+GOOD PODCAST</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
+                            <a href="/">WELL+GOOD TALKS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
+                            <a href="/">WELL+GOOD STUDIO SESSIONS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
+                            <a href="/">WELL+GOOD RETREATS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
+                            <a href="/">WELL+GOOD COOKBOOK</a>
                         </li>
                     </ul>
                 </div>
                 <div className="side-bar-footer">
                     <span>Become an Insider</span>
                     <div className="email-box">
-                        <label>Enter Email Address</label>
-                        <input type="text" id="first_name" name="first_name" />
+                        {/* <label>Enter Email Address</label> */}
+                        <input
+                            type="text"
+                            id="first_name"
+                            placeholder="Enter Email Address"
+                            required
+                        />
                     </div>
                     <a href="/">SIGN UP</a>
+                </div>
+                <div className="side-bar-icons">
+                    <i className="fa-brands fa-facebook-f"></i>
+                    <i className="fa-brands fa-pinterest-p"></i>
+                    <i className="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-youtube"></i>
+                    <i className="fa-brands fa-instagram"></i>
                 </div>
             </div>
             {/* actual navbar */}
             <nav className="navbar">
                 <div className="navbar-brand">
                     <div className="open-side-bar" onClick={handleToggleBar}>
-                        open
+                        <i className="fa-solid fa-bars"></i>
                     </div>
-                    <Link to="/">YOUR LOGO HERE</Link>
+                    <Link to="/">WELL PLUS GOOD</Link>
                 </div>
                 <button
                     className={`navbar-toggle ${menuActive ? "active" : ""}`}
