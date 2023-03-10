@@ -1,5 +1,4 @@
 import React from 'react'
-import BlogpostCard from '../components/BlogpostCard'
 import FeaturedCard from '../components/FeaturedCard'
 import RecentCard from '../components/RecentCard'
 

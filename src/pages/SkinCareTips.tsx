@@ -1,5 +1,4 @@
 import React from 'react'
-import BlogpostCard from '../components/BlogpostCard'
 import '../components/css/skinCareTips.css'
 import FeaturedCard from '../components/FeaturedCard'
 import HeaderBanner from '../components/HeaderBanner'
