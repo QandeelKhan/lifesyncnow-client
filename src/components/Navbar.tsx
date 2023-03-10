@@ -10,6 +10,7 @@ import { SidebarData } from "./sideBarData";
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
     const [toggleBar, setToggleBar] = useState(false);
+    const [searchBar, setSearchBar] = useState(false);
 
     useEffect(() => {
         let handler = () => {
@@ -25,14 +26,30 @@ const Navbar = () => {
     const handleToggleBar = () => {
         setToggleBar(!toggleBar);
     };
+    const handleSearchBar = () => {
+        setSearchBar(!searchBar);
+    };
 
     return (
         <>
             {/* HIDDEN SEARCH BAR STARTS HERE */}
-            <div className="hidden-search-main-container">
+            <div
+                className={
+                    toggleBar
+                        ? "hidden-search-main-container active"
+                        : "hidden-search-main-container"
+                }
+            >
                 <div className="search-area">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search Product..." />
+                    <i
+                        onClick={handleSearchBar}
+                        className={
+                            toggleBar
+                                ? "fa-solid fa-xmark"
+                                : "fa-solid fa-magnifying-glass"
+                        }
+                    ></i>
+                    <input type="text" placeholder="Search Here..." />
                 </div>
             </div>
             {/* HIDDEN SEARCH BAR ENDS HERE */}

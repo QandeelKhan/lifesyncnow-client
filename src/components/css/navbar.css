@@ -133,6 +133,14 @@
 .hidden-search-main-container {
     width: 100%;
     background-color: #f9f5f2;
+    top: -100%;
+    position: fixed;
+    left: 0;
+    transition: 850ms;
+}
+.hidden-search-main-container.active {
+    top: 90px;
+    transition: 350ms;
 }
 .search-area {
     width: 100%;
