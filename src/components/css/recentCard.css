@@ -1,6 +1,6 @@
 .recent-section{
     padding: 10px 40px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
    
   .recent-container{
@@ -65,8 +65,6 @@
         width: 30%;
         
        }
-   
-    
      
     }
     
