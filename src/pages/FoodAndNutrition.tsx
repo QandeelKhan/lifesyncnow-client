@@ -7,9 +7,8 @@ const FoodAndNutrition = () => {
     return (
         <>
             <h2> Food And Nutritions</h2>
-
-            <FeaturedCard/>
-            <RecentCard/>
+            <FeaturedCard />
+            <RecentCard />
         </>
     );
 };
