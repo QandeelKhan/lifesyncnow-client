@@ -6,7 +6,7 @@ import RecentCard from "../components/RecentCard";
 const FoodAndNutrition = () => {
     return (
         <>
-            <h2> Food And Nutrition</h2>
+            <h2> Food And Nutritions</h2>
             <FeaturedCard />
             <RecentCard />
         </>
