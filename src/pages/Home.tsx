@@ -31,6 +31,7 @@ const Home = () => {
                     <FeaturedCard/>
                     <RecentCard/>
                     <OlderCard/>
+                    
                 </div>
             </section>
         </>
