@@ -2,9 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import BlogpostCard from "../components/BlogpostCard";
 import "../components/css/home.css";
+import FeaturedCard from "../components/FeaturedCard";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NewsletterForm from "../components/NewsletterForm";
+import RecentCard from "../components/RecentCard";
 import Sidebar from "../components/Sidebar";
 
 const Home = () => {
@@ -29,7 +31,8 @@ const Home = () => {
             </Helmet>
             <section id="home">
                 <div className="home-container">
-                    <BlogpostCard />
+                    <FeaturedCard/>
+                    <RecentCard/>
                 </div>
             </section>
         </>

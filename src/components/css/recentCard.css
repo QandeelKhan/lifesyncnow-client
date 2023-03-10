@@ -1,0 +1,71 @@
+.recent-section{
+    padding: 10px 50px;
+  }
+   
+  .recent-container{
+    display: flex;
+    justify-content: space-between;
+    
+    flex-wrap: wrap;
+  }
+  .recent-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 23%;
+      margin: 20px 0;
+      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    }
+  .card:hover {
+      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+      
+    }
+    
+    .recent-img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+    
+    .recent-body {
+      padding: 10px;
+      color: #57544e;
+      /* text-align: center; */
+  
+    }
+    
+    .recent-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+    .recent-title:hover{
+      text-decoration: underline;
+    }
+    
+    .recent-text {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #252525;
+      cursor: pointer;
+    }
+    
+    .recent-text:hover {
+     text-decoration: underline;
+    }
+    .recent-author {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #252525;
+    }
+    
+    @media(max-width:477px){
+     .recent-card{
+      width: 100%;
+      
+     }
+     .recent-section{
+      padding: 10px 14px;
+     }
+  }

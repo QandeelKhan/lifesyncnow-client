@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 40px 80px;
     /* padding: 10px 20px; */
     align-items: center;
     background-color: #014e42;

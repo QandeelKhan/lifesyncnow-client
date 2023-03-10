@@ -1,11 +1,13 @@
 import React from 'react'
-import BlogpostCard from '../components/BlogpostCard'
 import '../components/css/fitnessTips.css'
+import FeaturedCard from '../components/FeaturedCard'
+import RecentCard from '../components/RecentCard'
 const FitnessTips = () => {
   return (
     <>
     <h2>Fitness Tips</h2>
-    <BlogpostCard/>
+    <FeaturedCard/>
+    <RecentCard/>
     </>
   )
 }
