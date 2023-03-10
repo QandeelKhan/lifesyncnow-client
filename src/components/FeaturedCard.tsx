@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading'
 const FeaturedCard = () => {
   return (
     <>
-    <div className='featured-section section-p1'>
+    <div className='featured-section '>
     <SectionHeading heading="Featured"/>
 
   <div className='featured-container'>
