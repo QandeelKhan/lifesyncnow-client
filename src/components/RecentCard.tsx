@@ -5,9 +5,8 @@ import SectionHeading from './SectionHeading'
 const RecentCard = () => {
   return (
     <>
-    <div className='recent-section section-p1'>
+    <div className='recent-section'>
     <SectionHeading heading="Most Recent"/>
-
   <div className='recent-container'>
   {recentData.map((recent)=>(
   <div className="recent-card" key={recent.id}>
