@@ -6,7 +6,7 @@ import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import Sidebar from "../components/Sidebar";
-import { FeaturedData } from "../data";
+import { FeaturedData, recentData } from "../data";
 
 const Home = (props: any) => {
     return (
@@ -43,7 +43,13 @@ const Home = (props: any) => {
                             />
                         ))}
                     </div>
-                    <RecentCard />
+                    {recentData.map((recent) => (
+                        <RecentCard
+                            key={recent.id}
+                            img={recent.img}
+                            heading={recent.heading}
+                        />
+                    ))}
                     <OlderCard />
                 </div>
             </section>
