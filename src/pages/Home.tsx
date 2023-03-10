@@ -47,7 +47,7 @@ const Home = (props: any) => {
                         <RecentCard
                             key={recent.id}
                             img={recent.img}
-                            heading={recent.heading}
+                            headin={recent.heading}
                         />
                     ))}
                     <OlderCard />
