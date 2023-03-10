@@ -28,36 +28,7 @@ const Home = (props: any) => {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Helmet>
-            <section id="home">
-                <div className="home-container">
-                    <SectionHeading heading="Featured" />
-
-                    <div className="featured-section ">
-                        {FeaturedData.map((feature) => (
-                            <FeaturedCard
-                                key={feature.id}
-                                img={feature.img}
-                                heading={feature.heading}
-                                paragraph={feature.paragraph}
-                                author={feature.author}
-                            />
-                        ))}
-                    </div>
-                    <SectionHeading heading="Most Recent" />
-                    <div className="recent-container ">
-                        {recentData.map((recent) => (
-                            <RecentCard
-                                key={recent.id}
-                                img={recent.img}
-                                heading={recent.heading}
-                                author={recent.author}
-                            />
-                        ))}
-                    </div>
-
-                    <OlderCard />
-                </div>
-            </section>
+            <section id="home">Home</section>
         </>
     );
 };
