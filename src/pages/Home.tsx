@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../components/css/home.css";
 import FeaturedCard from "../components/FeaturedCard";
+import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import Sidebar from "../components/Sidebar";
 
@@ -29,6 +30,7 @@ const Home = () => {
                 <div className="home-container">
                     <FeaturedCard/>
                     <RecentCard/>
+                    <OlderCard/>
                 </div>
             </section>
         </>
