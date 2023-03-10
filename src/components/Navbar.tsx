@@ -11,6 +11,13 @@ const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
     const [toggleBar, setToggleBar] = useState(false);
 
+    useEffect(() => {
+        let handler = () => {
+            setToggleBar(false);
+        };
+        document.addEventListener("mousedown", handler);
+    });
+
     const handleToggle = () => {
         setMenuActive(!menuActive);
     };
@@ -21,6 +28,14 @@ const Navbar = () => {
 
     return (
         <>
+            {/* HIDDEN SEARCH BAR STARTS HERE */}
+            <div className="hidden-search-main-container">
+                <div className="search-area">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search Product..." />
+                </div>
+            </div>
+            {/* HIDDEN SEARCH BAR ENDS HERE */}
             <div
                 className={
                     toggleBar
@@ -122,6 +137,7 @@ const Navbar = () => {
                     <li>
                         <Link to="/entertairment">ENTERTAIRMENT</Link>
                     </li>
+                    <i className="fa-solid fa-magnifying-glass"></i>
                 </ul>
                 <button
                     className={`navbar-close ${menuActive ? "active" : ""}`}

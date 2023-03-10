@@ -27,6 +27,9 @@
     color: #333333;
     text-decoration: none;
 }
+.navbar-menu i {
+    color: rgb(105, 104, 104);
+}
 
 .navbar-toggle {
     display: none;
@@ -126,7 +129,31 @@
     color: #333333;
     transform: rotate(45deg);
 }
-
+/* hidden search bar starts here */
+.hidden-search-main-container {
+    width: 100%;
+    background-color: #f9f5f2;
+}
+.search-area {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+}
+.search-area i {
+    font-size: 17px;
+    color: rgb(99, 98, 98);
+}
+.search-area input {
+    width: 100%;
+    line-height: 20px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    background: transparent;
+}
 @media (max-width: 768px) {
     /* Hide desktop menu */
     .navbar-menu {
