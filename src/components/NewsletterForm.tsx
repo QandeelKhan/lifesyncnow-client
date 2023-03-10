@@ -6,7 +6,7 @@ const NewsletterForm = () => {
             <div className="newstext">
                 <h4>Singn Up for Newsletters</h4>
                 <p>
-                    Get Email updates about our latest Posts and{" "}
+                    Get Email updates about our latest Posts and{"  "}
                     <span> special offers</span>
                 </p>
             </div>
