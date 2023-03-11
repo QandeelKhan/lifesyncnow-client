@@ -61,7 +61,7 @@ const SkinCareTips = () => {
             {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
             {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
             {/* {console.log(skinCareTips)} */}
-            {console.log(mostRecentPosts)}
+            {/* {console.log(mostRecentPosts)} */}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-section ">
