@@ -5,9 +5,12 @@ const initialState = {
     firstName: "",
     lastName: "",
     email: "",
+    profileImage: "",
+    staffUser: "",
     password: "",
     password2: "",
     termsAndConditions: "",
+    orderCount: "",
     providerName: "",
     access_token: null,
     refresh_token: null,
@@ -32,6 +35,12 @@ const slice = createSlice({
         setEmail: (state, action) => {
             state.email = action.payload;
         },
+        setProfileImage: (state, action) => {
+            state.profileImage = action.payload;
+        },
+        setStaffStatus: (state, action) => {
+            state.staffUser = action.payload;
+        },
         setPassword: (state, action) => {
             state.password = action.payload;
         },
@@ -40,6 +49,9 @@ const slice = createSlice({
         },
         setTermsAndConditions: (state, action) => {
             state.termsAndConditions = action.payload;
+        },
+        setOrderCount: (state, action) => {
+            state.orderCount = action.payload;
         },
         setProviderName: (state, action) => {
             state.providerName = action.payload;
@@ -84,9 +96,12 @@ export const {
     setFirstName,
     setLastName,
     setEmail,
+    setProfileImage,
+    setStaffStatus,
     setPassword,
     setPassword2,
     setTermsAndConditions,
+    setOrderCount,
     setProviderName,
     setUserToken,
     unSetUserToken,

@@ -2,10 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../components/css/home.css";
 import FeaturedCard from "../components/FeaturedCard";
+import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
+import SectionHeading from "../components/SectionHeading";
 import Sidebar from "../components/Sidebar";
+import { FeaturedData, recentData } from "../data";
 
-const Home = () => {
+const Home = (props: any) => {
     return (
         <>
             <Helmet>
@@ -25,12 +28,7 @@ const Home = () => {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Helmet>
-            <section id="home">
-                <div className="home-container">
-                    <FeaturedCard/>
-                    <RecentCard/>
-                </div>
-            </section>
+            <section id="home">Home</section>
         </>
     );
 };

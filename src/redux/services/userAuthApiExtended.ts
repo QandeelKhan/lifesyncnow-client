@@ -5,7 +5,7 @@ import {
     fetchBaseQuery,
     FetchBaseQueryError,
 } from "@reduxjs/toolkit/query/react";
-import { setUserToken, unSetUserToken } from "../features/authSlice";
+import { setUserToken, unSetUserToken } from "../../redux/features/authSlice";
 import {
     getToken,
     removeAccessToken,
@@ -15,7 +15,8 @@ import {
 } from "./localStorageService";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: "http://127.0.0.1:8000/api/user/",
+    // baseUrl: "http://127.0.0.1:8000/api/",
+    baseUrl: "https://our-resume-backend-azr8u.ondigitalocean.app/api/",
     prepareHeaders: (headers, { getState }) => {
         let { access_token } = getToken();
         if (access_token) {
@@ -35,7 +36,7 @@ const baseQueryWithReauth = async (args: any, api: any, extraOptions: any) => {
         // try to get a new token
         const refreshResult: any = await baseQuery(
             {
-                url: "token/refresh/",
+                url: "user/token/refresh/",
                 method: "POST",
                 body: body,
             },

@@ -1,14 +1,21 @@
-.recent-section{
-    padding: 10px 40px;
+.older-section{
+    padding: 10px 30px;
     /* border: 2px solid red; */
   }
    
- 
-  .recent-card {
+  .older-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .older-card {
+      display: flex;
       border: 1px solid #ccc;
       border-radius: 5px;
+      height: 100%;
       overflow: hidden;
-      width: 23%;
+      width: 31%;
       box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     }
   .card:hover {
@@ -16,59 +23,61 @@
       
     }
     
-    .recent-img {
+    .older-img {
       display: block;
       height: auto;
-      max-width: 100%;
+      max-width: 30%;
+      background-size: cover;
+      background-position: 0%;
     }
     
-    .recent-body {
-      padding: 10px;
+    .older-body {
+      padding: 20px;
       color: #57544e;
       /* text-align: center; */
   
     }
     
-    .recent-title {
+    .older-title {
       font-size: 20px;
       margin-bottom: 10px;
       font-weight: 300;
       cursor: pointer;
     }
-    .recent-title:hover{
+    .older-title:hover{
       text-decoration: underline;
     }
     
-    .recent-text {
+    .older-text {
       font-size: 14px;
       margin-bottom: 10px;
       color: #252525;
       cursor: pointer;
     }
     
-    .recent-text:hover {
+    .older-text:hover {
      text-decoration: underline;
     }
-    .recent-author {
+    .older-author {
       font-size: 14px;
       margin-bottom: 10px;
       color: #252525;
     }
 
     @media (max-width: 768px) {
-      .recent-card{
-        width: 30%;
+      .older-card{
+        width: 47%;
         
        }
      
     }
     
     @media(max-width:477px){
-     .recent-card{
+     .older-card{
       width: 100%;
       
      }
-     .recent-section{
+     .older-section{
       padding: 20px 14px;
      }
   }

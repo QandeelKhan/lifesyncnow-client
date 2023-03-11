@@ -10,15 +10,33 @@ import { RootState } from "../store";
 // import { setUserToken, unSetUserToken } from "../features/authSlice";
 import { userAuthApiExtended } from "./userAuthApiExtended";
 import { getToken, removeToken, storeToken } from "./localStorageService";
+import { setSelectedPost } from "../dataSlice";
+
+export interface UpdatedUserProfileResponse {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    profile_image: string;
+}
+
+export interface UpdatedUserProfileRequest {
+    first_name?: string;
+    last_name?: string;
+    email?: string;
+    profile_image?: File;
+}
 
 // fetchBaseQuery: is fetch wrapper, automatically handle request headers and response parsing similar to axios.
 const baseQuery = fetchBaseQuery({
-    baseUrl: "http://127.0.0.1:8000/api/user/",
+    baseUrl: "https://our-resume-backend-azr8u.ondigitalocean.app/api/",
+    // baseUrl: "http://127.0.0.1:8000/api/",
     prepareHeaders: (headers, { getState }) => {
         const { access_token } = getToken();
         if (access_token) {
             headers.set("authorization", `Bearer ${access_token}`);
         }
+        headers.set("content-type", "application/json");
         return headers;
     },
 });
@@ -35,7 +53,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
             query: (user) => {
                 return {
                     // "url": send request to which url
-                    url: "register/",
+                    url: "user/register/",
                     method: "POST",
                     // sending a "user" obj containing login/register fields data to the backend
                     body: user,
@@ -46,16 +64,52 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
                 };
             },
         }),
+        updateUserProfile: builder.mutation({
+            query: (user) => {
+                return {
+                    url: "user/profile/",
+                    method: "PATCH",
+                    // sending a "user" obj containing login/register fields data to the backend
+                    body: user,
+                    // if we want to pass headers as well,i.e application/json so in future we can pass token
+                    // headers: {
+                    //     "content-type": "application/json",
+                    // },
+                };
+            },
+        }),
         getLoggedUser: builder.query({
             query: (access_token) => {
                 // console.log(access_token); : if we don't type below code in "return{}" statement then we cannot
                 // be able to do i.e console.log(access_token) here. otherwise we can use it without "return" as well.
                 return {
-                    url: "profile/",
+                    url: "user/profile/",
                     method: "GET",
                     headers: {
                         authorization: `Bearer ${access_token}`,
                     },
+                };
+            },
+        }),
+        getLoggedUserOrders: builder.query({
+            query: (access_token) => {
+                // console.log(access_token); : if we don't type below code in "return{}" statement then we cannot
+                // be able to do i.e console.log(access_token) here. otherwise we can use it without "return" as well.
+                return {
+                    url: "orders/",
+                    method: "GET",
+                    headers: {
+                        authorization: `Bearer ${access_token}`,
+                    },
+                };
+            },
+        }),
+        createOrder: builder.mutation({
+            query: (body) => {
+                return {
+                    url: "orders/",
+                    method: "POST",
+                    body: body,
                 };
             },
         }),
@@ -64,7 +118,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
             // then we send that to our backend api through api call
             query: (user) => {
                 return {
-                    url: "login/",
+                    url: "user/login/",
                     method: "POST",
                     // sending a "user" obj containing login/register fields data to the backend
                     body: user,
@@ -77,7 +131,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
         changeUserPassword: builder.mutation({
             query: ({ actualData, access_token }) => {
                 return {
-                    url: "changepassword/",
+                    url: "user/changepassword/",
                     method: "POST",
                     body: actualData,
                     headers: {
@@ -89,7 +143,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
         sendPasswordResetEmail: builder.mutation({
             query: (user) => {
                 return {
-                    url: "send-reset-password-email/",
+                    url: "user/send-reset-password-email/",
                     method: "POST",
                     body: user,
                     headers: {
@@ -101,7 +155,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
         resetPassword: builder.mutation({
             query: ({ actualData, id, token }) => {
                 return {
-                    url: `/reset-password/${id}/${token}/`,
+                    url: `user/reset-password/${id}/${token}/`,
                     method: "POST",
                     body: actualData,
                     headers: {
@@ -113,7 +167,7 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
         logoutUser: builder.mutation({
             query: (access_token) => {
                 return {
-                    url: `logout/`,
+                    url: `user/logout/`,
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -122,6 +176,42 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
                 };
             },
         }),
+        getBlogPosts: builder.query({
+            query: (id) => {
+                return {
+                    url: "blog/blogposts/",
+                    method: "GET",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                };
+            },
+        }),
+        postingComments: builder.mutation({
+            query: ({ access_token, postId, commentText }) => {
+                return {
+                    url: `blog/${postId}/comments`,
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                        authorization: `Bearer ${access_token}`,
+                    },
+                    body: { text: commentText },
+                };
+            },
+        }),
+
+        // getBlogPosts: builder.query({
+        //     query: (id) => {
+        //         return {
+        //             url: `blog/blogposts/`,
+        //             method: "GET",
+        //             headers: {
+        //                 "Content-type": "application/json",
+        //             },
+        //         };
+        //     },
+        // }),
     }),
 });
 
@@ -138,13 +228,18 @@ export const userAuthApi = userAuthApiExtended.injectEndpoints({
 
 // Exporting auto-generated hooks for usage in functional components, which are
 export const {
+    usePostingCommentsMutation,
     useRegisterUserMutation,
     useLoginUserMutation,
     useGetLoggedUserQuery,
+    useGetLoggedUserOrdersQuery,
+    useCreateOrderMutation,
     useChangeUserPasswordMutation,
     useSendPasswordResetEmailMutation,
     useResetPasswordMutation,
     useLogoutUserMutation,
+    useGetBlogPostsQuery,
+    useUpdateUserProfileMutation,
 } = userAuthApi;
 
 // const refreshResult = await baseQuery(
