@@ -1,15 +1,14 @@
 .featured-section {
     /* padding: 12px 40px; */
-    /* border: 1px solid yellow; */
+    border: 1px solid yellow;
 }
-
-   
-  .featured-container{
+    .featured-container{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    z-index: -2;
-    /* gap: 60px; */
+    border: 2px solid red;
+
   }
   .featured-card {
       border: 1px solid #ccc;
