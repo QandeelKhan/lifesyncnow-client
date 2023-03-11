@@ -86,6 +86,8 @@ const SkinCareTips = () => {
                         />
                     ))}
                 </div>
+                <SectionHeading heading="Older Post" />
+
                 <OlderCard />
             </div>
         </PageTemplate>
