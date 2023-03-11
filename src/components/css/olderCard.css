@@ -1,9 +1,4 @@
-.older-section{
-    padding: 10px 30px;
-    /* border: 2px solid red; */
-  }
-   
-  .older-container{
+     .older-container{
     display: flex;
     justify-content: flex-start;
     gap: 32px;
@@ -77,9 +72,7 @@
       width: 100%;
       
      }
-     .older-section{
-      padding: 20px 14px;
-     }
+   
   }
 
 

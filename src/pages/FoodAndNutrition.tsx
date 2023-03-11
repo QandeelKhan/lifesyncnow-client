@@ -13,7 +13,7 @@ const FoodAndNutrition = () => {
             <div className="home-container">
                 <SectionHeading heading="Featured" />
 
-                <div className="featured-">
+                <div className="featured-container">
                     {FeaturedData.map((feature) => (
                         <FeaturedCard
                             key={feature.id}
