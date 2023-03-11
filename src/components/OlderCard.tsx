@@ -6,7 +6,6 @@ const OlderCard = () => {
     return (
         <>
             <div className="older-section">
-                <SectionHeading heading="Older Post" />
                 <div className="older-container">
                     {OlderData.map((older) => (
                         <div className="older-card" key={older.id}>

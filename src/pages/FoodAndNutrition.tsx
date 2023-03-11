@@ -34,6 +34,7 @@ const FoodAndNutrition = () => {
                         />
                     ))}
                 </div>
+                <SectionHeading heading="Older Post" />
 
                 <OlderCard />
             </div>
