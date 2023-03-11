@@ -12,6 +12,7 @@ import PageTemplate from "../components/PageTemplate";
 
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
+    const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
 
@@ -24,20 +25,30 @@ const SkinCareTips = () => {
                 const data = response.data;
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
-                const filteredMostRecentPosts = data.filter(
-                    (post: any) => post.most_recent_posts
+                const filteredSkinCareTips = data.filter(
+                    (post: any) => post.category_name === "SKIN-CARE TIPS"
                 );
-                const filteredOlderPosts = data.filter(
-                    (post: any) => post.older_post
-                );
-                const filteredFeaturedPosts = data.filter(
-                    (post: any) => post.featured_posts
-                );
+                if (filteredSkinCareTips) {
+                    const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
+                        (post: any) => post.most_recent_posts
+                    );
+                    setMostRecentPosts(mostRecentSkinCarePosts);
+                }
+                if (filteredSkinCareTips) {
+                    const filteredOlderPosts = filteredSkinCareTips.filter(
+                        (post: any) => post.older_posts
+                    );
+                    setOlderPosts(filteredOlderPosts);
+                }
+                if (filteredSkinCareTips) {
+                    const filteredFeaturedPosts = filteredSkinCareTips.filter(
+                        (post: any) => post.featured_posts
+                    );
+                    setFeaturedPosts(filteredFeaturedPosts);
+                }
 
                 // Update state with filtered data
-                setMostRecentPosts(filteredMostRecentPosts);
-                setOlderPosts(filteredOlderPosts);
-                setFeaturedPosts(filteredFeaturedPosts);
+                setSkinCareTips(filteredSkinCareTips);
             } catch (error) {
                 console.error(error);
             }
@@ -47,6 +58,10 @@ const SkinCareTips = () => {
     }, []);
     return (
         <PageTemplate>
+            {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
+            {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
+            {/* {console.log(skinCareTips)} */}
+            {console.log(mostRecentPosts)}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-section ">
