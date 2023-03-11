@@ -8,7 +8,7 @@ const PageTemplate = (props: any) => {
     return (
         <>
             <Navbar />
-            {props.children}
+            <div>{props.children}</div>
             <NewsletterForm />
             <Footer />
         </>

@@ -8,6 +8,7 @@ import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import { FeaturedData, recentData } from "../data";
 import axios from "axios";
+import PageTemplate from "../components/PageTemplate";
 
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
@@ -45,7 +46,7 @@ const SkinCareTips = () => {
         fetchData();
     }, []);
     return (
-        <>
+        <PageTemplate>
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-section ">
@@ -72,7 +73,7 @@ const SkinCareTips = () => {
                 </div>
                 <OlderCard />
             </div>
-        </>
+        </PageTemplate>
     );
 };
 
