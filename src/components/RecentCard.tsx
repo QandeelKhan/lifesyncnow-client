@@ -6,7 +6,7 @@ const RecentCard = (props: any) => {
     return (
         <>
             <div className="recent-card" key={props.id}>
-                <img src={props.img} className="recent-img" alt="Card image" />
+                <img src={props.img} className="recent-img" alt="Card" />
                 <div className="recent-body">
                     <h3 className="recent-title">{props.heading}</h3>
                     <p className="recent-author">By {props.author}</p>
