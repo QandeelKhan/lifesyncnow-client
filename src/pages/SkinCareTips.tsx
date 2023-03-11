@@ -48,7 +48,6 @@ const SkinCareTips = () => {
         <>
             <div className="home-container">
                 <SectionHeading heading="Featured" />
-
                 <div className="featured-section ">
                     {FeaturedData.map((feature) => (
                         <FeaturedCard
