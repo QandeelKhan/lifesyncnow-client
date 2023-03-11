@@ -5,10 +5,11 @@ import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import { FeaturedData, recentData } from "../data";
 import OlderCard from "../components/OlderCard";
+import PageTemplate from "../components/PageTemplate";
 
 const FoodAndNutrition = () => {
     return (
-        <>
+        <PageTemplate>
             <div className="home-container">
                 <SectionHeading heading="Featured" />
 
@@ -38,7 +39,7 @@ const FoodAndNutrition = () => {
 
                 <OlderCard />
             </div>
-        </>
+        </PageTemplate>
     );
 };
 
