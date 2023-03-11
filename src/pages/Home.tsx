@@ -7,6 +7,7 @@ import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import Sidebar from "../components/Sidebar";
 import { FeaturedData, recentData } from "../data";
+import PageTemplate from "../components/PageTemplate";
 
 const Home = (props: any) => {
     return (
@@ -28,7 +29,9 @@ const Home = (props: any) => {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Helmet>
-            <section id="home">Home</section>
+            <PageTemplate>
+                <section id="home">Home</section>
+            </PageTemplate>
         </>
     );
 };

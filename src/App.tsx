@@ -15,14 +15,20 @@ import FitnessTips from "./pages/FitnessTips";
 function App() {
     return (
         <Router>
-            <Navbar/>
+            {/* <Navbar /> */}
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />                    
-                    <Route path="/skin-care-tips" element={<SkinCareTips/>} />
-                    <Route path="/food-and-nutrition" element={<FoodAndNutrition/>} />
-                    <Route path="/holistic-treatment" element={<HolisticTreatment/>} />
-                    <Route path="/fitness-tips" element={<FitnessTips/>} />
+                    <Route index element={<Home />} />
+                    <Route path="/skin-care-tips" element={<SkinCareTips />} />
+                    <Route
+                        path="/food-and-nutrition"
+                        element={<FoodAndNutrition />}
+                    />
+                    <Route
+                        path="/holistic-treatment"
+                        element={<HolisticTreatment />}
+                    />
+                    <Route path="/fitness-tips" element={<FitnessTips />} />
                     <Route path="/registration" element={<Registration />} />
                     <Route path="/login" element={<Login />} />
                     {/* <Route
@@ -31,8 +37,8 @@ function App() {
                     /> */}
                 </Route>
             </Routes>
-            <NewsletterForm/>
-            <Footer/>
+            {/* <NewsletterForm />
+            <Footer /> */}
         </Router>
     );
 }

@@ -1,11 +1,17 @@
 import React from "react";
 import "./css/page-template.css";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import NewsletterForm from "./NewsletterForm";
 
-const PageTemplate = () => {
+const PageTemplate = (props: any) => {
     return (
-        <div>
-            <h1>i am template</h1>
-        </div>
+        <>
+            <Navbar />
+            {props.children}
+            <NewsletterForm />
+            <Footer />
+        </>
     );
 };
 
