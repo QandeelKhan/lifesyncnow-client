@@ -135,17 +135,17 @@
 }
 .hidden-search-main-container {
     width: 100%;
-    background-color: #f9f5f2;
-    top: 0;
+    background-color: #fcebeb;
+    top: -100px;
     position: fixed;
     /* right: 0; */
     transition: 850ms;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .hidden-search-main-container.active {
     top: 90px;
     transition: 350ms;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .search-area {
     width: 100%;

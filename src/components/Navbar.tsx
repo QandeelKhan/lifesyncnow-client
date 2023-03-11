@@ -12,12 +12,12 @@ const Navbar = () => {
     const [toggleBar, setToggleBar] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
 
-    useEffect(() => {
-        let handler = () => {
-            setToggleBar(false);
-        };
-        document.addEventListener("mousedown", handler);
-    });
+    // useEffect(() => {
+    //     let handler = () => {
+    //         setToggleBar(false);
+    //     };
+    //     document.addEventListener("mousedown", handler);
+    // });
 
     const handleToggle = () => {
         setMenuActive(!menuActive);
@@ -100,11 +100,21 @@ const Navbar = () => {
                     <a href="/">SIGN UP</a>
                 </div>
                 <div className="side-bar-icons">
-                    <i className="fa-brands fa-facebook-f"></i>
-                    <i className="fa-brands fa-pinterest-p"></i>
-                    <i className="fa-brands fa-twitter"></i>
-                    <i className="fa-brands fa-youtube"></i>
-                    <i className="fa-brands fa-instagram"></i>
+                    <a href="">
+                        <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="/">
+                        <i className="fa-brands fa-pinterest-p"></i>
+                    </a>
+                    <a href="/">
+                        <i className="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="/">
+                        <i className="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="/">
+                        <i className="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
             </div>
             {/* actual navbar */}
