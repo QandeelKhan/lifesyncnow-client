@@ -1,17 +1,18 @@
-.recent-section{
-    padding: 10px 40px;
-    /* border: 2px solid red; */
-  }
    
- 
-  .recent-card {
+.recent-container{
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+   .recent-card {
       border: 1px solid #ccc;
       border-radius: 5px;
       overflow: hidden;
       width: 23%;
       box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     }
-  .card:hover {
+  .recent-card:hover {
       box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
       
     }
@@ -68,9 +69,9 @@
       width: 100%;
       
      }
-     .recent-section{
+     /* .recent-section{
       padding: 20px 14px;
-     }
+     } */
   }
 
 
