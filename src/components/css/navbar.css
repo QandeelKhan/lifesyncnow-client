@@ -171,6 +171,7 @@
     border-left: 1px solid rgb(206, 204, 204);
     padding: 0px 10px;
 }
+
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
@@ -189,7 +190,7 @@
         display: none;
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
     .navbar-menu {
         display: none;
     }
