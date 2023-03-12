@@ -8,6 +8,7 @@ import SkinCareTips from "./pages/SkinCareTips";
 import FoodAndNutrition from "./pages/FoodAndNutrition";
 import HolisticTreatment from "./pages/HolisticTreatment";
 import FitnessTips from "./pages/FitnessTips";
+import PostDetail from "./pages/PostDetail";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="/skin-care-tips" element={<SkinCareTips />} />
+                    <Route path="/post-detail" element={<PostDetail />} />
                     <Route
                         path="/food-and-nutrition"
                         element={<FoodAndNutrition />}
