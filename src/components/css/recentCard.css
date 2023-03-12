@@ -1,8 +1,9 @@
    
 .recent-container{
+  border: 1px solid green;
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
+  width: 100%;
   flex-wrap: wrap;
 }
    .recent-card {
@@ -57,8 +58,14 @@
     }
 
     @media (max-width: 768px) {
+      .recent-container{
+  
+        display: flex;
+        gap: 41px;
+
+      }
       .recent-card{
-        width: 30%;
+        width: 47%;
         
        }
      

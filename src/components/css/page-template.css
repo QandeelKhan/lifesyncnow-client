@@ -1,4 +1,16 @@
 .template-children {
     height: 100%;
     width: 100%;
+    border: 1px solid red;
+    padding: 12px 40px;
+}
+
+@media (max-width: 768px) {
+   
+   
+  }
+@media(max-width:477px){
+    .template-children {
+        padding: 12px;
+    }
 }
