@@ -9,12 +9,15 @@ import SectionHeading from "../components/SectionHeading";
 import { FeaturedData, recentData } from "../data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
+import { setSelectedPost } from "../redux/dataSlice";
+import { Link } from "react-router-dom";
 
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -78,12 +81,17 @@ const SkinCareTips = () => {
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
-                        <RecentCard
-                            key={recent.id}
-                            img={recent.cover_image}
-                            heading={recent.title}
-                            author={recent.full_name}
-                        />
+                        <Link
+                            to="/post-detail"
+                            onClick={() => dispatch(setSelectedPost(recent))}
+                        >
+                            <RecentCard
+                                key={recent.id}
+                                img={recent.cover_image}
+                                heading={recent.title}
+                                author={recent.full_name}
+                            />
+                        </Link>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
