@@ -94,6 +94,10 @@
 .side-bar-icons {
     color: #55777a;
 }
+.side-bar-icons a {
+    color: #55777a;
+    cursor: pointer;
+}
 .side-bar-icons i {
     padding: 10px;
 }

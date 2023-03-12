@@ -100,7 +100,7 @@ const Navbar = () => {
                     <a href="/">SIGN UP</a>
                 </div>
                 <div className="side-bar-icons">
-                    <a href="">
+                    <a href="/">
                         <i className="fa-brands fa-facebook-f"></i>
                     </a>
                     <a href="/">
@@ -119,11 +119,13 @@ const Navbar = () => {
             </div>
             {/* actual navbar */}
             <nav className="navbar">
+                <div className="open-side-bar" onClick={handleToggleBar}>
+                    <i className="fa-solid fa-bars"></i>
+                </div>
                 <div className="navbar-brand">
-                    <div className="open-side-bar" onClick={handleToggleBar}>
-                        <i className="fa-solid fa-bars"></i>
-                    </div>
-                    <Link to="/">WELL PLUS GOOD</Link>
+                    <Link className="logo-name" to="/">
+                        WELL PLUS GOOD
+                    </Link>
                 </div>
                 <button
                     className={`navbar-toggle ${menuActive ? "active" : ""}`}
@@ -157,21 +159,22 @@ const Navbar = () => {
                     <li>
                         <Link to="/entertairment">ENTERTAIRMENT</Link>
                     </li>
-                    <i
-                        onClick={handleSearchBar}
-                        className={
-                            searchBar
-                                ? "fa-solid fa-xmark"
-                                : "fa-solid fa-magnifying-glass"
-                        }
-                    ></i>
                 </ul>
+
                 <button
                     className={`navbar-close ${menuActive ? "active" : ""}`}
                     onClick={handleToggle}
                 >
                     <FontAwesomeIcon icon={faTimes} />
                 </button>
+                <i
+                    onClick={handleSearchBar}
+                    className={
+                        searchBar
+                            ? "fa-solid fa-xmark"
+                            : "fa-solid fa-magnifying-glass"
+                    }
+                ></i>
             </nav>
         </>
     );
