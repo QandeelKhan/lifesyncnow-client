@@ -64,7 +64,7 @@ const SkinCareTips = () => {
             {/* {console.log(mostRecentPosts)} */}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
-                <div className="featured-section ">
+                <div className="featured-container ">
                     {FeaturedData.map((feature) => (
                         <FeaturedCard
                             key={feature.id}
@@ -86,6 +86,8 @@ const SkinCareTips = () => {
                         />
                     ))}
                 </div>
+                <SectionHeading heading="Older Post" />
+
                 <OlderCard />
             </div>
         </PageTemplate>
