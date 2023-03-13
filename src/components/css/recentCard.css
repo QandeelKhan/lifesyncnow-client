@@ -1,26 +1,30 @@
 .recent-container {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     border: 1px solid black;
     /* flex-direction: column; */
-    justify-content: start;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 33.7px;
+    /* gap: 33.7px; */
 }
 
 .recent-card {
     border: 1px solid #ccc;
     border-radius: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 23%;
+    /* justify-self: flex-start; */
     /* margin: auto; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
     /* align-items: center; */
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    justify-self: flex-start;
 }
+/* .recent-card:nth-child(4n + 3) {
+    justify-self: flex-start;
+} */
 .recent-card:hover {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
 }
@@ -61,6 +65,18 @@
     font-size: 14px;
     margin-bottom: 10px;
     color: #252525;
+}
+@media (max-width: 1024px) {
+    .recent-container {
+        display: flex;
+        gap: 41px;
+    }
+    .recent-card {
+        width: 21%;
+    }
+    .recent-card:nth-child(4n + 1) {
+        justify-self: flex-start;
+    }
 }
 
 @media (max-width: 768px) {

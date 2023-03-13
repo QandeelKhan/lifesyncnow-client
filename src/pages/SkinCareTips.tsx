@@ -80,7 +80,7 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
-                    {mostRecentPosts.map((recent: any) => (
+                    {recentData.map((recent: any) => (
                         <Link
                             to="/post-detail"
                             onClick={() => dispatch(setSelectedPost(recent))}
