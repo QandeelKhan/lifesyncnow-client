@@ -12,12 +12,13 @@ const Navbar = () => {
     const [toggleBar, setToggleBar] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
 
-    // useEffect(() => {
-    //     let handler = () => {
-    //         setToggleBar(false);
-    //     };
-    //     document.addEventListener("mousedown", handler);
-    // });
+    useEffect(() => {
+        let handler = () => {
+            setToggleBar(false);
+            setSearchBar(false);
+        };
+        document.addEventListener("mousedown", handler);
+    });
 
     const handleToggle = () => {
         setMenuActive(!menuActive);
