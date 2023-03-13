@@ -16,7 +16,7 @@ const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
-    const [featuredPosts, setFeaturedPosts] = useState([]);
+    // const [featuredPosts, setFeaturedPosts] = useState([]);s
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -81,7 +81,7 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
-                    {recentData.map((recent: any) => (
+                    {mostRecentPosts.map((recent: any) => (
                         <Link
                             to="/post-detail"
                             onClick={() => dispatch(setSelectedPost(recent))}
