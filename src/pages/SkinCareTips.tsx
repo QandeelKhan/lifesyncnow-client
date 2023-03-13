@@ -16,7 +16,7 @@ const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
-    // const [featuredPosts, setFeaturedPosts] = useState([]);s
+    const [featuredPosts, setFeaturedPosts] = useState([]);
     const dispatch = useDispatch();
 
     useEffect(() => {
