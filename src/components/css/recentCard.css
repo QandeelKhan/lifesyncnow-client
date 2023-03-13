@@ -6,7 +6,7 @@
     flex-wrap: wrap; */
     /* gap: 33.7px; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
     gap: 44px ;
 
