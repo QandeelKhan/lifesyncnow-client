@@ -8,6 +8,7 @@ import SectionHeading from "../components/SectionHeading";
 import Sidebar from "../components/Sidebar";
 import { FeaturedData, recentData } from "../data";
 import PageTemplate from "../components/PageTemplate";
+import PostDetail from "./PostDetail";
 
 const Home = (props: any) => {
     return (
@@ -30,7 +31,9 @@ const Home = (props: any) => {
                 />
             </Helmet>
             <PageTemplate>
-                <section id="home">Home</section>
+                <section id="home">
+                    <PostDetail />
+                </section>
             </PageTemplate>
         </>
     );
