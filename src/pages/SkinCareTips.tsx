@@ -23,7 +23,8 @@ const SkinCareTips = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:8000/api/blog/posts-list"
+                    // "http://localhost:8000/api/blog/posts-list"
+                    "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
                 );
                 const data = response.data;
 
