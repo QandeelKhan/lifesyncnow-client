@@ -6,7 +6,7 @@ import HeaderBanner from "../components/HeaderBanner";
 import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
-import { FeaturedData, recentData } from "../data";
+import { FeaturedData, OlderData, recentData } from "../data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";
@@ -81,7 +81,7 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
-                    {mostRecentPosts.map((recent: any) => (
+                    {/* {mostRecentPosts.map((recent: any) => (
                         <Link
                             to="/post-detail"
                             onClick={() => dispatch(setSelectedPost(recent))}
@@ -93,11 +93,28 @@ const SkinCareTips = () => {
                                 author={recent.full_name}
                             />
                         </Link>
+                    ))} */}
+                    {recentData.map((recent) => (
+                        <RecentCard
+                            key={recent.id}
+                            img={recent.img}
+                            heading={recent.heading}
+                            author={recent.author}
+                        />
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
 
-                <OlderCard />
+                <div className="older-container">
+                    {OlderData.map((older) => (
+                        <OlderCard
+                            key={older.id}
+                            img={older.img}
+                            heading={older.heading}
+                            author={older.author}
+                        />
+                    ))}
+                </div>
             </div>
         </PageTemplate>
     );

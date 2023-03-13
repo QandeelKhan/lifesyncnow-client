@@ -36,9 +36,10 @@
     .older-img {
       display: block;
       height: 100%;
-      max-width: 30%;
-      background-position: 0%;
-      object-fit: cover;
+      width: 30%;
+      min-width: 30%;
+      /* object-fit: inherit; */
+    
     }
     
     .older-body {
