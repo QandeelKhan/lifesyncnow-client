@@ -10,7 +10,7 @@ import { FeaturedData, OlderData, recentData } from "../data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
@@ -23,8 +23,8 @@ const SkinCareTips = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    // "http://localhost:8000/api/blog/posts-list"
-                    "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
+                    "http://localhost:8000/api/blog/posts-list"
+                    // "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
                 );
                 const data = response.data;
 
@@ -60,6 +60,11 @@ const SkinCareTips = () => {
 
         fetchData();
     }, []);
+    const navigate = useNavigate();
+    const handleNavigate = () => {
+        navigate("/post-detail");
+    };
+
     return (
         <PageTemplate>
             {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
@@ -94,12 +99,13 @@ const SkinCareTips = () => {
                             />
                         </Link>
                     ))} */}
-                    {recentData.map((recent) => (
+                    {mostRecentPosts.map((recent: any) => (
                         <RecentCard
-                            key={recent.id}
-                            img={recent.img}
-                            heading={recent.heading}
-                            author={recent.author}
+                            id={recent.id}
+                            handleNavigate={handleNavigate}
+                            cover_image={recent.cover_image}
+                            title={recent.title}
+                            full_name={recent.full_name}
                         />
                     ))}
                 </div>
