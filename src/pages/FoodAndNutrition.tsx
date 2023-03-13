@@ -3,7 +3,7 @@ import "../components/css/foodAndNutrition.css";
 import FeaturedCard from "../components/FeaturedCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
-import { FeaturedData, recentData } from "../data";
+import { FeaturedData, OlderData, recentData } from "../data";
 import OlderCard from "../components/OlderCard";
 import PageTemplate from "../components/PageTemplate";
 
@@ -36,8 +36,16 @@ const FoodAndNutrition = () => {
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
-
-                <OlderCard />
+                <div className="older-container">
+                    {OlderData.map((older) => (
+                        <OlderCard
+                            key={older.id}
+                            img={older.img}
+                            heading={older.heading}
+                            author={older.author}
+                        />
+                    ))}
+                </div>
             </div>
         </PageTemplate>
     );
