@@ -1,26 +1,37 @@
 .recent-container {
     /* width: 100%; */
-    display: flex;
-    border: 1px solid black;
+    /* display: flex; */
     /* flex-direction: column; */
+    /* justify-content: space-between;
+    flex-wrap: wrap; */
+    /* gap: 33.7px; */
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* gap: 33.7px; */
+    gap: 44px ;
+
+    
+    
 }
 
 .recent-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 31%;
+      display: flex;
+      background-color: #fff;
+      flex-direction: column;
+      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    /* border: 1px solid #ccc;
+    border-radius: 5px; */
     /* overflow: hidden; */
-    width: 23%;
+    /* width: 23%; */
     /* justify-self: flex-start; */
     /* margin: auto; */
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: center; */
     /* align-items: center; */
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-    justify-self: flex-start;
+    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    justify-self: flex-start; */
 }
 /* .recent-card:nth-child(4n + 3) {
     justify-self: flex-start;
@@ -66,32 +77,29 @@
     margin-bottom: 10px;
     color: #252525;
 }
-@media (max-width: 1024px) {
-    .recent-container {
-        display: flex;
-        gap: 41px;
-    }
-    .recent-card {
-        width: 21%;
-    }
-    .recent-card:nth-child(4n + 1) {
-        justify-self: flex-start;
-    }
-}
+
 
 @media (max-width: 768px) {
     .recent-container {
-        display: flex;
-        gap: 41px;
+        gap: 0;
+ 
     }
     .recent-card {
         width: 47%;
+        margin-bottom: 34px;
+
     }
 }
 
 @media (max-width: 477px) {
+    .recent-container {
+        gap: 0;
+ 
+    }
     .recent-card {
         width: 100%;
+        margin-bottom: 34px;
+ 
     }
     /* .recent-section{
       padding: 20px 14px;

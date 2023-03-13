@@ -1,7 +1,6 @@
 .template-children {
     height: 100%;
     width: 100%;
-    border: 1px solid red;
     padding: 12px 40px;
     /* margin-top: 68px; */
 }
