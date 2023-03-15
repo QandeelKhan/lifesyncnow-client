@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    /* width: 100%; */
     font-family: Arial, Helvetica, sans-serif;
 }
 .post-category-heading span {
@@ -51,6 +52,7 @@
     justify-content: space-between;
     align-items: start;
     gap: 100px;
+    /* flex-wrap: wrap; */
 }
 .shop-logo {
     display: flex;
@@ -63,7 +65,7 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    gap: 25px;
+    gap: 35px;
 }
 .google-ads {
     width: 25%;
@@ -77,7 +79,17 @@
     border: 1px solid rgb(204, 202, 202);
     padding: 20px;
     margin-top: 30px;
+    position: relative;
 }
+/* .border-article::before {
+    content: "";
+    position: absolute;
+    border: 1px solid rgb(214, 211, 211);
+    top: 0;
+    left: 0;
+    width: 70%;
+} */
+
 .shop-logo {
     width: 20%;
 }
@@ -147,10 +159,79 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding: 30px 0px;
+    border-bottom: 1px solid rgb(218, 215, 215);
 }
 .after-second-heading span {
-    text-align: center;
+    /* text-align: center; */
     line-height: 30px;
     font-size: 18px;
     color: rgb(77, 75, 75);
+    text-align: start;
+}
+.for-all-updates {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 50px;
+    background-color: #f9f5f2;
+}
+.for-all-updates .update-first-text {
+    font-size: 20px;
+    color: rgb(95, 94, 94);
+}
+.for-all-updates .update-second-text {
+    color: rgb(95, 94, 94);
+}
+.for-all-updates .email-area input {
+    border: none;
+    outline: none;
+    padding: 15px 75px 15px 10px;
+}
+.for-all-updates .email-area a {
+    padding: 14px 15px;
+    background-color: #42676b;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.tags .border-tags:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.tags,
+.border-tags {
+    color: rgb(107, 106, 106);
+}
+.foot-text span {
+    font-size: 13px;
+    color: rgb(107, 106, 106);
+}
+@media (max-width: 800px) {
+    .post-article-main {
+        flex-wrap: wrap;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .post-right-article {
+        width: 100%;
+    }
+    .google-ads {
+        width: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-post-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .second-post-container {
+        margin: 0;
+    }
 }

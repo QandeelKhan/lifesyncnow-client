@@ -124,6 +124,40 @@ const PostDetail = () => {
                                 method and break it down, benefit by benefit:
                             </span>
                         </div>
+                        <div className="for-all-updates">
+                            <span className="update-first-text">
+                                But wait, there's more!
+                            </span>
+                            <span className="update-second-text">
+                                Want to be the first to hear about the latest
+                                (and greatest) SHOP product drops, custom
+                                collections, discounts, and more? Sign up to
+                                have the intel delivered straight to your inbox.
+                            </span>
+                            <div className="email-area">
+                                <input
+                                    type="text"
+                                    placeholder="Enter Email Address"
+                                />
+                                <a href="/">Sign Up</a>
+                            </div>
+                        </div>
+                        <div className="tags">
+                            <span>TAGS:</span>
+                            <span className="border-tags"> FACE OILS,</span>
+                            <span className="border-tags">
+                                {" "}
+                                SKIN-CARE TIPS,
+                            </span>
+                            <span className="border-tags"> WELL+GOOD SHOP</span>
+                        </div>
+                        <div className="foot-text">
+                            <span>
+                                Our editors independently select these products.
+                                Making a purchase through our links may earn
+                                Well+Good a commission.
+                            </span>
+                        </div>
                     </div>
                     <div className="google-ads">
                         <img src="google-ad.png" alt="google-ad" />
