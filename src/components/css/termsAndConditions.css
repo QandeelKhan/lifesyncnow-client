@@ -1,0 +1,23 @@
+.terms-page-content{
+    max-width: 769px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-bottom:33px;
+
+
+}
+.terms-page-content > p{
+    color: #5a5656;
+    font-size: 19px;
+    line-height: 33px;
+    letter-spacing: 0;
+}
+.terms-page-content > h2{
+    font-size: 28px;
+    text-align: left;
+    font-weight: 400;
+    margin: 10px 0;
+    color: #5a5656;
+
+}

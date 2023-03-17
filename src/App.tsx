@@ -9,6 +9,8 @@ import FoodAndNutrition from "./pages/FoodAndNutrition";
 import HolisticTreatment from "./pages/HolisticTreatment";
 import FitnessTips from "./pages/FitnessTips";
 import PostDetail from "./pages/PostDetail";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import CookieNotice from "./pages/CookieNotice";
 
 function App() {
     return (
@@ -27,6 +29,11 @@ function App() {
                         element={<HolisticTreatment />}
                     />
                     <Route path="/fitness-tips" element={<FitnessTips />} />
+                    <Route
+                        path="/terms-and-conditions"
+                        element={<TermsAndConditions />}
+                    />
+                    <Route path="/cookie-notice" element={<CookieNotice />} />
                     <Route path="/registration" element={<Registration />} />
                     <Route path="/login" element={<Login />} />
                     {/* <Route
