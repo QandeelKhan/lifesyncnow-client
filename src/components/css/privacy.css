@@ -4,7 +4,7 @@
     margin-right: auto;
     padding: 10px;
     margin-bottom:33px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .privacy-page-content > p{
     color: #5a5656;
@@ -16,8 +16,10 @@
 }
 .privacy-page-content > p >span{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 19px;
     color: #353333;
+
+
 
 }
 .privacy-page-content > ul{
@@ -33,23 +35,31 @@
     font-size: 19px;
     color: #353333;
 
+
+
 }
 .privacy-page-content > ul >li> span>a{
 
     color: #353333;
 
 }
+.privacy-page-content > ul >li> span{
+    font-weight: bold;
+    color: #353333;
+
+}
 
 .privacy-page-content>table{
-    width: 100%;
+    margin: 5px;
     border-collapse: collapse;
     width: 100%;
     text-align: left;
 
 }
+
 .privacy-page-content>table >thead> tr> td{
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 18px;
     text-align: left;
     font-weight: 700;
     color: #353333;
@@ -58,10 +68,64 @@
 }
 .privacy-page-content>table > tbody> tr> td{
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 18px;
     text-align: left;
     color: #353333;
 
 
+    
+}
+@media (max-width: 768px) {
+    .privacy-page-content>table >thead> tr{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+
+
+        
+    }
+    .privacy-page-content>table>tbody> tr{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+
+        
+    }
+    
+   
+  }
+    
+
+@media(max-width:477px){
+    .ml{
+        margin-left: 0;
+        font-size: 18px;
+    
+    }
+    .privacy-page-content >ul > li{
+        margin-left: 34px;
+       
+    
+    }
+    .marker{
+        margin-left: 0;
+    
+    }
+    .privacy-page-content>table >thead> tr{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+
+
+        
+    }
+    
+    .privacy-page-content>table>tbody> tr{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+
+        
+    }
     
 }

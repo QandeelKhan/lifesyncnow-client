@@ -6,10 +6,13 @@ import SectionHeading from "../components/SectionHeading";
 import { FeaturedData, OlderData, recentData } from "../data";
 import OlderCard from "../components/OlderCard";
 import PageTemplate from "../components/PageTemplate";
+import PageMainHeading from "../components/PageMainHeading";
 
 const FoodAndNutrition = () => {
     return (
         <PageTemplate>
+            <PageMainHeading title="Food And Nutrition" />
+
             <div className="home-container">
                 <SectionHeading heading="Featured" />
 

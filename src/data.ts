@@ -360,3 +360,96 @@ export const PrivacyData = [
     },
     
 ]
+
+export const PrivacyData2 = [
+    {
+     id:1,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:2,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:3,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:4,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:5,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:6,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:7,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:8,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:9,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+    {
+     id:10,
+     category:"Personal and online identifiers (such as first and last name, email address, or unique online identifiers)",
+     cl12: "Yes.",
+     cSource: "All categories described above in Sections 2, 3, and 4.",
+     bussiness:"All purposes described above in Section 5.",
+     tcategory: "All categories listed above in Section 7.",
+     sold:"All categories listed below under section D."       
+    },
+]
