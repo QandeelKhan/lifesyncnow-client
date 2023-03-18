@@ -28,7 +28,6 @@
 }
 .marker{
     margin-left: 33px;
-    
     font-size: 24px;
     font-weight: bold;
 }
@@ -45,21 +44,21 @@
 
 
 }
-table{
+.cookie-page-content>table{
     width: 100%;
     border-collapse: collapse;
     width: 100%;
     text-align: left;
 
 }
-table thead> tr> td{
+.cookie-page-content>table >thead> tr> td{
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
     font-weight: 700;
     
 }
-table tbody> tr> td{
+.cookie-page-content>table > tbody> tr> td{
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
@@ -82,7 +81,7 @@ table tbody> tr> td{
         margin-left: 0;
     
     }
-    table thead> tr{
+    .cookie-page-content>table >thead> tr{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
@@ -91,7 +90,7 @@ table tbody> tr> td{
         
     }
     
-    table tbody> tr{
+    .cookie-page-content>table>body> tr{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;

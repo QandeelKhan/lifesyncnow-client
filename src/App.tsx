@@ -11,6 +11,9 @@ import FitnessTips from "./pages/FitnessTips";
 import PostDetail from "./pages/PostDetail";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CookieNotice from "./pages/CookieNotice";
+import Privacy from "./pages/Privacy";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
     return (
@@ -34,6 +37,9 @@ function App() {
                         element={<TermsAndConditions />}
                     />
                     <Route path="/cookie-notice" element={<CookieNotice />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/privacy" element={<Privacy />} />
                     <Route path="/registration" element={<Registration />} />
                     <Route path="/login" element={<Login />} />
                     {/* <Route

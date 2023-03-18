@@ -27,9 +27,9 @@ const Footer = () => {
 
             <div className="col">
                 <h4>Your logo here</h4>
-                <Link to="/">ABOUT US</Link>
-                <Link to="/">CONTACT US</Link>
-                <Link to="/">PRIVACY POLICY</Link>
+                <Link to="/about">ABOUT US</Link>
+                <Link to="/contact">CONTACT US</Link>
+                <Link to="/privacy">PRIVACY POLICY</Link>
                 <Link to="/terms-and-conditions">TERMS & CONDITIONS</Link>
                 <Link to="/">ADVERTISE</Link>
                 <Link to="/cookie-notice">Cookie Notice</Link>

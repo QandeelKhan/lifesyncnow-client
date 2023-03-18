@@ -308,3 +308,55 @@ export const TabelData = [
     },
 
 ]
+export interface PrivcyData {
+    id: number;
+    controller_1: string;
+    controller_2: string;
+    Email: string;
+    MailAddress: {
+        content_1: string;
+        content_2: string;
+        content_3: string;
+        content_4: string;
+        content_5: string;
+        content_6: string;
+        content_7: string;
+    };
+  }
+export const PrivacyData = [
+    {
+        id: 1,
+        controller_1: "Leaf Group Ltd.",
+        controller_2: "",
+        Email: "All users (UK and EU users included): privacy@leafgroup.com",
+        MailAddress: "All users:\n\n Attn: Legal Department\n1655 26th Street – Santa Monica, CA 90404 – UNITED STATES\n UK users may also contact us at: \n4th Floor, 15 D’Arblay Street, London, W1F 8DZ – UNITED KINGDOM",
+        
+      
+        
+    },
+    {
+        id: 2,
+        controller_1: "Leaf Group Ltd.",
+        controller_2: "Leaf Group Ltd.",
+        Email: "All users (UK and EU users included): privacy@leafgroup.com",
+        MailAddress: "All users:\n\n Attn: Legal Department\n1655 26th Street – Santa Monica, CA 90404 – UNITED STATES\n UK users may also contact us at: \n4th Floor, 15 D’Arblay Street, London, W1F 8DZ – UNITED KINGDOM",
+        
+    },
+    {
+        id: 3,
+        controller_1: "Leaf Group Ltd.",
+        controller_2: "Leaf Group Ltd.",
+        Email: "All users (UK and EU users included): privacy@leafgroup.com",
+        MailAddress: "All users:\n\n Attn: Legal Department\n1655 26th Street – Santa Monica, CA 90404 – UNITED STATES\n UK users may also contact us at: \n4th Floor, 15 D’Arblay Street, London, W1F 8DZ – UNITED KINGDOM",
+        
+    },
+    {
+        id: 4,
+        controller_1: "Leaf Group Ltd.",
+        controller_2: "Leaf Group Ltd.",
+        Email: "All users (UK and EU users included): privacy@leafgroup.com",
+        MailAddress: "All users:\n\n Attn: Legal Department\n1655 26th Street – Santa Monica, CA 90404 – UNITED STATES\n UK users may also contact us at: \n4th Floor, 15 D’Arblay Street, London, W1F 8DZ – UNITED KINGDOM",
+        
+    },
+    
+]
