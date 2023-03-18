@@ -206,9 +206,14 @@
 .border-tags {
     color: rgb(107, 106, 106);
 }
+.foot-text {
+    margin-bottom: 20px;
+}
 .foot-text span {
     font-size: 13px;
     color: rgb(107, 106, 106);
+    border: 1px solid rgb(167, 166, 166);
+    padding: 10px;
 }
 @media (max-width: 800px) {
     .post-article-main {
@@ -233,5 +238,8 @@
     }
     .second-post-container {
         margin: 0;
+    }
+    .foot-text span {
+        border: none;
     }
 }
