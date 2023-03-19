@@ -27,13 +27,13 @@
         overflow-x: scroll;
         overflow-y: hidden;
         white-space: nowrap;
-        height: 50px; /* or any other fixed height you want */
+        height: 50px; 
       }
       
       .sub-category {
         display: inline-block;
         white-space: nowrap;
-        padding-right: 10px; /* add some padding to the right to prevent the last tag from being cut off */
+        padding-right: 10px; 
       }
       
       .sub-category > ul{
