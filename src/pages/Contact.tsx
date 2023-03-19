@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate";
 import "../components/css/contact.css";
+import axios from "axios";
 const Contact = () => {
+    const [contactUs, setContactUs] = useState<any>({});
+    const [paragraphs, setParagraphs] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/contact-us")
+            .then((response) => {
+                setContactUs(response.data[0]);
+                setParagraphs(response.data[0].paragraphs);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     return (
         <PageTemplate>
+            {/* {console.log({ contactUs }, "this is claue data")}
+            {console.log({ paragraphs }, "this is data")} */}
             <div className="contact-main-container">
                 <div className="contact-heading">
-                    <h1>Contact Us</h1>
+                    <h1>{contactUs.title}</h1>
                 </div>
-                <div className="contact-content">
-                    <h3>Looking to advertise?</h3>
-                    <span>
-                        Well+Good works hand-in-hand with each of our partners
-                        to ensure their creative messaging resonates best with
-                        our audience. From editorial alignments, to custom
-                        content solutions, to social and email strategy, to live
-                        (or, ahem, virtual!) events, our sales and creative
-                        teams will help you generate some major good vibes in
-                        the wellness space. Visit our{" "}
-                        <a href="/">advertising page</a> or write us at
-                        advertising@wellandgood.com.
-                    </span>
-                </div>
-                <div className="contact-content types">
+                {/* TODO: correct it incase no data is comming from backend */}
+                {paragraphs.map((paragraph: any) => (
+                    <div key={paragraph.id} className="contact-content">
+                        <h3>{paragraph.paragraph_title}</h3>
+                        <span>{paragraph.paragraph_content}</span>
+                    </div>
+                ))}
+                {/* ----- */}
+                {/* <div className="contact-content types">
                     <h3>
                         Are you a publicist looking for coverage of your product
                         or client?
@@ -108,8 +120,9 @@ const Contact = () => {
                             </span>
                         </div>
                     </div>
-                </div>
-                <div className="contact-content">
+                </div> */}
+                {/* ------ */}
+                {/* <div className="contact-content">
                     <h3>
                         Are you a journalist or a writer who wants to contribute
                         to Well+Good?
@@ -147,7 +160,7 @@ const Contact = () => {
                         Due to the COVID-19 pandemic, we are not currently
                         accepting unsolicited packages by mail.
                     </h3>
-                </div>
+                </div> */}
             </div>
         </PageTemplate>
     );

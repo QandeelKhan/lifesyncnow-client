@@ -21,3 +21,25 @@
     color: #5a5656;
 
 }
+
+.main-heading{
+    text-align: center;
+    font-size: 47px;
+    color: #333333;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-heading{
+        
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 477px) {
+    .main-heading{
+        
+        font-size: 32px;
+    }
+}
