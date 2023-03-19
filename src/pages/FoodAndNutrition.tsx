@@ -7,12 +7,14 @@ import { FeaturedData, OlderData, recentData } from "../data";
 import OlderCard from "../components/OlderCard";
 import PageTemplate from "../components/PageTemplate";
 import PageMainHeading from "../components/PageMainHeading";
+import SubCategory from "../components/SubCategory";
+const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
 const FoodAndNutrition = () => {
     return (
         <PageTemplate>
             <PageMainHeading title="Food And Nutrition" />
-
+            <SubCategory categories={subcategory} />
             <div className="home-container">
                 <SectionHeading heading="Featured" />
 

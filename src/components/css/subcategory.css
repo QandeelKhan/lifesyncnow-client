@@ -1,0 +1,50 @@
+.sub-category{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 0 20px;
+    flex-wrap: wrap;
+}
+.sub-category > ul{
+    display: flex;
+    
+}
+.sub-category > ul >li{
+  
+    list-style: none;
+}
+.sub-category > ul >li>a{
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    color: #252525;
+
+}
+@media (max-width: 477px) {
+    
+    .sub-category-container{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        height: 50px; /* or any other fixed height you want */
+      }
+      
+      .sub-category {
+        display: inline-block;
+        white-space: nowrap;
+        padding-right: 10px; /* add some padding to the right to prevent the last tag from being cut off */
+      }
+      
+      .sub-category > ul{
+        display: inline-block;
+        padding: 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+   
+      
+
+}

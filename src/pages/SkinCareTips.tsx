@@ -11,7 +11,22 @@ import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";
 import { Link, useNavigate } from "react-router-dom";
-
+import PageMainHeading from "../components/PageMainHeading";
+import SubCategory from "../components/SubCategory";
+const subcategory = [
+    "ACNE CARE",
+    "BEAUTY WEEKS",
+    "BODY CARE",
+    "DEAR DERM",
+    "EXFOLIATORS",
+    "FACE OILS",
+    "MOISTURIZER",
+    "NATURAL ACNE TREATMENT",
+    "  SERUMS",
+    "SUMMER SKIN CARE",
+    "SUNSCREEN",
+    "WINTER SKIN CARE",
+];
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
@@ -67,6 +82,9 @@ const SkinCareTips = () => {
 
     return (
         <PageTemplate>
+            <PageMainHeading title="Skin Care Tips" />
+            <SubCategory categories={subcategory} />
+
             {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
             {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
             {/* {console.log(skinCareTips)} */}
