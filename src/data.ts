@@ -453,3 +453,44 @@ export const PrivacyData2 = [
      sold:"All categories listed below under section D."       
     },
 ]
+
+export const ContactData = [
+    {
+        id: 1,
+        title: "This is 1st",
+        paragraphs : [
+            {
+            p1:[
+                {
+                mainheading:"paragraph",
+                maincontent:"Main heading1",
+                stepguide: [],
+                }
+            ],
+            p2:[
+                {
+                mainheading:"paragraph",
+                maincontent:"Main heading1",
+                stepguide: [
+                    {
+                   subheadin: "subheading",
+                   subContent: "sub content",
+                },
+                {
+                    subheadin: "subheading",
+                    subContent: "sub content",
+                 },
+            ],
+            }
+        ],
+            
+           
+        }
+    ],
+        
+      
+    },
+    
+]
+
+    

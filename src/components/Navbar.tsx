@@ -149,7 +149,7 @@ const Navbar = () => {
                         <Link to="/food-and-nutrition">FOOD AND NUTRITION</Link>
                     </li>
                     <li>
-                        <Link to="holistic-treatment">HOLISTIC TREATMENT</Link>
+                        <Link to="/holistic-treatment">HOLISTIC TREATMENT</Link>
                     </li>
                     <li>
                         <Link to="/fitness-tips">FITNESS TIPS</Link>

@@ -126,3 +126,45 @@ hint: invocation.
 
 source venv-our-blog-backend/bin/activate
 python3 manage.py runserver
+
+Back-end model for Contact page
+export const ContactData = [
+    {
+        id: 1,
+        title: "This is 1st",
+        paragraphs : [
+            {
+            p1:[
+                {
+                mainheading:"paragraph",
+                maincontent:"Main heading1",
+                stepguide: [],
+                }
+            ],
+            p2:[
+                {
+                mainheading:"paragraph",
+                maincontent:"Main heading1",
+                stepguide: [
+                    {
+                   subheadin: "subheading",
+                   subContent: "sub content",
+                },
+                {
+                    subheadin: "subheading",
+                    subContent: "sub content",
+                 },
+            ],
+            }
+        ],
+            
+           
+        }
+    ],
+        
+      
+    },
+    
+]
+
+    
