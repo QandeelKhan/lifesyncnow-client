@@ -31,7 +31,7 @@ const Footer = () => {
                 <Link to="/contact">CONTACT US</Link>
                 <Link to="/privacy">PRIVACY POLICY</Link>
                 <Link to="/terms-and-conditions">TERMS & CONDITIONS</Link>
-                <Link to="/">ADVERTISE</Link>
+                <Link to="/advertise">ADVERTISE</Link>
                 <Link to="/cookie-notice">Cookie Notice</Link>
             </div>
             <div className="col">

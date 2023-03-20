@@ -158,7 +158,7 @@ const Navbar = () => {
                         <Link to="/relationship-tips">RELATIONSHIP TIPS</Link>
                     </li>
                     <li>
-                        <Link to="/entertairment">ENTERTAIRMENT</Link>
+                        <Link to="/author/zoe">ENTERTAIRMENT</Link>
                     </li>
                 </ul>
 

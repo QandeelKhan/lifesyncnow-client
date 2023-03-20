@@ -1,0 +1,153 @@
+.author-bio-container{
+    /* border: 2px solid red; */
+    background-color: #f9f5f2;
+    margin-bottom: 10px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    
+}
+.content-container{
+    /* border: 2px solid black; */
+    display: flex;
+
+
+}
+.img-container{
+    /* border: 2px solid green; */
+    flex: 1;
+    padding: 20px;
+    
+
+}
+.img-container>.author-img{
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+  
+    
+}
+.author-info{
+    /* border: 2px solid yellow; */
+    flex: 3;
+    padding: 20px;
+
+
+
+   
+
+}
+.author-info > h1{
+    color: #5a5656;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 33px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+}
+.author-info > h5{
+    color: #5a5656;
+    font-size: 16px;
+    line-height: 33px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+
+
+
+}
+.author-info > p{
+    color: #3f3c3c;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+
+}
+.author-social-info{
+    color: #5a5656;
+    display: flex;
+    gap: 0 20px; 
+}
+
+.author-social-info > a{
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.author-social-info > a > .social-container{
+    font-size: 18px;
+    color: #3a3737;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0 5px;
+}
+.author-social-info > a > .social-container:hover{
+    color: aqua;
+}
+
+.author-social-info > a > .social-container> .social-icon{
+    font-size: 18px;
+    color: #5a5656;
+    text-decoration: none;
+}
+.author-social-info > a > .social-container> span{
+    font-size: 18px;
+    text-align: center;
+    color: #5a5656;
+
+}
+@media(max-width:768px){
+    .author-bio-container{
+    height: auto;
+    display: block;
+
+
+    }
+    .content-container{
+        /* margin: 40px 0; */
+    }
+    .img-container>.author-img{
+        display: block;
+    width: 150px;
+    height: auto;
+
+    }
+    .author-info> h1{
+      font-size: 26px;
+    }
+    .author-info> h5{
+      font-size: 12px;
+
+     line-height: 1;
+    }
+    .author-info> p{
+     line-height: 1;
+    }
+    .author-social-info{
+        
+    }
+
+}
+@media(max-width:477px){
+    .author-bio-container{
+        padding: 20px;
+    }
+    .content-container{
+        flex-direction: column;
+    }
+    .img-container{
+        padding: 5px;
+    }
+    .author-info{
+        padding: 5px;
+    }
+
+
+}
