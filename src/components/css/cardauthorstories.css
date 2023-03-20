@@ -4,6 +4,22 @@
     padding: 10px 40px;
     /* border: 1px solid red; */
 }
+.author-strories-section>.stories-author{
+ margin: 10px 0;
+ padding: 10px 0;
+
+}
+.author-strories-section>.stories-author>.author-name{
+ text-align: start;
+ margin-bottom: 10px;
+ font-size: 28px;
+ color: #403333;
+ font-weight: 500;
+
+}
+hr {
+  border-color: #f6f5f4;
+}
    .story-card {
       display: flex;
       /* border: 2px solid yellow; */

@@ -3,6 +3,10 @@ import "./css/cardauthorstories.css";
 const CardAuthorStories = () => {
     return (
         <section className="author-strories-section">
+            <div className="stories-author">
+                <h2 className="author-name">Zoe's Stories</h2>
+                <hr className="break" />
+            </div>
             <div className="story-card">
                 <img
                     src="https://www.wellandgood.com/wp-content/uploads/2023/02/Changemakers_2023__How-Beauty-Became-More-About-Caring-for-Yourself-Than-Looking-Good-for-Other-People_art_490x328_true_75.webp"
