@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 const TermsAndConditions = () => {
-    const [data, setData] = useState([]);
-    const [clauses, setClauses] = useState([]);
+    const [data, setData] = useState<any>([]);
+    const [clauses, setClauses] = useState<any>([]);
 
     useEffect(() => {
         const fetchData = async () => {

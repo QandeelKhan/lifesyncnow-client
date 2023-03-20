@@ -127,6 +127,8 @@ hint: invocation.
 source venv-our-blog-backend/bin/activate
 python3 manage.py runserver
 
+sudo fuser -k 8000/tcp
+
 Back-end model for Contact page
 export const ContactData = [
     {
