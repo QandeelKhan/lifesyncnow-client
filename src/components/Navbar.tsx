@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 // import SideBarToggle from "./SideBarToggle";
 import "../components/css/side-bar-toggle.css";
 import { SidebarData } from "./sideBarData";
+import { setNavVisible } from "../redux/reducers/eventsSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
@@ -23,6 +27,10 @@ const Navbar = () => {
     const handleToggle = () => {
         setMenuActive(!menuActive);
     };
+
+    const { navVisible, clientPortalClicked } = useSelector(
+        (state: RootState) => state.events
+    );
 
     const handleToggleBar = () => {
         setToggleBar(!toggleBar);

@@ -11,6 +11,7 @@ import SubCategory from "../components/SubCategory";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setSelectedPost } from "../redux/dataSlice";
 const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
 const FoodAndNutrition = () => {
@@ -100,8 +101,9 @@ const FoodAndNutrition = () => {
                     ))} */}
                     {mostRecentPosts.map((recent: any) => (
                         <RecentCard
+                            {...dispatch(setSelectedPost(recent))}
                             id={recent.id}
-                            // handleNavigate={handleNavigate}
+                            handleNavigate={handleNavigate}
                             cover_image={recent.cover_image}
                             title={recent.title}
                             full_name={recent.full_name}

@@ -32,7 +32,7 @@ const Home = (props: any) => {
             </Helmet>
             <PageTemplate>
                 <section id="home">
-                    <PostDetail />
+                    <h2>Please Add Items to home page...</h2>
                 </section>
             </PageTemplate>
         </>

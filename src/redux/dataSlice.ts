@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 interface BlogPost {
     id: string;
     title: string;
+    content: string;
     cover_image: string;
     category: string;
     created_at: string;

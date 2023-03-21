@@ -11,6 +11,7 @@ import SubCategory from "../components/SubCategory";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setSelectedPost } from "../redux/dataSlice";
 const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
 const FitnessTips = () => {
@@ -31,7 +32,7 @@ const FitnessTips = () => {
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "food-and-nutrition"
+                    (post: any) => post.category_name === "fitness-tips"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
@@ -100,8 +101,9 @@ const FitnessTips = () => {
                     ))} */}
                     {mostRecentPosts.map((recent: any) => (
                         <RecentCard
+                            {...dispatch(setSelectedPost(recent))}
                             id={recent.id}
-                            // handleNavigate={handleNavigate}
+                            handleNavigate={handleNavigate}
                             cover_image={recent.cover_image}
                             title={recent.title}
                             full_name={recent.full_name}
