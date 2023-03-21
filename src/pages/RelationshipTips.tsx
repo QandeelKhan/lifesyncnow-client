@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
-const FoodAndNutrition = () => {
+const RelationshipTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
@@ -124,4 +124,4 @@ const FoodAndNutrition = () => {
     );
 };
 
-export default FoodAndNutrition;
+export default RelationshipTips;

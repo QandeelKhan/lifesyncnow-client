@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from "react";
-import "../components/css/foodAndNutrition.css";
+import { useDispatch } from "react-redux";
+import "../components/css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
+import HeaderBanner from "../components/HeaderBanner";
+import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import { FeaturedData, OlderData, recentData } from "../data";
-import OlderCard from "../components/OlderCard";
+import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
+import { setSelectedPost } from "../redux/dataSlice";
+import { Link, useNavigate } from "react-router-dom";
 import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
-
-const FoodAndNutrition = () => {
+const subcategory = [
+    "ACNE CARE",
+    "BEAUTY WEEKS",
+    "BODY CARE",
+    "DEAR DERM",
+    "EXFOLIATORS",
+    "FACE OILS",
+    "MOISTURIZER",
+    "NATURAL ACNE TREATMENT",
+    "  SERUMS",
+    "SUMMER SKIN CARE",
+    "SUNSCREEN",
+    "WINTER SKIN CARE",
+];
+const Entertairment = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
@@ -31,7 +45,7 @@ const FoodAndNutrition = () => {
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "food-and-nutrition"
+                    (post: any) => post.category_name === "SKIN-CARE TIPS"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
@@ -65,14 +79,19 @@ const FoodAndNutrition = () => {
     const handleNavigate = () => {
         navigate("/post-detail");
     };
+
     return (
         <PageTemplate>
-            <PageMainHeading title="Food And Nutrition" />
+            <PageMainHeading title="Skin Care Tips" />
             <SubCategory categories={subcategory} />
+
+            {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
+            {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
+            {/* {console.log(skinCareTips)} */}
+            {/* {console.log(mostRecentPosts)} */}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
-
-                <div className="featured-container">
+                <div className="featured-container ">
                     {FeaturedData.map((feature) => (
                         <FeaturedCard
                             key={feature.id}
@@ -109,6 +128,7 @@ const FoodAndNutrition = () => {
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
+
                 <div className="older-container">
                     {OlderData.map((older) => (
                         <OlderCard
@@ -124,4 +144,4 @@ const FoodAndNutrition = () => {
     );
 };
 
-export default FoodAndNutrition;
+export default Entertairment;

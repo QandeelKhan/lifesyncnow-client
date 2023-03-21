@@ -14,8 +14,8 @@ import CookieNotice from "./pages/CookieNotice";
 import Privacy from "./pages/Privacy";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Advertise from "./pages/Advertise";
-import AuthorProfile from "./pages/AuthorProfile";
+import RelationshipTips from "./pages/RelationshipTips";
+import Entertairment from "./pages/Entertairment";
 
 function App() {
     return (
@@ -38,12 +38,15 @@ function App() {
                         path="/terms-and-conditions"
                         element={<TermsAndConditions />}
                     />
+                    <Route
+                        path="/relationship-tips"
+                        element={<RelationshipTips />}
+                    />
                     <Route path="/cookie-notice" element={<CookieNotice />} />
+                    <Route path="/entertairment" element={<Entertairment />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/advertise" element={<Advertise />} />
-                    <Route path="/author/zoe" element={<AuthorProfile />} />
                     <Route path="/registration" element={<Registration />} />
                     <Route path="/login" element={<Login />} />
                     {/* <Route
