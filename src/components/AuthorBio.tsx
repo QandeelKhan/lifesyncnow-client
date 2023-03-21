@@ -1,6 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 import "./css/authorbio.css";
 const AuthorBio = () => {
+    const selectedPost = useSelector(
+        (state: RootState) => state.data.selectedPost
+    );
+
+    // if (!selectedPost) {
+    //     return <div>No post selected</div>;
+    // }
     return (
         <section className="author-bio-container">
             <div className="content-container">
@@ -8,7 +17,11 @@ const AuthorBio = () => {
                     {/* <h1>Left</h1> */}
                     <img
                         className="author-img"
-                        src="https://www.wellandgood.com/wp-content/uploads/2022/03/ZW-Headshot-500x500.jpg"
+                        src={`${
+                            !selectedPost
+                                ? "https://www.wellandgood.com/wp-content/uploads/2022/03/ZW-Headshot-500x500.jpg"
+                                : `${selectedPost.cover_image}`
+                        }`}
                         alt=""
                     />
                 </span>
