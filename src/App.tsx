@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RelationshipTips from "./pages/RelationshipTips";
 import Entertairment from "./pages/Entertairment";
+import AuthorBio from "./components/AuthorBio";
 
 function App() {
     return (
@@ -43,7 +44,10 @@ function App() {
                         element={<RelationshipTips />}
                     />
                     <Route path="/cookie-notice" element={<CookieNotice />} />
+                    {/* TODO: correct entertainment spellings at all instances */}
                     <Route path="/entertairment" element={<Entertairment />} />
+
+                    <Route path="/author/profile" element={<AuthorBio />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />

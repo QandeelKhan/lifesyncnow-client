@@ -5,6 +5,7 @@ interface BlogPost {
     title: string;
     content: string;
     cover_image: string;
+    full_name: string;
     category: string;
     created_at: string;
     author: string;

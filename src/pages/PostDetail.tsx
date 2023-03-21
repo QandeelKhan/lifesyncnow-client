@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "../components/css/post-detail.css";
 import PageTemplate from "../components/PageTemplate";
 import { RootState } from "../redux/store";
@@ -17,6 +18,7 @@ const PostDetail = () => {
 
     return (
         <PageTemplate>
+            {console.log(selectedPost)}
             <div className="main-post-container">
                 <div className="post-category-heading">
                     <span>Skin-Care Tips / Moisturizer</span>
@@ -27,7 +29,9 @@ const PostDetail = () => {
                     </span>
                     <div className="detail-user-name">
                         <img src="user-img.jpg" alt="user-image" />
-                        <span>Frencesca Krempa</span>
+                        <Link to="/author/profile">
+                            {selectedPost.full_name}
+                        </Link>
                     </div>
                     <div className="post-date-time">
                         {/* <span>March 10, 2023</span> */}
