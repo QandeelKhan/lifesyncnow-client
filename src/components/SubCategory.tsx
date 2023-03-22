@@ -4,9 +4,9 @@ const SubCategory = (props: any) => {
     return (
         <div className="sub-category-container">
             <div className="sub-category">
-                {props.categories.map((subcat: any) => (
-                    <ul key={subcat.index}>
-                        <li>
+                {props.categories.map((subcat: any, index: any) => (
+                    <ul key={index}>
+                        <li key={index}>
                             {" "}
                             <a href="">{subcat}</a>{" "}
                         </li>

@@ -13,6 +13,8 @@ import { setSelectedPost } from "../redux/dataSlice";
 import { Link, useNavigate } from "react-router-dom";
 import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
+import { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 const subcategory = [
     "ACNE CARE",
     "BEAUTY WEEKS",
@@ -76,9 +78,22 @@ const SkinCareTips = () => {
         fetchData();
     }, []);
     const navigate = useNavigate();
-    const handleNavigate = () => {
-        navigate("/post-detail");
+    // const handleNavigate = () => {
+    //     navigate("/post-detail");
+    // };
+
+    const selectedPost = useSelector(
+        (state: RootState) => state.data.selectedPost
+    );
+
+    const handleNavigate = (post: any) => {
+        dispatch(setSelectedPost(post));
+        navigate(`/post/${selectedPost.slug}`);
     };
+    // const handleNavigate = (post: any) => {
+    //     dispatch(setSelectedPost(post));
+    //     navigate(`/post/${post.slug}`);
+    // };
 
     return (
         <PageTemplate>
@@ -104,23 +119,11 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
-                    {/* {mostRecentPosts.map((recent: any) => (
-                        <RecentCard
-                        key={recent.id}
-                        img={recent.cover_image}
-                        heading={recent.title}
-                        author={recent.full_name}
-                        />
-                        </Link>
-                        <Link
-                            to="/post-detail"
-                            onClick={() => dispatch(setSelectedPost(recent))}
-                        >
-                    ))} */}
                     {mostRecentPosts.map((recent: any) => (
                         <RecentCard
+                            // {...dispatch(setSelectedPost(recent))}
                             {...dispatch(setSelectedPost(recent))}
-                            id={recent.id}
+                            key={recent.id}
                             handleNavigate={handleNavigate}
                             cover_image={recent.cover_image}
                             title={recent.title}

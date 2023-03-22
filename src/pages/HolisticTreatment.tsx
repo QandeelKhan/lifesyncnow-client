@@ -26,7 +26,6 @@ const HolisticTreatment = () => {
             try {
                 const response = await axios.get(
                     "http://localhost:8000/api/blog/posts-list"
-                    // "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
                 );
                 const data = response.data;
 
@@ -86,19 +85,6 @@ const HolisticTreatment = () => {
                 </div>
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
-                    {/* {mostRecentPosts.map((recent: any) => (
-                        <Link
-                            to="/post-detail"
-                            onClick={() => dispatch(setSelectedPost(recent))}
-                        >
-                            <RecentCard
-                                key={recent.id}
-                                img={recent.cover_image}
-                                heading={recent.title}
-                                author={recent.full_name}
-                            />
-                        </Link>
-                    ))} */}
                     {mostRecentPosts.map((recent: any) => (
                         <RecentCard
                             {...dispatch(setSelectedPost(recent))}

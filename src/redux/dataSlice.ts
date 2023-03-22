@@ -19,10 +19,11 @@ interface BlogPost {
     comment_count: string;
     comments: [] | any;
     repliesData: [];
+    slug: string;
 }
 
 interface DataState {
-    selectedPost: BlogPost | null;
+    selectedPost: BlogPost | null | any;
 }
 
 const initialState: DataState = {

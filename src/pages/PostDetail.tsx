@@ -1,20 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../components/css/post-detail.css";
 import PageTemplate from "../components/PageTemplate";
 import { RootState } from "../redux/store";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setSelectedPost } from "../redux/dataSlice";
 
 const PostDetail = () => {
+    const [post, setPost] = useState<any>(null);
     const selectedPost = useSelector(
         (state: RootState) => state.data.selectedPost
     );
+    const { slug } = useParams();
+    const dispatch = useDispatch();
 
-    if (!selectedPost) {
-        return <div>No post selected</div>;
-    }
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                const response = await fetch(
+                    `http://localhost:8000/api/blog/post/${selectedPost.slug}/`
+                );
+                const data = await response.json();
+                setPost(data);
+                dispatch(setSelectedPost(data));
+            } catch (error) {
+                console.error(error);
+            }
+        };
 
-    const formattedText = selectedPost.content.replace(/\n/g, "<br>");
+        fetchPost();
+    }, [selectedPost.slug]);
+
+    // if (!post) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // const formattedText = post.content.replace(/\n/g, "<br>");
+    const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
 
     return (
         <PageTemplate>
@@ -106,78 +130,6 @@ const PostDetail = () => {
                             {/* paragraphs content */}
                             {/* paragraphs subheadings */}
                             {/* paragraphs sub contents */}
-
-                            <div className="after-second-heading">
-                                <span>
-                                    Apparently, I'm not the only one who wants
-                                    to shorten their beauty routines. Founder
-                                    Peter Thomas Roth explains that nowadays,
-                                    most people want to shrink their skin-care
-                                    regimens down to something that takes
-                                    minutes, if not seconds. "Some people just
-                                    want a quick skin-care routine," Roth says.
-                                    While technically a moisturizer, each jar of
-                                    the Ultimate Solution 5 Multitasking
-                                    Moisturizer is formulated to skip any
-                                    extraneous serums and toners all together.
-                                    "Clean skin is all you need," Roth says.
-                                    "Simply apply twice daily after cleansing
-                                    and use continuously to see the best
-                                    results... All you need to add is an eye
-                                    cream and sunblock."
-                                </span>
-                                <img
-                                    src="post-second-ad.jpeg"
-                                    alt="second-ad"
-                                />
-                                <span>
-                                    The secret behind its formidable,
-                                    multi-tasking powers lies in its complex
-                                    formulation which is chock-full of
-                                    derm-approved ingredients. There's a lot in
-                                    this cream. But, let's follow the KISS
-                                    method and break it down, benefit by
-                                    benefit:
-                                </span>
-                            </div>
-                            <div className="for-all-updates">
-                                <span className="update-first-text">
-                                    But wait, there's more!
-                                </span>
-                                <span className="update-second-text">
-                                    Want to be the first to hear about the
-                                    latest (and greatest) SHOP product drops,
-                                    custom collections, discounts, and more?
-                                    Sign up to have the intel delivered straight
-                                    to your inbox.
-                                </span>
-                                <div className="email-area">
-                                    <input
-                                        type="text"
-                                        placeholder="Enter Email Address"
-                                    />
-                                    <a href="/">Sign Up</a>
-                                </div>
-                            </div>
-                            <div className="tags">
-                                <span>TAGS:</span>
-                                <span className="border-tags"> FACE OILS,</span>
-                                <span className="border-tags">
-                                    {" "}
-                                    SKIN-CARE TIPS,
-                                </span>
-                                <span className="border-tags">
-                                    {" "}
-                                    WELL+GOOD SHOP
-                                </span>
-                            </div>
-                            <div className="foot-text">
-                                <span>
-                                    Our editors independently select these
-                                    products. Making a purchase through our
-                                    links may earn Well+Good a commission.
-                                </span>
-                            </div>
                         </div>
                         <div className="google-ads">
                             <img src="google-ad.png" alt="google-ad" />

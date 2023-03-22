@@ -25,7 +25,8 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
                     <Route path="/skin-care-tips" element={<SkinCareTips />} />
-                    <Route path="/post-detail" element={<PostDetail />} />
+                    {/* <Route path="/post-detail" element={<PostDetail />} /> */}
+                    <Route path="/post/:slug" element={<PostDetail />} />
                     <Route
                         path="/food-and-nutrition"
                         element={<FoodAndNutrition />}
@@ -46,7 +47,6 @@ function App() {
                     <Route path="/cookie-notice" element={<CookieNotice />} />
                     {/* TODO: correct entertainment spellings at all instances */}
                     <Route path="/entertairment" element={<Entertairment />} />
-
                     <Route path="/author/profile" element={<AuthorBio />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
