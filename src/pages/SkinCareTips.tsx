@@ -78,20 +78,16 @@ const SkinCareTips = () => {
         fetchData();
     }, []);
     const navigate = useNavigate();
-    // const handleNavigate = () => {
-    //     navigate("/post-detail");
-    // };
 
     const selectedPost = useSelector(
         (state: RootState) => state.data.selectedPost
     );
 
     const handleNavigate = (post: any) => {
-        dispatch(setSelectedPost(post));
         navigate(`/post/${selectedPost.slug}`);
+        // dispatch(setSelectedPost(post));
     };
     // const handleNavigate = (post: any) => {
-    //     dispatch(setSelectedPost(post));
     //     navigate(`/post/${post.slug}`);
     // };
 
@@ -120,15 +116,15 @@ const SkinCareTips = () => {
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
-                        <RecentCard
-                            // {...dispatch(setSelectedPost(recent))}
-                            {...dispatch(setSelectedPost(recent))}
-                            key={recent.id}
-                            handleNavigate={handleNavigate}
-                            cover_image={recent.cover_image}
-                            title={recent.title}
-                            full_name={recent.full_name}
-                        />
+                        <div key={recent.id}>
+                            <RecentCard
+                                // {...dispatch(setSelectedPost(recent))}
+                                handleNavigate={handleNavigate}
+                                cover_image={recent.cover_image}
+                                title={recent.title}
+                                full_name={recent.full_name}
+                            />
+                        </div>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />

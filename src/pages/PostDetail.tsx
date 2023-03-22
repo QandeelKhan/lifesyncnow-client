@@ -7,6 +7,7 @@ import { RootState } from "../redux/store";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSelectedPost } from "../redux/dataSlice";
+import axios from "axios";
 
 const PostDetail = () => {
     const [post, setPost] = useState<any>(null);
@@ -17,21 +18,27 @@ const PostDetail = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchPost = async () => {
+        const fetchData = async () => {
             try {
-                const response = await fetch(
-                    `http://localhost:8000/api/blog/post/${selectedPost.slug}/`
+                const response = await axios.get(
+                    `http://localhost:8000/api/blog/post/${selectedPost.slug}`
+                    // "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
                 );
-                const data = await response.json();
-                setPost(data);
+                const data = response.data;
                 dispatch(setSelectedPost(data));
+                setPost(data);
+
+                // Filter posts based on most_recent_posts, older_post, and featured_posts fields
+                const filteredSkinCareTips = data.filter(
+                    (post: any) => post.category_name === "SKIN-CARE TIPS"
+                );
             } catch (error) {
                 console.error(error);
             }
         };
 
-        fetchPost();
-    }, [selectedPost.slug]);
+        fetchData();
+    }, []);
 
     // if (!post) {
     //     return <div>Loading...</div>;
@@ -40,17 +47,18 @@ const PostDetail = () => {
     // const formattedText = post.content.replace(/\n/g, "<br>");
     const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
 
+    {
+        /* {console.log(selectedPost)} */
+    }
     return (
         <PageTemplate>
-            {console.log(selectedPost)}
-            <div className="main-post-container">
+            {console.log(post)}
+            <div className="main-post-container" key={post.id}>
                 <div className="post-category-heading">
                     <span>Skin-Care Tips / Moisturizer</span>
                 </div>
-                <div className="second-post-container">
-                    <span className="main-post-heading">
-                        {selectedPost.title}
-                    </span>
+                <div key={selectedPost.id} className="second-post-container">
+                    {/* <span className="main-post-heading">{selectedPost.title}</span> */}
                     <div className="detail-user-name">
                         <img src="user-img.jpg" alt="user-image" />
                         <Link to="/author/profile">
@@ -64,7 +72,7 @@ const PostDetail = () => {
                         </span>
                     </div>
                     <div className="post-main-image">
-                        <img src={selectedPost.cover_image} alt="mainimage" />
+                        {/* <img src={selectedPost.cover_image} alt="mainimage" /> */}
                         <span>Photo: Getty Images/Supersizer</span>
                     </div>
                     <div className="post-article-main">
@@ -99,7 +107,7 @@ const PostDetail = () => {
                                     // }}
                                 >
                                     {/*  */}
-                                    {selectedPost.content}
+                                    {/* {selectedPost.content} */}
                                 </span>
                                 <div className="post-mid-image">
                                     <img

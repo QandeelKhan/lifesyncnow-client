@@ -3,7 +3,7 @@ import "./css/featuredCard.css";
 const FeaturedCard = (props: any) => {
     return (
         <>
-            <div className="featured-card" key={props.key}>
+            <div className="featured-card">
                 <img
                     src={props.img}
                     className="featured-img"

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 const RecentCard = (props: any) => {
     return (
         <>
-            <div className="recent-card" key={props.key}>
+            <div className="recent-card" onClick={props.capture}>
                 <img
                     src={props.cover_image}
                     className="recent-img"

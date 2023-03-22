@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 const OlderCard = (props: any) => {
     return (
         <>
-            <div className="older-card" key={props.id}>
+            <div className="older-card">
                 <img src={props.img} className="older-img" alt="Card image" />
                 <div className="older-body">
                     <p className="older-title">{props.heading}</p>
