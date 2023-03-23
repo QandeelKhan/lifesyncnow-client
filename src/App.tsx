@@ -47,7 +47,7 @@ function App() {
                     <Route path="/cookie-notice" element={<CookieNotice />} />
                     {/* TODO: correct entertainment spellings at all instances */}
                     <Route path="/entertairment" element={<Entertairment />} />
-                    <Route path="/author/profile" element={<AuthorBio />} />
+                    <Route path="/author/:slug" element={<AuthorBio />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />

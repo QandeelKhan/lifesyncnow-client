@@ -77,10 +77,12 @@ const PostDetail = () => {
                             ))} */}
                             <img
                                 src={post.author.profile_image}
-                                alt="user-image"
+                                alt="post author"
                             />
                             {/* <h2>{post.author.first_name}</h2> */}
-                            <span>{post.full_name}</span>
+                            <Link to={`/author/${post.author.user_slug}`}>
+                                {post.full_name}
+                            </Link>
                         </div>
                         <div className="post-date-time">
                             <span>March 10, 2023</span>
