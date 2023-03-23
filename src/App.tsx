@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import RelationshipTips from "./pages/RelationshipTips";
 import Entertairment from "./pages/Entertairment";
 import AuthorBio from "./components/AuthorBio";
+import AuthorProfile from "./pages/AuthorProfile";
 
 function App() {
     return (
@@ -47,7 +48,8 @@ function App() {
                     <Route path="/cookie-notice" element={<CookieNotice />} />
                     {/* TODO: correct entertainment spellings at all instances */}
                     <Route path="/entertairment" element={<Entertairment />} />
-                    <Route path="/author/:slug" element={<AuthorBio />} />
+                    {/* <Route path="/author/:slug" element={<AuthorBio />} /> */}
+                    <Route path="/author/:slug" element={<AuthorProfile />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />

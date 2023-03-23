@@ -30,33 +30,9 @@ const AuthorBio = () => {
         fetchData();
     }, []);
 
-    // if (!post) {
-    //     return <div>Loading...</div>;
-    // }
-
-    // const formattedText = post.content.replace(/\n/g, "<br>");
-    // const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
-
-    {
-        /* {console.log(selectedPost)} */
-    }
-    {
-        /* {post.paragraphs.map((paragraph: any) => (
-        <div key={paragraph.id}>
-            <h3>{paragraph.paragraph_title}</h3>
-            <p>{paragraph.paragraph_content}</p>
-        </div>
-    ))} */
-    }
-    {
-        /* Render the rest of the post content here */
-    }
-    // if (!selectedPost) {
-    //     return <div>No post selected</div>;
-    // }
     return (
         <section className="author-bio-container">
-            {`${console.log(author)}`}
+            {/* {`${console.log(author)}`} */}
             {author !== null && (
                 <div>
                     {author.map((author: any) => (
