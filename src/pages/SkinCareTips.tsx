@@ -10,7 +10,7 @@ import { FeaturedData, OlderData, recentData } from "../data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
@@ -34,6 +34,7 @@ const SkinCareTips = () => {
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -117,13 +118,15 @@ const SkinCareTips = () => {
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
                         <div key={recent.id}>
-                            <RecentCard
-                                // {...dispatch(setSelectedPost(recent))}
-                                handleNavigate={handleNavigate}
-                                cover_image={recent.cover_image}
-                                title={recent.title}
-                                full_name={recent.full_name}
-                            />
+                            <Link to={`/post/${recent.slug}`}>
+                                <RecentCard
+                                    // {...dispatch(setSelectedPost(recent))}
+                                    // handleNavigate={handleNavigate}
+                                    cover_image={recent.cover_image}
+                                    title={recent.title}
+                                    full_name={recent.full_name}
+                                />
+                            </Link>
                         </div>
                     ))}
                 </div>

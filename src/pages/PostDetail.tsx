@@ -21,17 +21,10 @@ const PostDetail = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/api/blog/post/${selectedPost.slug}`
-                    // "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
+                    `http://localhost:8000/api/blog/post/${slug}/`
                 );
                 const data = response.data;
-                dispatch(setSelectedPost(data));
                 setPost(data);
-
-                // Filter posts based on most_recent_posts, older_post, and featured_posts fields
-                const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "SKIN-CARE TIPS"
-                );
             } catch (error) {
                 console.error(error);
             }
@@ -45,110 +38,192 @@ const PostDetail = () => {
     // }
 
     // const formattedText = post.content.replace(/\n/g, "<br>");
-    const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
+    // const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
 
     {
         /* {console.log(selectedPost)} */
     }
+    {
+        /* {post.paragraphs.map((paragraph: any) => (
+        <div key={paragraph.id}>
+            <h3>{paragraph.paragraph_title}</h3>
+            <p>{paragraph.paragraph_content}</p>
+        </div>
+    ))} */
+    }
+    {
+        /* Render the rest of the post content here */
+    }
     return (
         <PageTemplate>
-            {console.log(post)}
-            <div className="main-post-container" key={post.id}>
+            <div className="main-post-container">
                 <div className="post-category-heading">
                     <span>Skin-Care Tips / Moisturizer</span>
                 </div>
-                <div key={selectedPost.id} className="second-post-container">
-                    {/* <span className="main-post-heading">{selectedPost.title}</span> */}
-                    <div className="detail-user-name">
-                        <img src="user-img.jpg" alt="user-image" />
-                        <Link to="/author/profile">
-                            {selectedPost.full_name}
-                        </Link>
-                    </div>
-                    <div className="post-date-time">
-                        {/* <span>March 10, 2023</span> */}
-                        <span>
-                            <span>{selectedPost.created_at}</span>
+                {post !== null && (
+                    <div className="second-post-container">
+                        <span className="main-post-heading">
+                            I Replaced My Entire Multi-Step Skin-Care Routine
+                            <br /> With This 5-in-1 Moisturizer, and Caring for
+                            My
+                            <br /> Complexion Has Never Been Quicker
                         </span>
-                    </div>
-                    <div className="post-main-image">
-                        {/* <img src={selectedPost.cover_image} alt="mainimage" /> */}
-                        <span>Photo: Getty Images/Supersizer</span>
-                    </div>
-                    <div className="post-article-main">
-                        <div className="post-right-article">
-                            <div className="border-article">
-                                <div className="shop-logo">
-                                    <span>Well Plus Good</span>
-                                    <span>SHOP</span>
+                        <div className="detail-user-name">
+                            {/* {post.paragraphs.map((paragraph: any) => (
+                                <div key={paragraph.id}>
+                                    <h3>{paragraph.paragraph_title}</h3>
+                                    <p>{paragraph.paragraph_content}</p>
                                 </div>
-                                <div className="shop-text">
+                            ))} */}
+                            <img
+                                src={post.author.profile_image}
+                                alt="user-image"
+                            />
+                            {/* <h2>{post.author.first_name}</h2> */}
+                            <span>{post.full_name}</span>
+                        </div>
+                        <div className="post-date-time">
+                            <span>March 10, 2023</span>
+                        </div>
+                        <div className="post-main-image">
+                            <img src={post.cover_image} alt="mainimage" />
+                            <span>Photo: Getty Images/Supersizer</span>
+                        </div>
+                        <div className="post-article-main">
+                            <div className="post-right-article">
+                                <div className="border-article">
+                                    <div className="shop-logo">
+                                        <span>Well Plus Good</span>
+                                        <span>SHOP</span>
+                                    </div>
+                                    <div className="shop-text">
+                                        <span>
+                                            With the Well+Good SHOP, our editors
+                                            put their years of know-how to work
+                                            in order to pick products (from skin
+                                            care to self care and beyond)
+                                            they’re betting you’ll love. While
+                                            our editors independently select
+                                            these products, making a purchase
+                                            through our links may earn Well+Good
+                                            a commission. Happy shopping!
+                                            <a href="/">Explore the Shop</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="main-article">
+                                    <span>{post.content}</span>
+                                    <div className="post-mid-image">
+                                        <img
+                                            src="post-mid-iamge.jpeg"
+                                            alt="mid-image"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="post-second-heading-container">
+                                    <div className="link-to-product">
+                                        <a href="/">
+                                            Peter Thomas Roth, Ultimate Solution
+                                            5 Multitasking Moisturizer — $75.00
+                                        </a>
+                                    </div>
+
+                                    <div className="product-size-url">
+                                        <span>Also available in a </span>
+                                        <a href="/">
+                                            smaller, travel-size jar for $32.
+                                        </a>
+                                    </div>
+                                    <div className="shop-now-btn">
+                                        <a href="/">Shop Now</a>
+                                    </div>
+                                </div>
+                                <div className="after-second-heading">
                                     <span>
-                                        With the Well+Good SHOP, our editors put
-                                        their years of know-how to work in order
-                                        to pick products (from skin care to self
-                                        care and beyond) they’re betting you’ll
-                                        love. While our editors independently
-                                        select these products, making a purchase
-                                        through our links may earn Well+Good a
-                                        commission. Happy shopping!
-                                        <a href="/">Explore the Shop</a>
+                                        Apparently, I'm not the only one who
+                                        wants to shorten their beauty routines.
+                                        Founder Peter Thomas Roth explains that
+                                        nowadays, most people want to shrink
+                                        their skin-care regimens down to
+                                        something that takes minutes, if not
+                                        seconds. "Some people just want a quick
+                                        skin-care routine," Roth says. While
+                                        technically a moisturizer, each jar of
+                                        the Ultimate Solution 5 Multitasking
+                                        Moisturizer is formulated to skip any
+                                        extraneous serums and toners all
+                                        together. "Clean skin is all you need,"
+                                        Roth says. "Simply apply twice daily
+                                        after cleansing and use continuously to
+                                        see the best results... All you need to
+                                        add is an eye cream and sunblock."
+                                    </span>
+                                    <img
+                                        src="post-second-ad.jpeg"
+                                        alt="second-ad"
+                                    />
+                                    <span>
+                                        The secret behind its formidable,
+                                        multi-tasking powers lies in its complex
+                                        formulation which is chock-full of
+                                        derm-approved ingredients. There's a lot
+                                        in this cream. But, let's follow the
+                                        KISS method and break it down, benefit
+                                        by benefit:
+                                    </span>
+                                </div>
+                                <div className="for-all-updates">
+                                    <span className="update-first-text">
+                                        But wait, there's more!
+                                    </span>
+                                    <span className="update-second-text">
+                                        Want to be the first to hear about the
+                                        latest (and greatest) SHOP product
+                                        drops, custom collections, discounts,
+                                        and more? Sign up to have the intel
+                                        delivered straight to your inbox.
+                                    </span>
+                                    <div className="email-area">
+                                        <input
+                                            type="text"
+                                            placeholder="Enter Email Address"
+                                        />
+                                        <a href="/">Sign Up</a>
+                                    </div>
+                                </div>
+                                <div className="tags">
+                                    <span>TAGS:</span>
+                                    <span className="border-tags">
+                                        {" "}
+                                        FACE OILS,
+                                    </span>
+                                    <span className="border-tags">
+                                        {" "}
+                                        SKIN-CARE TIPS,
+                                    </span>
+                                    <span className="border-tags">
+                                        {" "}
+                                        WELL+GOOD SHOP
+                                    </span>
+                                </div>
+                                <div className="foot-text">
+                                    <span>
+                                        Our editors independently select these
+                                        products. Making a purchase through our
+                                        links may earn Well+Good a commission.
                                     </span>
                                 </div>
                             </div>
-                            <div className="main-article">
-                                <span
-                                    style={{
-                                        width: "100%",
-                                        whiteSpace: "pre-line",
-                                    }}
-                                    // dangerouslySetInnerHTML={{
-                                    //     __html: formattedText,
-                                    // }}
-                                >
-                                    {/*  */}
-                                    {/* {selectedPost.content} */}
-                                </span>
-                                <div className="post-mid-image">
-                                    <img
-                                        src="post-mid-iamge.jpeg"
-                                        alt="mid-image"
-                                    />
-                                </div>
+                            <div className="google-ads">
+                                <img src="google-ad.png" alt="google-ad" />
                             </div>
-                            <div className="post-second-heading-container">
-                                <div className="link-to-product">
-                                    <a href="/">
-                                        Peter Thomas Roth, Ultimate Solution 5
-                                        Multitasking Moisturizer — $75.00
-                                    </a>
-                                </div>
-
-                                <div className="product-size-url">
-                                    <span>Also available in a </span>
-                                    <a href="/">
-                                        smaller, travel-size jar for $32.
-                                    </a>
-                                </div>
-                                <div className="shop-now-btn">
-                                    <a href="/">Shop Now</a>
-                                </div>
-                            </div>
-                            {/* paragraphs heading */}
-                            {/* paragraphs content */}
-                            {/* paragraphs subheadings */}
-                            {/* paragraphs sub contents */}
-                        </div>
-                        <div className="google-ads">
-                            <img src="google-ad.png" alt="google-ad" />
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         </PageTemplate>
     );
 };
-
 export default PostDetail;
 
 //
@@ -331,4 +406,4 @@ export default PostDetail;
 //     );
 // };
 
-// export default PostDetail;
+//d export default PostDetail
