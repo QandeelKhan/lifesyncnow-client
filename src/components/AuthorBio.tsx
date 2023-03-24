@@ -5,76 +5,116 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../redux/store";
 import "./css/authorbio.css";
-const AuthorBio = () => {
-    const selectedPost = useSelector(
-        (state: RootState) => state.data.selectedPost
-    );
 
-    const [author, setAuthor] = useState<any>(null);
-    const { slug } = useParams();
-    const dispatch = useDispatch();
+const AuthorBio = (props: any) => {
+    // const selectedPost = useSelector(
+    //     (state: RootState) => state.data.selectedPost
+    // );
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(
-                    `http://localhost:8000/api/profile/${slug}/`
-                );
-                const data = response.data;
-                setAuthor(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+    // const [author, setAuthor] = useState<any>(null);
+    // const { slug } = useParams();
+    // const dispatch = useDispatch();
 
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get(
+    //                 `http://localhost:8000/api/profile/${slug}/`
+    //             );
+    //             const data = response.data;
+    //             setAuthor(data);
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
 
     return (
         <section className="author-bio-container">
-            {/* {`${console.log(author)}`} */}
-            {author !== null && (
-                <div>
-                    {author.map((author: any) => (
-                        <div className="content-container">
-                            <span className="img-container">
-                                {/* <h1>Left</h1> */}
-                                <img
-                                    className="author-img"
-                                    src={`${author.profile_image}`}
-                                    alt=""
-                                />
-                            </span>
-                            <div className="author-info">
-                                <h1>{author.full_name}</h1>
-                                {/* <h5>SENIOR BEAUTY EDITOR</h5> */}
-                                <h5>{author.role_name}</h5>
-                                <p>{author.bio}</p>
-                                <div className="author-social-info">
-                                    <a href="">
-                                        <div className="social-container">
-                                            <i className="fab fa-instagram social-icon"></i>
-                                            <span>{author.instagram_acc} </span>
-                                        </div>
-                                    </a>
-
-                                    <a href="">
-                                        <div className="social-container">
-                                            <i className="fab fa-twitter social-icon"></i>
-                                            <span>{author.twitter_acc} </span>
-                                        </div>
-                                    </a>
+            <div>
+                <div className="content-container">
+                    <span className="img-container">
+                        {/* <h1>Left</h1> */}
+                        <img
+                            className="author-img"
+                            src={props.profileImage}
+                            alt=""
+                        />
+                    </span>
+                    <div className="author-info">
+                        <h1>{props.fullName}</h1>
+                        {/* <h5>SENIOR BEAUTY EDITOR</h5> */}
+                        <h5>{props.roleName}</h5>
+                        <p>{props.bio}</p>
+                        <div className="author-social-info">
+                            <a href="">
+                                <div className="social-container">
+                                    <i className="fab fa-instagram social-icon"></i>
+                                    <span>{props.instagramAccount} </span>
                                 </div>
-                            </div>
+                            </a>
+
+                            <a href="">
+                                <div className="social-container">
+                                    <i className="fab fa-twitter social-icon"></i>
+                                    <span>{props.TwitterAccount} </span>
+                                </div>
+                            </a>
                         </div>
-                    ))}
+                    </div>
                 </div>
-            )}
+            </div>
         </section>
     );
 };
 
 export default AuthorBio;
+//         <section className="author-bio-container">
+//             {/* {`${console.log(author)}`} */}
+//             {author !== null && (
+//                 <div>
+//                     {author.map((author: any) => (
+//                         <div className="content-container">
+//                             <span className="img-container">
+//                                 {/* <h1>Left</h1> */}
+//                                 <img
+//                                     className="author-img"
+//                                     src={`${author.profile_image}`}
+//                                     alt=""
+//                                 />
+//                             </span>
+//                             <div className="author-info">
+//                                 <h1>{author.full_name}</h1>
+//                                 {/* <h5>SENIOR BEAUTY EDITOR</h5> */}
+//                                 <h5>{author.role_name}</h5>
+//                                 <p>{author.bio}</p>
+//                                 <div className="author-social-info">
+//                                     <a href="">
+//                                         <div className="social-container">
+//                                             <i className="fab fa-instagram social-icon"></i>
+//                                             <span>{author.instagram_acc} </span>
+//                                         </div>
+//                                     </a>
+
+//                                     <a href="">
+//                                         <div className="social-container">
+//                                             <i className="fab fa-twitter social-icon"></i>
+//                                             <span>{author.twitter_acc} </span>
+//                                         </div>
+//                                     </a>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     ))}
+//                 </div>
+//             )}
+//         </section>
+//     );
+// };
+
+// export default AuthorBio;
 //     return (
 //         <section className="author-bio-container">
 //             {`${console.log(author)}`}
