@@ -15,7 +15,7 @@ const eventsState: EventState = {
     // animate: "",
     sideBarVisible: false,
     blogCardClicked: false,
-    navVisible: true,
+    navVisible: false,
     gearOpen: false,
     clientPortalClicked: false,
 };

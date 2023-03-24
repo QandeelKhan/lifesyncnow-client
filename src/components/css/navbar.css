@@ -135,6 +135,7 @@
 .navbar-menu .fa-xmark {
     font-size: 20px;
 }
+/* TODO:correct this as this is the biggest div of dom */
 .hidden-search-main-container {
     width: 100%;
     background-color: #fdf3f3;
@@ -143,6 +144,7 @@
     /* right: 0; */
     transition: 850ms;
     /* z-index: -1; */
+    /* height: 100vh; */
 }
 .hidden-search-main-container.active {
     top: 85px;

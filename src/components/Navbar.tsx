@@ -13,41 +13,62 @@ import { RootState } from "../redux/store";
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
-    const [toggleBar, setToggleBar] = useState(false);
+    const [hamBurgerClicked, setHamburgerClicked] = useState(false);
+    const [crossClicked, setCrossClicked] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
 
-    useEffect(() => {
-        let handler = () => {
-            setToggleBar(false);
-            setSearchBar(false);
-        };
-        document.addEventListener("mousedown", handler);
-    });
+    const dispatch = useDispatch();
 
     const handleToggle = () => {
         setMenuActive(!menuActive);
+        dispatch(setNavVisible(!navVisible));
     };
 
     const { navVisible, clientPortalClicked } = useSelector(
         (state: RootState) => state.events
     );
 
-    const handleToggleBar = () => {
-        setToggleBar(!toggleBar);
+    const handleHamBurgerClick = () => {
+        setHamburgerClicked(true);
+        setCrossClicked(false);
+        dispatch(setNavVisible(true));
     };
+
+    const handleCrossClick = () => {
+        setHamburgerClicked(false);
+        setCrossClicked(true);
+        dispatch(setNavVisible(false));
+        // setToggleBar(!toggleBar);
+    };
+
+    const handleNavVisible = () => {
+        if (hamBurgerClicked) {
+            setCrossClicked(false);
+            dispatch(setNavVisible(true));
+        }
+        if (crossClicked) {
+            setHamburgerClicked(false);
+            dispatch(setNavVisible(false));
+        }
+    };
+
+    useEffect(() => {
+        handleNavVisible();
+    }, []);
+
     const handleSearchBar = () => {
         setSearchBar(!searchBar);
     };
 
     return (
-        <>
+        // TODO: correct this if needed and check the html elements stack of the app as this is the biggest div of dom
+        // big-div or top-level-div
+        <div className="big-div">
             {/* HIDDEN SEARCH BAR STARTS HERE */}
             <div
-                className={
-                    searchBar
-                        ? "hidden-search-main-container active"
-                        : "hidden-search-main-container"
-                }
+                className={`hidden-search-main-container ${
+                    searchBar ? "active" : ""
+                }`}
             >
                 <div className="search-area">
                     <i className="fa-solid fa-magnifying-glass"></i>
@@ -57,13 +78,13 @@ const Navbar = () => {
             {/* HIDDEN SEARCH BAR ENDS HERE */}
             <div
                 className={
-                    toggleBar
+                    navVisible
                         ? "side-bar-main-container active"
                         : "side-bar-main-container"
                 }
             >
-                <div className="toggle-close-icon" onClick={handleToggleBar}>
-                    <i className="fa-solid fa-xmark"></i>
+                <div className="toggle-close-icon" onClick={handleCrossClick}>
+                    <i className="fa-solid fa-xmark" />
                 </div>
                 <div className="side-bar-menu">
                     <ul>
@@ -128,7 +149,7 @@ const Navbar = () => {
             </div>
             {/* actual navbar */}
             <nav className="navbar">
-                <div className="open-side-bar" onClick={handleToggleBar}>
+                <div className="open-side-bar" onClick={handleHamBurgerClick}>
                     <i className="fa-solid fa-bars"></i>
                 </div>
                 <div className="navbar-brand">
@@ -185,7 +206,7 @@ const Navbar = () => {
                     }
                 ></i>
             </nav>
-        </>
+        </div>
     );
 };
 
