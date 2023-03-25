@@ -1,21 +1,24 @@
-import React from "react";
-import { recentData } from "../data";
 import "./css/recentCard.css";
-import SectionHeading from "./SectionHeading";
-const RecentCard = (props: any) => {
+
+interface props {
+    cover_image: string;
+    title: string;
+    full_name: string;
+    // takes function that returns no parameters, if not decided or having the exact logic in mind yet then simply pass the console.log() as function in the parent to make typescript happy, or add the question mark while defining the type in the interface to make the property optional like "onClick?: () => void;"
+    // onClick: () => void;
+    authorSlug: string;
+}
+// TODO: clean code for cards like on this component
+const RecentCard = ({ cover_image, title, full_name, authorSlug }: props) => {
     return (
         <>
-            <div className="recent-card" onClick={props.capture}>
-                <img
-                    src={props.cover_image}
-                    className="recent-img"
-                    alt="Card"
-                />
+            <div className="recent-card">
+                <img src={cover_image} className="recent-img" alt="Card" />
                 <div className="recent-body">
-                    <h3 className="recent-title" onClick={props.handleNavigate}>
-                        {props.title}
-                    </h3>
-                    <p className="recent-author">By {props.full_name}</p>
+                    <h3 className="recent-title">{title}</h3>
+                    <a href={`/author/${authorSlug}`} className="recent-author">
+                        By {full_name}{" "}
+                    </a>
                 </div>
             </div>
         </>

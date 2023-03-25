@@ -63,7 +63,11 @@ const Navbar = () => {
     return (
         // TODO: correct this if needed and check the html elements stack of the app as this is the biggest div of dom
         // big-div or top-level-div
-        <div className="big-div">
+        <div
+            className={`big-div ${
+                hamBurgerClicked && navVisible ? "blur" : ""
+            }`}
+        >
             {/* HIDDEN SEARCH BAR STARTS HERE */}
             <div
                 className={`hidden-search-main-container ${

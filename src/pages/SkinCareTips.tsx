@@ -42,7 +42,6 @@ const SkinCareTips = () => {
             try {
                 const response = await axios.get(
                     "http://localhost:8000/api/blog/posts-list"
-                    // "https://0469-2400-adc7-3103-2000-405e-2a4e-bc14-91d0.in.ngrok.io/api/blog/posts-list"
                 );
                 const data = response.data;
 
@@ -121,10 +120,10 @@ const SkinCareTips = () => {
                             <Link to={`/post/${recent.slug}`}>
                                 <RecentCard
                                     // {...dispatch(setSelectedPost(recent))}
-                                    // handleNavigate={handleNavigate}
                                     cover_image={recent.cover_image}
                                     title={recent.title}
                                     full_name={recent.full_name}
+                                    authorSlug={recent.author.slug}
                                 />
                             </Link>
                         </div>

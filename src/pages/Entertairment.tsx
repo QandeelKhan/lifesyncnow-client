@@ -119,11 +119,11 @@ const Entertairment = () => {
                     ))} */}
                     {mostRecentPosts.map((recent: any) => (
                         <RecentCard
-                            id={recent.id}
                             // handleNavigate={handleNavigate}
                             cover_image={recent.cover_image}
                             title={recent.title}
                             full_name={recent.full_name}
+                            authorSlug={recent.author.user_slug}
                         />
                     ))}
                 </div>
