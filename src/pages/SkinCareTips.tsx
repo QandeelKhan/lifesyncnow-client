@@ -129,7 +129,6 @@ const SkinCareTips = () => {
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
-
                 <div className="older-container">
                     {olderPosts.map((older: any) => (
                         <OlderCard
