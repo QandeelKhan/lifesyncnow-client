@@ -13,6 +13,7 @@ interface recentCardProps {
 // TODO: clean code for cards like on this component
 // TODO: in the next projects we might hands on the css libraries like material ui, not confirmed yet for the reactive development as a lot of big companies are using these stacks these days.
 // also use related things right next to each other acc to programming concept of cohesion, also coupling would be preferable by some developers.
+
 const RecentCard = ({
     cover_image,
     title,
