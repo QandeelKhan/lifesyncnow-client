@@ -1,18 +1,29 @@
 import React from "react";
 import "./css/featuredCard.css";
-const FeaturedCard = (props: any) => {
+interface featureCardprops {
+    cover_image: string;
+    title: string;
+    subTitle: string;
+    authorSlug: string;
+}
+const FeaturedCard = ({
+    cover_image,
+    title,
+    subTitle,
+    authorSlug,
+}: featureCardprops) => {
     return (
         <>
             <div className="featured-card">
                 <img
-                    src={props.img}
+                    src={cover_image}
                     className="featured-img"
                     alt="featured-img"
                 />
                 <div className="featured-body">
-                    <h3 className="featured-title">{props.heading}</h3>
-                    <p className="featured-text">{props.paragraph}</p>
-                    <p className="featured-author"> By {props.author}</p>
+                    <h3 className="featured-title">{title}</h3>
+                    <p className="featured-text">{subTitle}</p>
+                    <p className="featured-author"> By {authorSlug}</p>
                 </div>
             </div>
         </>

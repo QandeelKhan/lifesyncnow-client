@@ -104,13 +104,12 @@ const SkinCareTips = () => {
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-container ">
-                    {FeaturedData.map((feature) => (
+                    {FeaturedData.map((feature: any) => (
                         <FeaturedCard
-                            key={feature.id}
-                            img={feature.img}
-                            heading={feature.heading}
-                            paragraph={feature.paragraph}
-                            author={feature.author}
+                            cover_image={feature.cover_image}
+                            title={feature.title}
+                            subTitle={feature.subTitle}
+                            authorSlug={feature.authorSlug}
                         />
                     ))}
                 </div>
@@ -132,16 +131,15 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Older Post" />
 
-                <div className="older-container">
-                    {OlderData.map((older) => (
+                {/* <div className="older-container">
+                    {OlderData.map((older: any) => (
                         <OlderCard
-                            key={older.id}
-                            img={older.img}
-                            heading={older.heading}
-                            author={older.author}
+                            cover_image={older.cover_image}
+                            title={older.title}
+                            authorSlug={older.author.user_slug}
                         />
                     ))}
-                </div>
+                </div> */}
             </div>
         </PageTemplate>
     );
