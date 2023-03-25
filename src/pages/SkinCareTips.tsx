@@ -29,6 +29,7 @@ const subcategory = [
     "SUNSCREEN",
     "WINTER SKIN CARE",
 ];
+
 const SkinCareTips = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
@@ -123,7 +124,7 @@ const SkinCareTips = () => {
                                     cover_image={recent.cover_image}
                                     title={recent.title}
                                     full_name={recent.full_name}
-                                    authorSlug={recent.author.slug}
+                                    authorSlug={recent.author.user_slug}
                                 />
                             </Link>
                         </div>
