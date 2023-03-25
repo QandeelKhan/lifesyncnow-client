@@ -110,7 +110,7 @@ const FoodAndNutrition = () => {
                 </div>
                 <SectionHeading heading="Older Post" />
                 <div className="older-container">
-                    {OlderData.map((older: any) => (
+                    {mostRecentPosts.map((older: any) => (
                         <OlderCard
                             cover_image={older.cover_image}
                             title={older.title}

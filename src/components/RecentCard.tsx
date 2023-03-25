@@ -6,6 +6,8 @@ interface recentCardProps {
     full_name: string;
     // takes function that returns no parameters, if not decided or having the exact logic in mind yet then simply pass the console.log() as function in the parent to make typescript happy, or add the question mark while defining the type in the interface to make the property optional like "onClick?: () => void;"
     // onClick: () => void;
+    // TODO: fix me: remove the optional sign from postSlug
+    postSlug?: string;
     authorSlug: string;
 }
 // TODO: clean code for cards like on this component
@@ -16,12 +18,15 @@ const RecentCard = ({
     title,
     full_name,
     authorSlug,
+    postSlug,
 }: recentCardProps) => {
     return (
         <div className="recent-card">
             <img src={cover_image} className="recent-img" alt="Card" />
             <div className="recent-body">
-                <h3 className="recent-title">{title}</h3>
+                <a href={`/post/${postSlug}`} className="recent-title">
+                    {title}
+                </a>
                 <a href={`/author/${authorSlug}`} className="recent-author">
                     By {full_name}{" "}
                 </a>

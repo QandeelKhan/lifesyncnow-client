@@ -104,7 +104,7 @@ const SkinCareTips = () => {
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-container ">
-                    {FeaturedData.map((feature: any) => (
+                    {featuredPosts.map((feature: any) => (
                         <FeaturedCard
                             cover_image={feature.cover_image}
                             title={feature.title}
@@ -117,29 +117,28 @@ const SkinCareTips = () => {
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
                         <div key={recent.id}>
-                            <Link to={`/post/${recent.slug}`}>
-                                <RecentCard
-                                    // {...dispatch(setSelectedPost(recent))}
-                                    cover_image={recent.cover_image}
-                                    title={recent.title}
-                                    full_name={recent.full_name}
-                                    authorSlug={recent.author.user_slug}
-                                />
-                            </Link>
+                            <RecentCard
+                                // {...dispatch(setSelectedPost(recent))}
+                                cover_image={recent.cover_image}
+                                title={recent.title}
+                                full_name={recent.full_name}
+                                authorSlug={recent.author.user_slug}
+                                postSlug={recent.slug}
+                            />
                         </div>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
 
-                {/* <div className="older-container">
-                    {OlderData.map((older: any) => (
+                <div className="older-container">
+                    {olderPosts.map((older: any) => (
                         <OlderCard
                             cover_image={older.cover_image}
                             title={older.title}
                             authorSlug={older.author.user_slug}
                         />
                     ))}
-                </div> */}
+                </div>
             </div>
         </PageTemplate>
     );
