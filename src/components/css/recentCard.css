@@ -57,6 +57,7 @@
     margin-bottom: 10px;
     font-weight: 300;
     cursor: pointer;
+    text-decoration: none;
 }
 .recent-title:hover {
     text-decoration: underline;
