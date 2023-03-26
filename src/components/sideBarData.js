@@ -4,27 +4,27 @@ export const SidebarData = [
     {
         title: 'SKIN-CARE TIPS',
         cName: 'anchor',
-        path: '/'
+        path: '/skin-care-tips'
     },
     {
         title: 'FOOD AND NUTRITION',
         cName: 'anchor',
-        path: '/'
+        path: '/food-and-nutrition'
     },
     {
         title: 'HOLISTIC TREATMENT',
         cName: 'anchor',
-        path: '/'
+        path: '/holistic-treatment'
     },
     {
         title: 'FITNESS TIPS',
         cName: 'anchor',
-        path: '/'
+        path: '/fitness-tips'
     },
     {
         title: 'RELATIONSHIP TIPS',
         cName: 'anchor',
-        path: '/'
+        path: '/relationship-tips'
     },
     {
         title: 'SHOPPING',
@@ -36,51 +36,5 @@ export const SidebarData = [
         cName: 'anchor',
         path: '/'
     },
-    {
-        title: 'RELATIONSHIP TIPS',
-        cName: 'anchor',
-        path: '/'
-    },
-]
-export const SidebarSecondData = [
-    {
-        title: 'SKIN-CARE TIPS',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'FOOD AND NUTRITION',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'HOLISTIC TREATMENT',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'FITNESS TIPS',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'RELATIONSHIP TIPS',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'SHOPPING',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'ALL TOPICS',
-        cName: 'anchor',
-        path: '/'
-    },
-    {
-        title: 'RELATIONSHIP TIPS',
-        cName: 'anchor',
-        path: '/'
-    },
+  
 ]
