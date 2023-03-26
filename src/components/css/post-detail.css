@@ -48,10 +48,11 @@
     gap: 10px;
 }
 .post-article-main {
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 100px;
+    gap: 50px;
     /* flex-wrap: wrap; */
 }
 .shop-logo {
@@ -215,7 +216,7 @@
     border: 1px solid rgb(167, 166, 166);
     padding: 10px;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     .post-article-main {
         flex-wrap: wrap;
         width: 100%;
