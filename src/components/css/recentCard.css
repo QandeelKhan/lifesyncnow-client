@@ -103,11 +103,19 @@
 
     text-transform: uppercase;
 }
+@media(max-width:1024px){
+    .recent-container {
+        gap: 32px;
+    }
+    .recent-card{
+        width: 31%;
 
+    }
+  }
 
 @media (max-width: 768px) {
     .recent-container {
-        gap: 20px;
+        gap: 36px;
  
     }
     .recent-card {

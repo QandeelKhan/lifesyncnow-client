@@ -1,6 +1,7 @@
 .featured-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
     gap: 36px ;
 
 }
@@ -122,6 +123,24 @@
         font-size: 20px;
        }
      
+    }
+    @media(max-width:1024px){
+      .featured-img-container {
+        height: 200px;
+        width: 100%;
+    }
+      .featured-card{
+        width: 29%;
+      }
+    }
+    @media(max-width:768){
+      .featured-img-container {
+        height: 200px;
+        width: 100%;
+    }
+      .featured-card{
+        width: 22%;
+      }
     }
   @media(max-width:477px){
     .featured-card{
