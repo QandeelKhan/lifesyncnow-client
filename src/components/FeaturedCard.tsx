@@ -23,9 +23,14 @@ const FeaturedCard = ({
                     />
                 </div>
                 <div className="featured-body">
-                    <h3 className="featured-title">{title}</h3>
+                    <a href="" className="featured-title">
+                        <h3>{title}</h3>
+                    </a>
                     <p className="featured-text">{subTitle}</p>
-                    <p className="featured-author"> By {authorSlug}</p>
+                    <a href="" className="featured-author">
+                        {" "}
+                        By <span>{authorSlug}</span>
+                    </a>
                 </div>
             </div>
         </>

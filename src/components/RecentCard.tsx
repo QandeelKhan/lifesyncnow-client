@@ -28,11 +28,14 @@ const RecentCard = ({
             </div>
             <div className="recent-body">
                 <a href={`/post/${postSlug}`} className="recent-title">
-                    {title}
+                    <h3>{title} </h3>
                 </a>
-                <a href={`/author/${authorSlug}`} className="recent-author">
-                    By {full_name}{" "}
-                </a>
+                <span>
+                    By
+                    <a href={`/author/${authorSlug}`} className="recent-author">
+                        <span> {full_name} </span>
+                    </a>
+                </span>
             </div>
         </div>
     );

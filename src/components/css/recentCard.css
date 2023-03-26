@@ -51,32 +51,52 @@
 }
 
 .recent-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #57544e;
-
-    font-weight: 300;
+   
+    font-weight: 500;
     cursor: pointer;
     text-decoration: none;
 }
 .recent-title:hover {
     text-decoration: underline;
-}
+    color: #42403d;
 
-.recent-text {
-    font-size: 14px;
+}
+.recent-title > h3{
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.4;
     margin-bottom: 10px;
-    color: #252525;
-    cursor: pointer;
+    color: #42403d;
 }
 
-.recent-text:hover {
-    text-decoration: underline;
+
+
+
+
+.recent-body > span{
+    text-transform: uppercase;
+    color: #131212;
+    font-size: 14px;
+
 }
 .recent-author {
+   
+    text-decoration: none;
+    color: #131212;
+
+}
+.recent-author:hover {
+    text-decoration: underline;
+    color: #131212;
+
+
+}
+.recent-author > span{
     font-size: 14px;
+    /* margin-left: 4px; */
     margin-bottom: 10px;
-    color: #252525;
+    color: #131212;
+
     text-transform: uppercase;
 }
 
