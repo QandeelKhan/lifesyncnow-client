@@ -83,6 +83,8 @@
    
     text-decoration: none;
     color: #131212;
+    letter-spacing: 1.5px;
+
 
 }
 .recent-author:hover {
@@ -96,6 +98,8 @@
     /* margin-left: 4px; */
     margin-bottom: 10px;
     color: #131212;
+    letter-spacing: 1.5px;
+
 
     text-transform: uppercase;
 }
