@@ -15,11 +15,13 @@ const FeaturedCard = ({
     return (
         <>
             <div className="featured-card">
-                <img
-                    src={cover_image}
-                    className="featured-img"
-                    alt="featured-img"
-                />
+                <div className="featured-img-container">
+                    <img
+                        src={cover_image}
+                        className="featured-img"
+                        alt="featured-img"
+                    />
+                </div>
                 <div className="featured-body">
                     <h3 className="featured-title">{title}</h3>
                     <p className="featured-text">{subTitle}</p>

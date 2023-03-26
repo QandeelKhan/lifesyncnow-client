@@ -116,16 +116,17 @@ const SkinCareTips = () => {
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
-                        <div key={recent.id}>
-                            <RecentCard
-                                // {...dispatch(setSelectedPost(recent))}
-                                cover_image={recent.cover_image}
-                                title={recent.title}
-                                full_name={recent.full_name}
-                                authorSlug={recent.author.user_slug}
-                                postSlug={recent.slug}
-                            />
-                        </div>
+                        // <div key={recent.id}>
+                        <RecentCard
+                            // {...dispatch(setSelectedPost(recent))}
+                            key={recent.id}
+                            cover_image={recent.cover_image}
+                            title={recent.title}
+                            full_name={recent.full_name}
+                            authorSlug={recent.author.user_slug}
+                            postSlug={recent.slug}
+                        />
+                        // </div>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />

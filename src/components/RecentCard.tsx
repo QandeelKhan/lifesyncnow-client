@@ -23,7 +23,9 @@ const RecentCard = ({
 }: recentCardProps) => {
     return (
         <div className="recent-card">
-            <img src={cover_image} className="recent-img" alt="Card" />
+            <div className="recent-img-container">
+                <img src={cover_image} className="recent-img" alt="Card" />
+            </div>
             <div className="recent-body">
                 <a href={`/post/${postSlug}`} className="recent-title">
                     {title}
