@@ -38,9 +38,8 @@ const Layout: React.FC = () => {
             {/* <ThemeWrapper key={key}>
                     </ThemeWrapper> */}
             {/* <CssBaseline /> */}
-            <div>
-                <Outlet key={key} />
-            </div>
+
+            <Outlet key={key} />
         </>
     );
 };
