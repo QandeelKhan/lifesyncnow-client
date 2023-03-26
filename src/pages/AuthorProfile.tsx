@@ -57,6 +57,8 @@ const AuthorProfile = () => {
                                     postImage={post.cover_image}
                                     fullName={author.full_name}
                                     authorImage={author.profile_image}
+                                    postSlug={post.slug}
+                                    userSlug={author.user_slug}
                                 />
                             ))}
                         </div>
