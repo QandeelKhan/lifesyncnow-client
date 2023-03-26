@@ -109,7 +109,7 @@ const SkinCareTips = () => {
                             cover_image={feature.cover_image}
                             title={feature.title}
                             subTitle={feature.subTitle}
-                            authorSlug={feature.authorSlug}
+                            authorSlug={feature.author.user_slug}
                         />
                     ))}
                 </div>
