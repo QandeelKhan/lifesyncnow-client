@@ -119,7 +119,7 @@ const About = () => {
                         </div>
                         <div className="para">
                             {" "}
-                            <h1>Diverse Perspectives</h1>
+                            <h1>Ongoing Education</h1>
                             <span>
                                 Well+Good aims to be a meaningfully diverse,
                                 inclusive, and welcoming space for all people—on
@@ -133,16 +133,12 @@ const About = () => {
                         </div>
                         <div className="para">
                             {" "}
-                            <h1>Diverse Perspectives</h1>
+                            <h1>Our 15% Pledge</h1>
                             <span>
-                                Well+Good aims to be a meaningfully diverse,
-                                inclusive, and welcoming space for all people—on
-                                our team and in our community. We seek to do
-                                this by further diversifying our contributor and
-                                talent pool, speaking with expert sources of
-                                varying backgrounds and abilities within our
-                                content, integrating DEI in our corporate hiring
-                                practices, and more.
+                                We pledge that a minimum of 15% of our shopping
+                                content will feature brands with founders,
+                                owners, or leaders from historically
+                                underrepresented groups.
                             </span>
                         </div>
                     </div>
