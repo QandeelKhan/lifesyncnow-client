@@ -133,7 +133,7 @@ const About = () => {
                         </div>
                         <div className="para">
                             {" "}
-                            <h1>Our 15% Pledge</h1>
+                            <h1>Our 15%% Pledge</h1>
                             <span>
                                 We pledge that a minimum of 15% of our shopping
                                 content will feature brands with founders,
