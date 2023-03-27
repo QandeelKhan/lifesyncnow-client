@@ -1,8 +1,8 @@
 .featured-container{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-    gap: 36px ;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+    gap: 38px ;
 
 }
   .featured-card {
@@ -24,7 +24,7 @@
     .featured-img-container{
       display: block;
       height: 100%;
-      max-height: 220px;
+      /* max-height: 220px; */
    
     }
     
