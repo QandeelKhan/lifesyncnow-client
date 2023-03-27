@@ -3,6 +3,7 @@
    display: flex;
    /* justify-content: space-between; */
    flex-wrap: wrap;
+   gap: 10px;
    
 
   }
@@ -37,7 +38,7 @@
       height: 100%;
       width: 30%;
       min-width: 30%;
-      /* object-fit: inherit; */
+      object-fit: cover;
     
     }
     
@@ -110,6 +111,14 @@
        }
      
     }
+    @media (max-width: 635px) {
+      .older-card{
+        width: 100%;
+        max-width: 100%;
+        
+   
+        
+       }}
     
     @media(max-width:477px){
      .older-card{

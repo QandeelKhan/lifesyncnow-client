@@ -105,17 +105,22 @@
 }
 @media(max-width:1024px){
     .recent-container {
-        gap: 32px;
+        gap: 30px;
     }
     .recent-card{
         width: 31%;
 
     }
   }
+  @media (max-width: 995px){
+   
+  
+    
+  }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 990px){
     .recent-container {
-        gap: 36px;
+        gap: 30px;
  
     }
     .recent-card {
@@ -124,6 +129,27 @@
 
     }
 }
+@media (min-width: 636px) and (max-width: 768px){
+    .recent-container {
+        gap: 30px;
+ 
+    }
+    .recent-card {
+        width: 46%;
+        margin-bottom: 34px;
+
+    }
+
+}
+@media (max-width: 635px) {
+    .recent-card{
+      width: 100%;
+      max-width: 100%;
+      
+ 
+      
+     }}
+
 
 @media (max-width: 477px) {
     .recent-container {

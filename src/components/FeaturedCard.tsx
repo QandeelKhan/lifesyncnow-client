@@ -26,7 +26,7 @@ const FeaturedCard = ({
                     <a href="" className="featured-title">
                         <h3>{title}</h3>
                     </a>
-                    <p className="featured-text">{subTitle}</p>
+                    <p className="featured-subtitle">{subTitle}</p>
                     <span>
                         By
                         <a href="" className="featured-author">
