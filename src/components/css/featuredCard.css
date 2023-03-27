@@ -151,22 +151,7 @@
       }
   }
    
-    @media (max-width: 768px) {
-      .featured-card{
-        width: 29%;
-        
-       }
-       .featured-img {
-      min-height: 50%;
-      object-fit: cover;
-
-        
-       }
-       .featured-title {
-        font-size: 20px;
-       }
-     
-    }
+    
    
     @media (max-width: 635px) {
       .featured-card{
