@@ -103,7 +103,7 @@
 }
 .our-purpose-content {
     width: 50%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,8 +136,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    /* overflow-y: scroll; */
+    height: 100vh;
+    overflow-y: scroll;
     background-color: #42676b;
     padding: 45px 120px;
 }
@@ -179,6 +179,7 @@
     font-size: 18px;
     color: white;
 }
+/* third container starts here */
 .main-third-container {
     display: flex;
     flex-direction: column;
@@ -200,7 +201,7 @@
     gap: 25px;
 }
 .first-in-main img {
-    width: 80%;
+    width: 60%;
 }
 .first-in-main .left-text {
     text-align: start;
@@ -250,6 +251,7 @@
     gap: 20px;
     padding-top: 15px;
 }
+
 @media (max-width: 800px) {
     .three-paras {
         flex-wrap: wrap;
@@ -270,5 +272,142 @@
     }
     .banner-text {
         padding: 0px 30px;
+    }
+}
+/* WE BELIEVE SECTION STARTS HERE */
+.we-believe-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f5f2;
+    width: 100%;
+    padding: 60px 175px;
+    gap: 25px;
+}
+.points-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.left-points-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.right-points-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.point {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 25px 50px 25px 0px;
+    border-bottom: 1px solid rgb(228, 226, 226);
+}
+.point span {
+    font-size: 20px;
+    line-height: 25px;
+}
+.point h3 {
+    padding-top: 5px;
+    color: #7a7979;
+}
+.we-believe-main-container h1 {
+    font-size: 45px;
+    font-weight: lighter;
+}
+@media (max-width: 900px) {
+    .left-points-container,
+    .right-points-container {
+        width: 100%;
+    }
+    .points-main-container {
+        flex-wrap: wrap;
+    }
+    .we-believe-main-container {
+        padding: 60px 50px;
+    }
+    .point {
+        padding: 25px 10px 25px 0px;
+    }
+}
+/* OUR TEAM SECTION STARTS HERE */
+.our-team-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+    background-color: #1b3531;
+}
+
+.our-team-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 35px;
+    padding: 75px 50px;
+}
+.our-team-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 35px;
+    padding: 75px 50px;
+    border-right: 1px solid white;
+}
+.our-team-right img {
+    border-radius: 40%;
+}
+.our-team-left h1 {
+    font-size: 45px;
+    font-weight: lighter;
+}
+.our-team-left span {
+    font-size: 25px;
+    text-align: center;
+}
+.our-team-left a {
+    width: 150px;
+    height: 45px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #1b3531;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.our-team-left a:hover {
+    background-color: #1b3531;
+    color: white;
+    transition: 0.3s;
+    border: 1px solid white;
+}
+@media (max-width: 900px) {
+    .our-team-left,
+    .our-team-right {
+        width: 100%;
+        border: none;
+    }
+    .our-team-main-container {
+        flex-wrap: wrap-reverse;
     }
 }
