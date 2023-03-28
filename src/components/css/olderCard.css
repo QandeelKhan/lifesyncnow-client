@@ -27,7 +27,7 @@
     }
   
   .card:hover {
-      box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 20px 20px 27px rgba(0, 0, 0, 0.08);
       
     }
     .older-container:nth-child(4n) {
