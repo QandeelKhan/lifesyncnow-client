@@ -187,7 +187,7 @@
     color: white;
     background-color: #0c2130;
     width: 100%;
-    gap: 50px;
+    gap: 70px;
     /* height: 100%; */
     padding: 100px 0px;
 }
@@ -200,7 +200,7 @@
     gap: 25px;
 }
 .first-in-main img {
-    width: 75%;
+    width: 80%;
 }
 .first-in-main .left-text {
     text-align: start;
@@ -215,7 +215,7 @@
     font-size: 40px;
 }
 .second-in-main {
-    gap: 50px;
+    gap: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,13 +226,13 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 .three-paras {
     display: flex;
     align-items: start;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     padding: 0px 100px;
 }
 .para {
@@ -245,8 +245,8 @@
 
 .para span {
     text-align: center;
-    line-height: 20px;
-    font-size: 17px;
+    line-height: 30px;
+    font-size: 19px;
     gap: 20px;
     padding-top: 15px;
 }
