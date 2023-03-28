@@ -90,6 +90,7 @@ const SkinCareTips = () => {
     };
     // const handleNavigate = (post: any) => {
     //     navigate(`/post/${post.slug}`);
+
     // };
 
     return (
