@@ -30,7 +30,7 @@ const subcategory = [
     "WINTER SKIN CARE",
 ];
 
-const SkinCareTips = () => {
+const PostTopic = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
@@ -90,7 +90,6 @@ const SkinCareTips = () => {
     };
     // const handleNavigate = (post: any) => {
     //     navigate(`/post/${post.slug}`);
-
     // };
 
     return (
@@ -145,4 +144,4 @@ const SkinCareTips = () => {
     );
 };
 
-export default SkinCareTips;
+export default PostTopic;
