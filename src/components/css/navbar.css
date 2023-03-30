@@ -139,7 +139,7 @@
 /* TODO:correct this as this is the biggest div of dom */
 .hidden-search-main-container {
     width: 100%;
-    background-color: #fdf3f3;
+    background-color: #f5e7e7;
     top: -100px;
     position: fixed;
     /* right: 0; */
