@@ -15,13 +15,13 @@ import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
-const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
 const FoodAndNutrition = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
+    const subcategory = ["PLANT BASED", "YOU VERSUS FOOD"];
 
     const dispatch = useDispatch();
 

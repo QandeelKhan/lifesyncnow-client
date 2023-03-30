@@ -57,7 +57,7 @@ const SkinCareTips = () => {
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "SKIN CARE TIPS"
+                    (post: any) => post.category_name === "SKIN-CARE TIPS"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(

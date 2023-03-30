@@ -15,13 +15,13 @@ import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
-const subcategory = [
-    "GOOD MOVES",
-    "THE RIGHT WAY",
-    "TRAINER OF THE MONTH CLUB",
-];
 
 const FitnessTips = () => {
+    const subcategory = [
+        "GOOD MOVES",
+        "THE RIGHT WAY",
+        "TRAINER OF THE MONTH CLUB",
+    ];
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
