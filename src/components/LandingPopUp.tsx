@@ -18,12 +18,12 @@ const LandingPopUp = () => {
                             </p>
                         </div>
 
-                        <form className="form">
+                        <form className="pop-form">
                             <input
                                 type="text"
                                 placeholder="example@gmail.com"
                             />
-                            <button className="normal">Sign Up</button>
+                            <button className="pop-btn">Sign Up</button>
                         </form>
                     </div>
                     <div className="bottom-line">
