@@ -21,7 +21,7 @@ const PostDetail = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/api/blog/post/${slug}/`
+                    `http://localhost:8000/api/blog/post/${slug}`
                 );
                 const data = response.data;
                 setPost(data);
@@ -56,6 +56,7 @@ const PostDetail = () => {
     }
     return (
         <PageTemplate>
+            <>{console.log(post)}</>
             <div className="main-post-container">
                 <div className="post-category-heading">
                     <span>Skin-Care Tips / Moisturizer</span>

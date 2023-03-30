@@ -57,7 +57,7 @@ const SkinCareTips = () => {
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "SKIN-CARE TIPS"
+                    (post: any) => post.category_name === "SKIN CARE TIPS"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
@@ -164,9 +164,7 @@ const SkinCareTips = () => {
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
-                        // <div key={recent.id}>
                         <RecentCard
-                            // {...dispatch(setSelectedPost(recent))}
                             key={recent.id}
                             cover_image={recent.cover_image}
                             title={recent.title}
@@ -174,7 +172,6 @@ const SkinCareTips = () => {
                             authorSlug={recent.author.user_slug}
                             postSlug={recent.slug}
                         />
-                        // </div>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
