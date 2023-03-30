@@ -261,6 +261,114 @@ const About = () => {
                     <img src="our-team.webp" alt="responsive" />
                 </div>
             </div>
+
+            {/* OUR COMMUNITY SECTION STARTS HERE */}
+            <div className="community-main-container">
+                <div className="heading">
+                    <span>Our community</span>
+                </div>
+                <div className="community-para">
+                    <span>
+                        Without our community, Well+Good would just be words on
+                        a page—it’s you that gives the brand heart and soul.
+                    </span>
+                </div>
+                <div className="community-features">
+                    <div className="ist">
+                        <div className="image">
+                            <img src="cummunity-one.jpg" alt="community-pic" />
+                        </div>
+                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="second">
+                            Introducing Well+Good's Very First Podcast
+                        </span>
+                        <span className="third">
+                            WEDNESDAY, OCTOBER 13TH, 2021
+                        </span>
+                    </div>
+                    <div className="ist">
+                        <div className="image">
+                            <img src="community-two.jpg" alt="community-pic" />
+                        </div>
+                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="second">
+                            Introducing Well+Good's Very First Podcast
+                        </span>
+                        <span className="third">
+                            WEDNESDAY, OCTOBER 13TH, 2021
+                        </span>
+                    </div>
+                    <div className="ist">
+                        <div className="image">
+                            <img
+                                src="community-three.jpg"
+                                alt="community-pic"
+                            />
+                        </div>
+                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="second">
+                            Introducing Well+Good's Very First Podcast
+                        </span>
+                        <span className="third">
+                            WEDNESDAY, OCTOBER 13TH, 2021
+                        </span>
+                    </div>
+                    <div className="ist">
+                        <div className="image">
+                            <img src="community-four.jpg" alt="community-pic" />
+                        </div>
+                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="second">
+                            Introducing Well+Good's Very First Podcast
+                        </span>
+                        <span className="third">
+                            WEDNESDAY, OCTOBER 13TH, 2021
+                        </span>
+                    </div>
+                </div>
+                <div className="social-medias">
+                    <span>FOLLOW US ON SOCIAL:</span>
+                    <div className="icons">
+                        <a href="/">
+                            <i className="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="/">
+                            <i className="fa-brands fa-pinterest-p"></i>
+                        </a>
+                        <a href="/">
+                            <i className="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="/">
+                            <i className="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="/">
+                            <i className="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* OUR REACH STARTS HERE */}
+            <div className="our-reach-main-container">
+                <h1>Our Reach</h1>
+                <div className="reaches-container">
+                    <div className="ist">
+                        <h2>20 Million</h2>
+                        <span>
+                            monthly sessions to main
+                            <br /> website
+                        </span>
+                    </div>
+                    <div className="ist">
+                        <h2>22 Million</h2>
+                        <span>views on YouTube</span>
+                    </div>
+                    <div className="ist">
+                        <h2>2.7 Million</h2>
+                        <span>followers on social media</span>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
