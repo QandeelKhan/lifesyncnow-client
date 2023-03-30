@@ -2,32 +2,48 @@
     height: 100vh;
     position: absolute;
     top: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .pop-up{
-    border: 1px solid black ;
+    /* border: 1px solid black ; */
     display: flex;
     flex-direction: column;
     padding: 40px;
     text-align: center;
 }
+.content-container{
+    background-color: #42676b;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid white;
+    
+
+}
+.content-container > .close{
+    display: flex;
+    font-size: 24px;
+    justify-content: end;
+    padding-top: 20px;
+    padding-right: 30px;
+    color: white;
+}
 .content{
     /* border: 1px solid red; */
     /* text-align: center; */
     background-color: #42676b;
-    padding-top: 50px;
-    
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
    
 }
-.pop-up >.content> h3{
+.content-container >.content> h3{
     font-size: 36px;
     line-height: 36px;
     color: white;
@@ -40,7 +56,7 @@
     margin-bottom: 10px;
 
 }
-.pop-up>.content> .desc>p{
+.content> .desc>p{
     font-size: 20px;
     line-height: 24px;
     color: white;
@@ -90,7 +106,7 @@
     color: #42676b;
     text-transform: uppercase;
     margin-left: 10px;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 11px;
     line-height: 12px;
     letter-spacing: 1px;
@@ -101,7 +117,7 @@
 }
 .bottom-line >a > span{
     color: #42676b;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 11px;
     line-height: 12px;
     letter-spacing: 1px;
