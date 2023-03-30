@@ -7,7 +7,8 @@
     background-image: url("/public/jogging.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    /* background-position: center; */
     /* background-attachment: fixed; */
     display: flex;
     justify-content: center;
@@ -94,6 +95,7 @@
     color: white;
     text-align: center;
 }
+/* OUR PURPOSE SEXTION STARTS HERE */
 .our-purpose-main-container {
     display: flex;
     width: 100%;
@@ -103,7 +105,7 @@
 }
 .our-purpose-content {
     width: 50%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +138,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
     background-color: #42676b;
     padding: 45px 120px;
@@ -406,8 +408,145 @@
     .our-team-right {
         width: 100%;
         border: none;
+        padding: 75px 20px;
     }
     .our-team-main-container {
         flex-wrap: wrap-reverse;
+    }
+}
+/* OUR COMMUNITY STARTS HERE */
+.community-main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f5f2;
+    gap: 50px;
+    padding: 75px 125px;
+}
+
+.community-main-container .heading span {
+    font-size: 40px;
+}
+.community-main-container .community-para {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.community-features .ist img {
+    width: 100%;
+    height: 100%;
+}
+.community-features .image {
+    width: 260px;
+    height: 175px;
+}
+.community-features {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.community-features .ist {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 260px;
+}
+.community-features .ist .first {
+    font-size: 17px;
+    color: #4c6e72;
+}
+.community-features .ist .second {
+    font-size: 20px;
+    line-height: 25px;
+}
+.community-features .ist .third {
+    font-size: 13px;
+}
+.social-medias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.social-medias .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.social-medias .icons a {
+    color: #42676b;
+}
+@media (max-width: 1100px) {
+    .community-features {
+        flex-wrap: wrap;
+    }
+    .community-main-container {
+        padding: 75px 100px;
+    }
+}
+@media (max-width: 600px) {
+    .social-medias {
+        flex-wrap: wrap;
+    }
+    .community-main-container {
+        padding: 75px 20px;
+    }
+}
+/* REWARDS CONTAINER STARTS HERE */
+.our-reach-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    padding: 75px 100px;
+    background-color: #f9f5f2;
+}
+.our-reach-main-container h1 {
+    font-size: 45px;
+    font-weight: lighter;
+    color: rgb(100, 98, 98);
+}
+.our-reach-main-container .reaches-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 100px;
+}
+.reaches-container .ist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.reaches-container .ist h2 {
+    font-weight: lighter;
+    color: #42676b;
+    font-size: 35px;
+}
+.reaches-container .ist span {
+    font-size: 20px;
+    text-align: center;
+    line-height: 25px;
+}
+@media (max-width: 800px) {
+    .our-reach-main-container .reaches-container {
+        flex-wrap: wrap;
+    }
+    .our-reach-main-container {
+        padding: 75px 0px;
     }
 }
