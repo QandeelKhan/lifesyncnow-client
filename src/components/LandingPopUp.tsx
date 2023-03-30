@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./css/landingpopup.css";
 const LandingPopUp = () => {
+    const [isHidden, setIsHidden] = useState(false);
+
+    const toggleVisibility = () => {
+        setIsHidden(!isHidden);
+    };
+
+    const hiddenStyle = {
+        display: isHidden ? "none" : "flex",
+    };
+
     return (
-        <div className="pop-up-main">
+        <div className="pop-up-main" style={hiddenStyle}>
             <div className="pop-up">
                 <div className="content-container">
                     <div className="close">
                         {" "}
-                        <i className="fa-solid fa-xmark"></i>
+                        <i
+                            className="fa-solid fa-xmark"
+                            onClick={toggleVisibility}
+                        ></i>
                     </div>
                     <div className="content">
                         <h3>Subscribe to Well+Good</h3>

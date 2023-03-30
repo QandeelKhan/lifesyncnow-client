@@ -5,5 +5,9 @@
   font-family: 'League Spartan', sans-serif;
 }
 body{
-  /* width: 100%; */
+  width: 100%;
+
+}
+.active{
+  overflow: hidden;
 }
