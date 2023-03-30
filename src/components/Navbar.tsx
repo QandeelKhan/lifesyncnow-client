@@ -92,19 +92,16 @@ const Navbar = () => {
                     searchBar ? "active" : ""
                 }`}
             >
-                <div className="search-area">
+                <form onSubmit={handleSearch} className="search-area">
                     <i className="fa-solid fa-magnifying-glass"></i>
                     <input
                         type="text"
                         placeholder="Search Here..."
                         onChange={(event) => setSearchQuery(event.target.value)}
                     />
-                    {/* <button onClick={handleSearch}>Search</button> */}
-                </div>
-                <div></div>
+                </form>
             </div>
             {/* HIDDEN SEARCH BAR ENDS HERE */}
-
             <div
                 className={
                     navVisible
@@ -176,7 +173,6 @@ const Navbar = () => {
                     </a>
                 </div>
             </div>
-
             {/* actual navbar */}
             <nav className="navbar">
                 <div className="open-side-bar" onClick={handleHamBurgerClick}>
