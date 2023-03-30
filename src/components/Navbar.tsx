@@ -100,7 +100,6 @@ const Navbar = () => {
                         onChange={(event) => setSearchQuery(event.target.value)}
                     />
                 </form>
-                <div></div>
             </div>
             {/* HIDDEN SEARCH BAR ENDS HERE */}
             <div
