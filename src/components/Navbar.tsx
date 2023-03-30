@@ -99,7 +99,7 @@ const Navbar = () => {
                         placeholder="Search Here..."
                         onChange={(event) => setSearchQuery(event.target.value)}
                     />
-                    <button onClick={handleSearch}>Search</button>
+                    {/* <button onClick={handleSearch}>Search</button> */}
                 </div>
                 <div></div>
             </div>

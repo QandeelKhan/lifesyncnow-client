@@ -550,3 +550,109 @@
         padding: 75px 0px;
     }
 }
+/* REWARDS STARTS HERE */
+.rewards-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b3631;
+}
+.reward-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px;
+}
+.reward-container .left-side,
+.right-side {
+    width: 50%;
+}
+.reward-container .left-side {
+    gap: 35px;
+    color: white;
+}
+.reward-container .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reward-container .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    color: white;
+    padding: 0px 125px;
+    gap: 35px;
+    border-left: 1px solid white;
+}
+.reward-container .left-side .image {
+    max-width: 300px;
+}
+.reward-container .left-side .image img {
+    width: 100%;
+}
+.reward-container .left-side span {
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+.reward-container .left-side {
+    padding: 0px 150px;
+}
+.reward-container .left-side a {
+    padding: 15px 25px;
+    background-color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    color: black;
+}
+.reward-container .left-side a:hover {
+    background-color: #1b3531;
+    color: white;
+    transition: 0.3s;
+    border: 1px solid white;
+}
+.reward-container .right-side span {
+    font-size: 28px;
+}
+.reward-container .right-side .first-reward {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+.reward-container .right-side .first-reward span {
+    font-size: 20px;
+    line-height: 25px;
+}
+@media (max-width: 1000px) {
+    .reward-container {
+        flex-wrap: wrap;
+        gap: 75px;
+    }
+    .reward-container .left-side,
+    .right-side {
+        width: 100%;
+    }
+    .reward-container .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 0px 125px;
+        border: none;
+    }
+    .reward-container {
+        padding: 100px 10px;
+    }
+    .reward-container .left-side {
+        padding: 0px 25px;
+    }
+    .reward-container .right-side {
+        padding: 0px 25px;
+    }
+}
