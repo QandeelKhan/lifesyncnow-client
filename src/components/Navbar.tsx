@@ -104,6 +104,7 @@ const Navbar = () => {
                 <div></div>
             </div>
             {/* HIDDEN SEARCH BAR ENDS HERE */}
+
             <div
                 className={
                     navVisible
@@ -175,6 +176,7 @@ const Navbar = () => {
                     </a>
                 </div>
             </div>
+
             {/* actual navbar */}
             <nav className="navbar">
                 <div className="open-side-bar" onClick={handleHamBurgerClick}>
