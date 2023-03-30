@@ -11,7 +11,7 @@ import ReachAbout from "../components/ReachAbout";
 import BannerAbout from "../components/BannerAbout";
 const About = () => {
     return (
-        <>
+        <PageTemplate>
             <BannerAbout />
             {/* OUR PURPOSE SECTION STARTS HERE */}
             <PurposeAbout />
@@ -27,7 +27,7 @@ const About = () => {
             <RewardSection />
             {/* OUR REACH STARTS HERE */}
             <ReachAbout />
-        </>
+        </PageTemplate>
     );
 };
 
