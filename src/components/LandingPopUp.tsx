@@ -25,12 +25,12 @@ const LandingPopUp = () => {
                             />
                             <button className="normal">Sign Up</button>
                         </form>
-                        <div className="bottom-line">
-                            <span>Need Help?</span>
-                            <a href="">
-                                <span>Contact Support</span>
-                            </a>
-                        </div>
+                    </div>
+                    <div className="bottom-line">
+                        <span>Need Help?</span>
+                        <a href="">
+                            <span>Contact Support</span>
+                        </a>
                     </div>
                 </div>
             </div>
