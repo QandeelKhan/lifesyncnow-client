@@ -19,6 +19,7 @@ import Entertairment from "./pages/Entertairment";
 import AuthorBio from "./components/AuthorBio";
 import AuthorProfile from "./pages/AuthorProfile";
 import PostTopic from "./pages/PostTopic";
+import SearchResults from "./pages/SearchResult";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                     {/* <Route path="/post-detail" element={<PostDetail />} /> */}
                     <Route path="/post/:slug" element={<PostDetail />} />
                     <Route path="/topic/:slug" element={<PostTopic />} />
+                    <Route path="search/" element={<SearchResults />} />
                     <Route
                         path="/food-and-nutrition"
                         element={<FoodAndNutrition />}

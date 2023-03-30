@@ -4,19 +4,28 @@ const LandingPopUp = () => {
     return (
         <div className="pop-up-main">
             <div className="pop-up">
-                <div className="content">
-                    <h3>Subscribe to Well+Good</h3>
-                    <div className="desc">
-                        <p>
-                            Get your daily dose of wellness delivered straight
-                            to your inbox.{" "}
-                        </p>
+                <div className="content-container">
+                    <div className="close">
+                        {" "}
+                        <i className="fa-solid fa-xmark"></i>
                     </div>
+                    <div className="content">
+                        <h3>Subscribe to Well+Good</h3>
+                        <div className="desc">
+                            <p>
+                                Get your daily dose of wellness delivered
+                                straight to your inbox.{" "}
+                            </p>
+                        </div>
 
-                    <form className="form">
-                        <input type="text" placeholder="example@gmail.com" />
-                        <button className="normal">Sign Up</button>
-                    </form>
+                        <form className="pop-form">
+                            <input
+                                type="text"
+                                placeholder="example@gmail.com"
+                            />
+                            <button className="pop-btn">Sign Up</button>
+                        </form>
+                    </div>
                     <div className="bottom-line">
                         <span>Need Help?</span>
                         <a href="">

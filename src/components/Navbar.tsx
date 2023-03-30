@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./css/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import SideBarToggle from "./SideBarToggle";
 import "../components/css/side-bar-toggle.css";
 import { SidebarData } from "./sideBarData";
-import { setNavVisible } from "../redux/reducers/eventsSlice";
+import { setNavVisible, setSearchResults } from "../redux/reducers/eventsSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
@@ -16,6 +16,9 @@ const Navbar = () => {
     const [hamBurgerClicked, setHamburgerClicked] = useState(false);
     const [crossClicked, setCrossClicked] = useState(false);
     const [searchBar, setSearchBar] = useState(false);
+    // const [searchResults, setSearchResults] = useState([]);
+    const [blogPosts, setBlogPosts] = useState([]);
+    const [searchQuery, setSearchQuery] = useState<any>([]);
 
     const dispatch = useDispatch();
 
@@ -24,7 +27,7 @@ const Navbar = () => {
         dispatch(setNavVisible(!navVisible));
     };
 
-    const { navVisible, clientPortalClicked } = useSelector(
+    const { navVisible, clientPortalClicked, searchResults } = useSelector(
         (state: RootState) => state.events
     );
 
@@ -56,10 +59,25 @@ const Navbar = () => {
         handleNavVisible();
     }, []);
 
+    const navigate = useNavigate();
+
     const handleSearchBar = () => {
         setSearchBar(!searchBar);
     };
 
+    const fetchBlogPosts = async (searchQuery: any) => {
+        const response = await fetch(
+            `http://localhost:8000/api/blog/posts-list?search=${searchQuery}`
+        );
+        const data = await response.json();
+        // setBlogPosts(data);
+        dispatch(setSearchResults(data));
+    };
+
+    const handleSearch = () => {
+        fetchBlogPosts(searchQuery);
+        navigate("/search");
+    };
     return (
         // TODO: correct this if needed and check the html elements stack of the app as this is the biggest div of dom
         // big-div or top-level-div
@@ -76,8 +94,14 @@ const Navbar = () => {
             >
                 <div className="search-area">
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search Here..." />
+                    <input
+                        type="text"
+                        placeholder="Search Here..."
+                        onChange={(event) => setSearchQuery(event.target.value)}
+                    />
+                    <button onClick={handleSearch}>Search</button>
                 </div>
+                <div></div>
             </div>
             {/* HIDDEN SEARCH BAR ENDS HERE */}
             <div
@@ -209,6 +233,15 @@ const Navbar = () => {
                             : "fa-solid fa-magnifying-glass"
                     }
                 ></i>
+                {/* <div>
+                    {searchResults.map((post: any) => (
+                        <div key={post.id}>
+                            <h2>{post.title}</h2>
+                            <p>{post.content}</p>
+                            <img src={post.cover_image} alt="" />
+                        </div>
+                    ))}
+                </div> */}
             </nav>
         </div>
     );

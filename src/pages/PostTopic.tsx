@@ -45,7 +45,7 @@ const PostTopic = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/api/blog/skin-care-tips/${slug}`
+                    `http://localhost:8000/api/blog/category/skin-care-tips/${slug}`
                 );
                 const data = response.data;
                 setData(data);
@@ -72,7 +72,7 @@ const PostTopic = () => {
                     );
                     setFeaturedPosts(filteredFeaturedPosts);
                 }
-                setTopics(data[0]?.topics_name[0] || []);
+                // setTopics(data[0]?.topics_name[0] || []);
 
                 // Update state with filtered data
                 setSkinCareTips(filteredSkinCareTips);
@@ -99,7 +99,8 @@ const PostTopic = () => {
 
     return (
         <PageTemplate>
-            <PageMainHeading title={topics} />
+            {/* <>{`${console.log(data)}`}</> */}
+            {/* <PageMainHeading title={topics} /> */}
             {/* {data.map((data:any) => (
                 <div key={data.id}>
                 </div>
@@ -123,7 +124,6 @@ const PostTopic = () => {
                 <SectionHeading heading="Most Recent" />
                 <div className="recent-container ">
                     {mostRecentPosts.map((recent: any) => (
-                        // <div key={recent.id}>
                         <RecentCard
                             // {...dispatch(setSelectedPost(recent))}
                             key={recent.id}
@@ -133,7 +133,6 @@ const PostTopic = () => {
                             authorSlug={recent.author.user_slug}
                             postSlug={recent.slug}
                         />
-                        // </div>
                     ))}
                 </div>
                 <SectionHeading heading="Older Post" />
