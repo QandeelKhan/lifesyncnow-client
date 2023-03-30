@@ -18,6 +18,7 @@ import RelationshipTips from "./pages/RelationshipTips";
 import Entertairment from "./pages/Entertairment";
 import AuthorBio from "./components/AuthorBio";
 import AuthorProfile from "./pages/AuthorProfile";
+import PostTopic from "./pages/PostTopic";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/skin-care-tips" element={<SkinCareTips />} />
                     {/* <Route path="/post-detail" element={<PostDetail />} /> */}
                     <Route path="/post/:slug" element={<PostDetail />} />
+                    <Route path="/topic/:slug" element={<PostTopic />} />
                     <Route
                         path="/food-and-nutrition"
                         element={<FoodAndNutrition />}

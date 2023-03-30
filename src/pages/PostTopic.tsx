@@ -31,10 +31,13 @@ const subcategory = [
 ];
 
 const PostTopic = () => {
+    const { slug } = useParams();
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
+    const [data, setData] = useState<any>([]);
+    const [topics, setTopics] = useState<any>([]);
 
     const dispatch = useDispatch();
 
@@ -42,13 +45,14 @@ const PostTopic = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:8000/api/blog/posts-list"
+                    `http://localhost:8000/api/blog/skin-care-tips/${slug}`
                 );
                 const data = response.data;
+                setData(data);
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "SKIN-CARE TIPS"
+                    (post: any) => post.category_name === "SKIN CARE TIPS"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
@@ -68,6 +72,7 @@ const PostTopic = () => {
                     );
                     setFeaturedPosts(filteredFeaturedPosts);
                 }
+                setTopics(data[0]?.topics_name[0] || []);
 
                 // Update state with filtered data
                 setSkinCareTips(filteredSkinCareTips);
@@ -94,9 +99,11 @@ const PostTopic = () => {
 
     return (
         <PageTemplate>
-            <PageMainHeading title="Skin Care Tips" />
-            <SubCategory categories={subcategory} />
-
+            <PageMainHeading title={topics} />
+            {/* {data.map((data:any) => (
+                <div key={data.id}>
+                </div>
+            ))} */}
             {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
             {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
             {/* {console.log(skinCareTips)} */}
