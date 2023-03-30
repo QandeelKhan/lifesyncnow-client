@@ -15,6 +15,7 @@ import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
+import LandingPopUp from "../components/LandingPopUp";
 const subcategory = [];
 
 const Entertairment = () => {
@@ -80,54 +81,57 @@ const Entertairment = () => {
     // };
 
     return (
-        <PageTemplate>
-            <PageMainHeading title="Entertairment" />
-            {/* <SubCategory categories={subcategory} /> */}
+        <>
+            <PageTemplate>
+                <PageMainHeading title="Entertairment" />
+                {/* <SubCategory categories={subcategory} /> */}
 
-            {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
-            {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
-            {/* {console.log(skinCareTips)} */}
-            {/* {console.log(mostRecentPosts)} */}
-            <div className="home-container">
-                <SectionHeading heading="Featured" />
-                <div className="featured-container ">
-                    {featuredPosts.map((feature: any) => (
-                        <FeaturedCard
-                            cover_image={feature.cover_image}
-                            title={feature.title}
-                            subTitle={feature.subTitle}
-                            authorSlug={feature.author.user_slug}
-                        />
-                    ))}
+                {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
+                {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
+                {/* {console.log(skinCareTips)} */}
+                {/* {console.log(mostRecentPosts)} */}
+                <div className="home-container">
+                    <SectionHeading heading="Featured" />
+                    <div className="featured-container ">
+                        {featuredPosts.map((feature: any) => (
+                            <FeaturedCard
+                                cover_image={feature.cover_image}
+                                title={feature.title}
+                                subTitle={feature.subTitle}
+                                authorSlug={feature.author.user_slug}
+                            />
+                        ))}
+                    </div>
+                    <SectionHeading heading="Most Recent" />
+                    <div className="recent-container ">
+                        {mostRecentPosts.map((recent: any) => (
+                            // <div key={recent.id}>
+                            <RecentCard
+                                // {...dispatch(setSelectedPost(recent))}
+                                key={recent.id}
+                                cover_image={recent.cover_image}
+                                title={recent.title}
+                                full_name={recent.full_name}
+                                authorSlug={recent.author.user_slug}
+                                postSlug={recent.slug}
+                            />
+                            // </div>
+                        ))}
+                    </div>
+                    <SectionHeading heading="Older Post" />
+                    <div className="older-container">
+                        {olderPosts.map((older: any) => (
+                            <OlderCard
+                                cover_image={older.cover_image}
+                                title={older.title}
+                                authorSlug={older.author.user_slug}
+                            />
+                        ))}
+                    </div>
                 </div>
-                <SectionHeading heading="Most Recent" />
-                <div className="recent-container ">
-                    {mostRecentPosts.map((recent: any) => (
-                        // <div key={recent.id}>
-                        <RecentCard
-                            // {...dispatch(setSelectedPost(recent))}
-                            key={recent.id}
-                            cover_image={recent.cover_image}
-                            title={recent.title}
-                            full_name={recent.full_name}
-                            authorSlug={recent.author.user_slug}
-                            postSlug={recent.slug}
-                        />
-                        // </div>
-                    ))}
-                </div>
-                <SectionHeading heading="Older Post" />
-                <div className="older-container">
-                    {olderPosts.map((older: any) => (
-                        <OlderCard
-                            cover_image={older.cover_image}
-                            title={older.title}
-                            authorSlug={older.author.user_slug}
-                        />
-                    ))}
-                </div>
-            </div>
-        </PageTemplate>
+            </PageTemplate>
+            <LandingPopUp />
+        </>
     );
 };
 

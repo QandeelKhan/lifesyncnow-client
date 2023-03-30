@@ -6,7 +6,6 @@ import HeaderBanner from "../components/HeaderBanner";
 import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
-import { FeaturedData, OlderData, recentData } from "../data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";
@@ -15,26 +14,31 @@ import PageMainHeading from "../components/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
-const subcategory = [
-    "ACNE CARE",
-    "BEAUTY WEEKS",
-    "BODY CARE",
-    "DEAR DERM",
-    "EXFOLIATORS",
-    "FACE OILS",
-    "MOISTURIZER",
-    "NATURAL ACNE TREATMENT",
-    "  SERUMS",
-    "SUMMER SKIN CARE",
-    "SUNSCREEN",
-    "WINTER SKIN CARE",
-];
-
+import "../components/css/subcategory.css";
 const SkinCareTips = () => {
+    const subcategory = [
+        "ACNE CARE",
+        "BEAUTY WEEKS",
+        "BODY CARE",
+        "DEAR DERM",
+        "EXFOLIATORS",
+        "FACE OILS",
+        "MOISTURIZER",
+        "NATURAL ACNE TREATMENT",
+        "  SERUMS",
+        "SUMMER SKIN CARE",
+        "SUNSCREEN",
+        "WINTER SKIN CARE",
+    ];
+
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
+    // const [topics, setTopics] = useState<any>([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
+    const [topicSlug, setTopicSlug] = useState([]);
+    const [data, setData] = useState<any>([]);
+    const [topics, setTopics] = useState<any[]>([]);
 
     const dispatch = useDispatch();
 
@@ -42,9 +46,14 @@ const SkinCareTips = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:8000/api/blog/posts-list"
+                    "http://localhost:8000/api/blog/category/skin-care-tips"
                 );
                 const data = response.data;
+
+                // const slugs = data.map((obj: any) => obj.topic.topic_slug);
+                // console.log(slugs);
+                // setTopicSlug(slugs);
+                // setData(data);
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
@@ -62,6 +71,7 @@ const SkinCareTips = () => {
                     );
                     setOlderPosts(filteredOlderPosts);
                 }
+
                 if (filteredSkinCareTips) {
                     const filteredFeaturedPosts = filteredSkinCareTips.filter(
                         (post: any) => post.featured_posts
@@ -71,6 +81,30 @@ const SkinCareTips = () => {
 
                 // Update state with filtered data
                 setSkinCareTips(filteredSkinCareTips);
+
+                // getting topic array of objects
+                // setTopics(data[0]);
+                const topicsData = data[0]?.topics_name || [];
+                const topicSlugs = data[0]?.topic_slug || [];
+                // setTopics(data[0] || []);
+                // setTopicSlug(data[0]?.topic_slug || []);
+                const extractedTopics = topicsData.map(
+                    (obj: any, index: number) => ({
+                        name: obj,
+                        slug: topicSlugs[index],
+                    })
+                );
+
+                setTopics(extractedTopics);
+
+                // topics.forEach((topicName: any) => {
+                //     if (!topics.includes(topicName.topic_name)) {
+                //         setTopics((prevTopics: any) => [
+                //             ...prevTopics,
+                //             topicName.topic_name,
+                //         ]);
+                //     }
+                // });
             } catch (error) {
                 console.error(error);
             }
@@ -95,8 +129,21 @@ const SkinCareTips = () => {
 
     return (
         <PageTemplate>
-            <PageMainHeading title="Skin Care Tips" />
-            <SubCategory categories={subcategory} />
+            <PageMainHeading title="SKIN CARE TIPS" />
+            {/* <SubCategory categories={topics} slug={topicSlug} /> */}
+            <div className="sub-category-container">
+                <div className="sub-category">
+                    {topics.map((topic: any, index: any) => (
+                        <ul key={index}>
+                            <li>
+                                <a href={`/topic/${topic.slug}`}>
+                                    {topic.name}
+                                </a>
+                            </li>
+                        </ul>
+                    ))}
+                </div>
+            </div>
 
             {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
             {/* {console.log(`skin care tips: ${skinCareTips}`)} */}

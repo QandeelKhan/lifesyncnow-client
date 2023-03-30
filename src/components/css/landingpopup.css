@@ -1,0 +1,110 @@
+.pop-up-main{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pop-up{
+    border: 1px solid black ;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+}
+.content{
+    /* border: 1px solid red; */
+    /* text-align: center; */
+    background-color: #42676b;
+    padding-top: 50px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   
+}
+.pop-up >.content> h3{
+    font-size: 36px;
+    line-height: 36px;
+    color: white;
+    margin-bottom: 10px;
+    
+}
+.desc{
+    width: 70%;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+}
+.pop-up>.content> .desc>p{
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+    font-weight: 400;
+
+}
+.form{
+    display: flex;
+    margin-top: 10px;
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 40px;
+
+}
+.form>input{
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;   
+
+}
+.form >button{
+    height: 40px;
+    background-color: white;
+    color: #42676b;
+    padding: 0 20px;
+    white-space: nowrap;
+    border: 1px solid #088178;
+    /* border-radius: 4px; */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; 
+    cursor: pointer; 
+
+}
+.bottom-line{
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+.bottom-line > span {
+    color: #42676b;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.bottom-line >a{
+    text-decoration: none;
+}
+.bottom-line >a > span{
+    color: #42676b;
+    font-weight: 800;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
