@@ -10,6 +10,7 @@ import { setNavVisible, setSearchResults } from "../redux/reducers/eventsSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import NavSubscribeForm from "./forms/NavSubscribeForm";
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
@@ -19,6 +20,7 @@ const Navbar = () => {
     // const [searchResults, setSearchResults] = useState([]);
     const [blogPosts, setBlogPosts] = useState([]);
     const [searchQuery, setSearchQuery] = useState<any>([]);
+    const apiUrl = "http://localhost:8000/api/subscribe/";
 
     const dispatch = useDispatch();
 
@@ -142,18 +144,10 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
+                {/* TODO: REALLY BAD PRACTICE, DIRTY CODE */}
                 <div className="side-bar-footer">
                     <span>Become an Insider</span>
-                    <div className="email-box">
-                        {/* <label>Enter Email Address</label> */}
-                        <input
-                            type="text"
-                            id="first_name"
-                            placeholder="Enter Email Address"
-                            required
-                        />
-                    </div>
-                    <a href="/">SIGN UP</a>
+                    <NavSubscribeForm apiUrl={apiUrl} />
                 </div>
                 <div className="side-bar-icons">
                     <a href="/">

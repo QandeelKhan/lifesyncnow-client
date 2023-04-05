@@ -5,6 +5,7 @@ import PageTemplate from "../components/PageTemplate";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+
 const TermsAndConditions = () => {
     const [data, setData] = useState<any>([]);
     const [clauses, setClauses] = useState<any>([]);
@@ -34,6 +35,7 @@ const TermsAndConditions = () => {
                         <p>{claue.content}</p>
                     </div>
                 ))}
+
                 <div>
                     {clauses.map((claue: any, index: any) => (
                         <div key={index}>
