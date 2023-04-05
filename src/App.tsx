@@ -20,6 +20,7 @@ import AuthorBio from "./components/AuthorBio";
 import AuthorProfile from "./pages/AuthorProfile";
 import PostTopic from "./pages/PostTopic";
 import SearchResults from "./pages/SearchResult";
+import Advertise from "./pages/Advertise";
 
 function App() {
     return (
@@ -57,6 +58,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/privacy" element={<Privacy />} />
+                    <Route path="/advertise" element={<Advertise />} />
                     <Route path="/registration" element={<Registration />} />
                     <Route path="/login" element={<Login />} />
                     {/* <Route
