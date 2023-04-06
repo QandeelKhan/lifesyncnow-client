@@ -39,31 +39,27 @@ const AuthorProfile = () => {
         <>
             <Navbar />
             {author !== null && (
-                <div>
-                    {author.map((author: any) => (
-                        <div key={author.id}>
-                            <AuthorBio
-                                profileImage={author.profile_image}
-                                fullName={author.full_name}
-                                roleName={author.role_name}
-                                bio={author.bio}
-                                instagramAccount={author.instagram_acc}
-                                twitterAccount={author.twitter_acc}
-                            />
-                            {author.related_posts.map((post: any) => (
-                                <CardAuthorStories
-                                    firstName={author.first_name}
-                                    postTitle={post.title}
-                                    postImage={post.cover_image}
-                                    fullName={author.full_name}
-                                    authorImage={author.profile_image}
-                                    postSlug={post.slug}
-                                    userSlug={author.user_slug}
-                                />
-                            ))}
-                        </div>
+                <>
+                    <AuthorBio
+                        profileImage={author.profile_image}
+                        fullName={author.full_name}
+                        roleName={author.role_name}
+                        bio={author.bio}
+                        instagramAccount={author.instagram_acc}
+                        twitterAccount={author.twitter_acc}
+                    />
+                    {author.related_posts.map((post: any) => (
+                        <CardAuthorStories
+                            firstName={author.first_name}
+                            postTitle={post.title}
+                            postImage={post.cover_image}
+                            fullName={author.full_name}
+                            authorImage={author.profile_image}
+                            postSlug={post.slug}
+                            userSlug={author.user_slug}
+                        />
                     ))}
-                </div>
+                </>
             )}
             <NewsletterForm />
             <Footer />

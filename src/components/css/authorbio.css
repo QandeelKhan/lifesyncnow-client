@@ -7,39 +7,30 @@
     justify-content: center;
     align-items: center;
     padding: 40px;
-
-
-    
+    height: 100%;
 }
 .content-container{
     /* border: 2px solid black; */
     display: flex;
-
-
+    align-items: center;
 }
 .img-container{
     /* border: 2px solid green; */
-    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* align-self: center; */
     padding: 20px;
-    
-
 }
 .img-container>.author-img{
     border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-  
-    
+    max-width: 50%;
 }
 .author-info{
     /* border: 2px solid yellow; */
-    flex: 3;
     padding: 20px;
-
-
-
-   
-
+    width: 100%;
 }
 .author-info > h1{
     color: #5a5656;

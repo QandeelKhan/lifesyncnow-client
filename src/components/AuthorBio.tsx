@@ -36,7 +36,6 @@ const AuthorBio = (props: any) => {
             <div>
                 <div className="content-container">
                     <span className="img-container">
-                        {/* <h1>Left</h1> */}
                         <img
                             className="author-img"
                             src={props.profileImage}
