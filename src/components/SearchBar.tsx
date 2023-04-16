@@ -1,17 +1,12 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-    setSearchResults,
-    setSearchQuery,
-} from "../redux/reducers/eventsSlice";
+import { setSearchBar, setSearchQuery } from "../redux/reducers/eventsSlice";
 import "../components/css/searchbar.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
 const SearchBar = (props: any) => {
-    const inputRef = useRef<HTMLInputElement | null>(null); // create a reference to the input element
-
     const { searchQuery, searchBar } = useSelector(
         (state: RootState) => state.events
     );
@@ -25,24 +20,33 @@ const SearchBar = (props: any) => {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setSearchQuery(event.target.value));
+        dispatch(setSearchBar(true));
+    };
+    const handleSearchClose = () => {
+        dispatch(setSearchBar(false));
     };
 
     return (
-        <div
-            className={`hidden-search-main-container ${
-                searchBar ? "active" : ""
-            }`}
-        >
-            <form onSubmit={handleSearch} className="search-area">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <input
-                    type="text"
-                    placeholder="Search Here..."
-                    onChange={handleInputChange}
-                    ref={props.inputRef} // assign the ref to the input element
-                />
-            </form>
-        </div>
+        <>
+            {searchBar && (
+                <div className="sidebar-overlay" onClick={handleSearchClose} />
+            )}
+            <div
+                className={`hidden-search-main-container ${
+                    searchBar ? "active" : ""
+                }`}
+            >
+                <form onSubmit={handleSearch} className="search-area">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        placeholder="Search Here..."
+                        onChange={handleInputChange}
+                        ref={props.inputRef} // assign the ref to the input element
+                    />
+                </form>
+            </div>
+        </>
     );
 };
 

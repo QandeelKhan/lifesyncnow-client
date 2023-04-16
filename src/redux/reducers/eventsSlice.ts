@@ -11,6 +11,7 @@ interface EventState {
     crossClicked: boolean;
     searchQuery: "";
     searchBar: boolean;
+    searchBarVisible: boolean;
 }
 
 const eventsState: EventState = {
@@ -28,6 +29,7 @@ const eventsState: EventState = {
     crossClicked: false,
     searchQuery: "",
     searchBar: false,
+    searchBarVisible: false,
 };
 
 export const eventsSlice = createSlice({
@@ -42,6 +44,9 @@ export const eventsSlice = createSlice({
         },
         setSearchBar: (state, action: { payload: boolean }) => {
             state.searchBar = action.payload;
+        },
+        setSearchBarVisible: (state, action: { payload: boolean }) => {
+            state.searchBarVisible = action.payload;
         },
         setSearchQuery: (state, action) => {
             state.searchQuery = action.payload;
@@ -97,6 +102,7 @@ export const {
     setCrossClicked,
     setSearchQuery,
     setSearchBar,
+    setSearchBarVisible,
 } = eventsSlice.actions;
 
 export default eventsSlice.reducer;
