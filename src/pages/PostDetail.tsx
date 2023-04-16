@@ -33,27 +33,7 @@ const PostDetail = () => {
         fetchData();
     }, []);
 
-    // if (!post) {
-    //     return <div>Loading...</div>;
-    // }
-
-    // const formattedText = post.content.replace(/\n/g, "<br>");
-    // const formattedTexts = selectedPost.content.replace(/\n/g, "<br>");
-
-    {
-        /* {console.log(selectedPost)} */
-    }
-    {
-        /* {post.paragraphs.map((paragraph: any) => (
-        <div key={paragraph.id}>
-            <h3>{paragraph.paragraph_title}</h3>
-            <p>{paragraph.paragraph_content}</p>
-        </div>
-    ))} */
-    }
-    {
-        /* Render the rest of the post content here */
-    }
+    const formattedText = post?.content?.replace(/\n/g, "<br />");
     return (
         <PageTemplate>
             <>{console.log(post)}</>
@@ -115,7 +95,11 @@ const PostDetail = () => {
                                     </div>
                                 </div>
                                 <div className="main-article">
-                                    <span>{post.content}</span>
+                                    <span
+                                        dangerouslySetInnerHTML={{
+                                            __html: formattedText,
+                                        }}
+                                    />
                                     <div className="post-mid-image">
                                         <img
                                             src="post-mid-iamge.jpeg"

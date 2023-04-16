@@ -7,6 +7,10 @@ interface EventState {
     sideBarVisible: boolean;
     clientPortalClicked: boolean;
     searchResults: any[];
+    hamBurgerClicked: boolean;
+    crossClicked: boolean;
+    searchQuery: "";
+    searchBar: boolean;
 }
 
 const eventsState: EventState = {
@@ -20,6 +24,10 @@ const eventsState: EventState = {
     gearOpen: false,
     clientPortalClicked: false,
     searchResults: [],
+    hamBurgerClicked: false,
+    crossClicked: false,
+    searchQuery: "",
+    searchBar: false,
 };
 
 export const eventsSlice = createSlice({
@@ -28,6 +36,18 @@ export const eventsSlice = createSlice({
     reducers: {
         setNavVisible: (state, action: { payload: boolean }) => {
             state.navVisible = action.payload;
+        },
+        setHamBurgerClicked: (state, action: { payload: boolean }) => {
+            state.hamBurgerClicked = action.payload;
+        },
+        setSearchBar: (state, action: { payload: boolean }) => {
+            state.searchBar = action.payload;
+        },
+        setSearchQuery: (state, action) => {
+            state.searchQuery = action.payload;
+        },
+        setCrossClicked: (state, action: { payload: boolean }) => {
+            state.crossClicked = action.payload;
         },
         setGearOpen: (state, action: { payload: boolean }) => {
             state.gearOpen = action.payload;
@@ -73,6 +93,10 @@ export const {
     setNavVisible,
     setClientPortalClicked,
     setSearchResults,
+    setHamBurgerClicked,
+    setCrossClicked,
+    setSearchQuery,
+    setSearchBar,
 } = eventsSlice.actions;
 
 export default eventsSlice.reducer;

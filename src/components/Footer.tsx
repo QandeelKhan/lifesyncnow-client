@@ -29,7 +29,7 @@ const Footer = (props: any) => {
                 <Link to="/privacy">PRIVACY POLICY</Link>
                 <Link to="/terms-and-conditions">TERMS & CONDITIONS</Link>
                 <Link to="/advertise">ADVERTISE</Link>
-                <Link to="/cookie-notice">Cookie Notice</Link>
+                {/* <Link to="/cookie-notice">Cookie Notice</Link> */}
             </div>
             <div className="col">
                 <h4>Topics</h4>

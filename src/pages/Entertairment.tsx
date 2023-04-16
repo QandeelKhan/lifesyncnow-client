@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import LandingPopUp from "../components/LandingPopUp";
 const subcategory = [];
 
-const Entertairment = () => {
+const Entertainment = () => {
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     const [skinCareTips, setSkinCareTips] = useState([]);
     const [olderPosts, setOlderPosts] = useState([]);
@@ -135,4 +135,4 @@ const Entertairment = () => {
     );
 };
 
-export default Entertairment;
+export default Entertainment;

@@ -1,38 +1,46 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {
+    setSearchResults,
+    setSearchQuery,
+} from "../redux/reducers/eventsSlice";
+import "../components/css/searchbar.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const SearchBar = (props: any) => {
-    const [searchBar, setSearchBar] = useState(false);
-    const [searchQuery, setSearchQuery] = useState("");
+    const inputRef = useRef<HTMLInputElement | null>(null); // create a reference to the input element
 
-    const handleInputChange = (e: any) => {
-        setSearchQuery(e.target.value);
+    const { searchQuery, searchBar } = useSelector(
+        (state: RootState) => state.events
+    );
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        navigate(`/search/${searchQuery}`);
     };
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        props.handleSearch(searchQuery);
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setSearchQuery(event.target.value));
     };
 
-    const handleSearchBar = () => {
-        setSearchBar(!searchBar);
-    };
     return (
         <div
             className={`hidden-search-main-container ${
                 searchBar ? "active" : ""
             }`}
         >
-            <form onSubmit={handleSubmit} className="search-area">
+            <form onSubmit={handleSearch} className="search-area">
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input
                     type="text"
-                    placeholder="Search posts"
-                    value={searchQuery}
+                    placeholder="Search Here..."
                     onChange={handleInputChange}
+                    ref={props.inputRef} // assign the ref to the input element
                 />
-                <div className="search-button-container">
-                    <button type="submit">Search</button>
-                </div>
             </form>
         </div>
     );

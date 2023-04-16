@@ -29,7 +29,11 @@ const NavSubscribeForm: React.FC<SubscribeFormProps> = ({ apiUrl }) => {
             })
             .catch((error) => {
                 setIsSuccess(false);
-                setErrorMessage(error.message);
+                if (error.response) {
+                    setErrorMessage(error.response.data.email[0]);
+                } else {
+                    setErrorMessage(error.message);
+                }
             })
             .finally(() => {
                 setIsLoading(false);
@@ -55,7 +59,7 @@ const NavSubscribeForm: React.FC<SubscribeFormProps> = ({ apiUrl }) => {
                 {isLoading ? "Subscribing..." : "Subscribe"}
             </button>
             {isSuccess && <p>Successfully subscribed!</p>}
-            {errorMessage && <p>{errorMessage}</p>}
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
         </form>
     );
 };

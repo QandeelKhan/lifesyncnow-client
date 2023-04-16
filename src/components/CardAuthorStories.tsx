@@ -5,6 +5,7 @@ const CardAuthorStories = (props: any) => {
     return (
         <section className="author-strories-section">
             <div className="stories-author">
+                {/* TODO: WHAT IS THIS?, don't you see that when this gonna render inside the parent it can print out author name'Stories above each post! */}
                 <h2 className="author-name">{props.firstName}'s Stories</h2>
                 <hr className="break" />
             </div>

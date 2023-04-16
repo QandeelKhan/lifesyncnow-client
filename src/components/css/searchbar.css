@@ -1,0 +1,39 @@
+/* TODO:correct this as this is the biggest div of dom */
+.hidden-search-main-container {
+    width: 100%;
+    background-color: #f5e7e7;
+    top: -100px;
+    position: fixed;
+    /* right: 0; */
+    transition: 850ms;
+    /* z-index: -1; */
+    /* height: 100vh; */
+}
+.hidden-search-main-container.active {
+    top: 70px;
+    transition: 350ms;
+    /* z-index: -1; */
+}
+.search-area {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+}
+.search-area i {
+    font-size: 17px;
+    color: rgb(99, 98, 98);
+}
+.search-icon {
+    cursor: pointer;
+}
+.search-area input {
+    width: 100%;
+    line-height: 20px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    background: transparent;
+}

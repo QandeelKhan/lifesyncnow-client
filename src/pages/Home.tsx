@@ -5,7 +5,6 @@ import FeaturedCard from "../components/FeaturedCard";
 import OlderCard from "../components/OlderCard";
 import RecentCard from "../components/RecentCard";
 import SectionHeading from "../components/SectionHeading";
-import Sidebar from "../components/Sidebar";
 import { FeaturedData, recentData } from "../data";
 import PageTemplate from "../components/PageTemplate";
 import PostDetail from "./PostDetail";

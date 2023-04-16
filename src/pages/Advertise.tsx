@@ -26,12 +26,24 @@ const Advertise = () => {
                     <div className="advertise-page-content">
                         <p>{myData.content}</p>
                         {myData.paragraphs_advertise_well_good.map(
-                            (paragraph: any) => (
-                                <div>
-                                    <p>{paragraph.paragraph_title}</p>
-                                    <p>{paragraph.paragraph_content}</p>
-                                </div>
-                            )
+                            (paragraph: any) => {
+                                const formattedText =
+                                    paragraph?.paragraph_content?.replace(
+                                        /\n/g,
+                                        "<br />"
+                                    );
+                                return (
+                                    <div key={paragraph.id}>
+                                        <p>{paragraph.paragraph_title}</p>
+                                        <p
+                                            dangerouslySetInnerHTML={{
+                                                __html: formattedText,
+                                            }}
+                                        />
+                                        {paragraph.paragraph_content}
+                                    </div>
+                                );
+                            }
                         )}
                         <br />
                     </div>

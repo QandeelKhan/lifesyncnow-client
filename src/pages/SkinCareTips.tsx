@@ -49,12 +49,6 @@ const SkinCareTips = () => {
                     "http://localhost:8000/api/blog/category/skin-care-tips"
                 );
                 const data = response.data;
-
-                // const slugs = data.map((obj: any) => obj.topic.topic_slug);
-                // console.log(slugs);
-                // setTopicSlug(slugs);
-                // setData(data);
-
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
                     (post: any) => post.category_name === "SKIN CARE TIPS"

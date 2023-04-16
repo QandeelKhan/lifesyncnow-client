@@ -15,7 +15,7 @@ import Privacy from "./pages/Privacy";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import RelationshipTips from "./pages/RelationshipTips";
-import Entertairment from "./pages/Entertairment";
+import Entertainment from "./pages/Entertairment";
 import AuthorBio from "./components/AuthorBio";
 import AuthorProfile from "./pages/AuthorProfile";
 import PostTopic from "./pages/PostTopic";
@@ -32,7 +32,7 @@ function App() {
                     {/* <Route path="/post-detail" element={<PostDetail />} /> */}
                     <Route path="/post/:slug" element={<PostDetail />} />
                     <Route path="/topic/:slug" element={<PostTopic />} />
-                    <Route path="search/" element={<SearchResults />} />
+                    <Route path="/search/:query" element={<SearchResults />} />
                     <Route
                         path="/food-and-nutrition"
                         element={<FoodAndNutrition />}
@@ -52,7 +52,7 @@ function App() {
                     />
                     <Route path="/cookie-notice" element={<CookieNotice />} />
                     {/* TODO: correct entertainment spellings at all instances */}
-                    <Route path="/entertairment" element={<Entertairment />} />
+                    <Route path="/entertainment" element={<Entertainment />} />
                     {/* <Route path="/author/:slug" element={<AuthorBio />} /> */}
                     <Route path="/author/:slug" element={<AuthorProfile />} />
                     <Route path="/about" element={<About />} />

@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./css/navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import "../components/css/searchbar.css";
+import { Link } from "react-router-dom";
 // import SideBarToggle from "./SideBarToggle";
-import "../components/css/side-bar-toggle.css";
-import { SidebarData } from "./sideBarData";
-import { setNavVisible, setSearchResults } from "../redux/reducers/eventsSlice";
+import "../components/css/sidebar.css";
+import {
+    setCrossClicked,
+    setHamBurgerClicked,
+    setNavVisible,
+    setSearchBar,
+} from "../redux/reducers/eventsSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import NavSubscribeForm from "./forms/NavSubscribeForm";
+import SideBar from "./SideBar";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
-    const [hamBurgerClicked, setHamburgerClicked] = useState(false);
-    const [crossClicked, setCrossClicked] = useState(false);
-    const [searchBar, setSearchBar] = useState(false);
     // const [searchResults, setSearchResults] = useState([]);
-    const [blogPosts, setBlogPosts] = useState([]);
-    const [searchQuery, setSearchQuery] = useState<any>([]);
-    const apiUrl = "http://localhost:8000/api/subscribe/";
+    const inputRef = useRef<HTMLInputElement | null>(null); // create a reference to the input element
 
     const dispatch = useDispatch();
 
@@ -29,21 +30,13 @@ const Navbar = () => {
         dispatch(setNavVisible(!navVisible));
     };
 
-    const { navVisible, clientPortalClicked, searchResults } = useSelector(
-        (state: RootState) => state.events
-    );
+    const { navVisible, searchBar, hamBurgerClicked, crossClicked } =
+        useSelector((state: RootState) => state.events);
 
     const handleHamBurgerClick = () => {
-        setHamburgerClicked(true);
-        setCrossClicked(false);
+        dispatch(setHamBurgerClicked(true));
+        dispatch(setCrossClicked(false));
         dispatch(setNavVisible(true));
-    };
-
-    const handleCrossClick = () => {
-        setHamburgerClicked(false);
-        setCrossClicked(true);
-        dispatch(setNavVisible(false));
-        // setToggleBar(!toggleBar);
     };
 
     const handleNavVisible = () => {
@@ -52,7 +45,7 @@ const Navbar = () => {
             dispatch(setNavVisible(true));
         }
         if (crossClicked) {
-            setHamburgerClicked(false);
+            dispatch(setHamBurgerClicked(false));
             dispatch(setNavVisible(false));
         }
     };
@@ -61,25 +54,14 @@ const Navbar = () => {
         handleNavVisible();
     }, []);
 
-    const navigate = useNavigate();
-
     const handleSearchBar = () => {
-        setSearchBar(!searchBar);
+        dispatch(setSearchBar(!searchBar));
+        if (inputRef.current) {
+            // focus the input element when the search bar is opened
+            inputRef.current.focus();
+        }
     };
 
-    const fetchBlogPosts = async (searchQuery: any) => {
-        const response = await fetch(
-            `http://localhost:8000/api/blog/posts-list?search=${searchQuery}`
-        );
-        const data = await response.json();
-        // setBlogPosts(data);
-        dispatch(setSearchResults(data));
-    };
-
-    const handleSearch = () => {
-        fetchBlogPosts(searchQuery);
-        navigate("/search");
-    };
     return (
         // TODO: correct this if needed and check the html elements stack of the app as this is the biggest div of dom
         // big-div or top-level-div
@@ -89,84 +71,9 @@ const Navbar = () => {
             }`}
         >
             {/* HIDDEN SEARCH BAR STARTS HERE */}
-            <div
-                className={`hidden-search-main-container ${
-                    searchBar ? "active" : ""
-                }`}
-            >
-                <form onSubmit={handleSearch} className="search-area">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                    <input
-                        type="text"
-                        placeholder="Search Here..."
-                        onChange={(event) => setSearchQuery(event.target.value)}
-                    />
-                </form>
-            </div>
+            <SearchBar inputRef={inputRef} />
             {/* HIDDEN SEARCH BAR ENDS HERE */}
-            <div
-                className={
-                    navVisible
-                        ? "side-bar-main-container active"
-                        : "side-bar-main-container"
-                }
-            >
-                <div className="toggle-close-icon" onClick={handleCrossClick}>
-                    <i className="fa-solid fa-xmark" />
-                </div>
-                <div className="side-bar-menu">
-                    <ul>
-                        {SidebarData.map((item, index) => {
-                            return (
-                                <li key={index} className={item.cName}>
-                                    <a href={item.path}>{item.title}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-                <div className="side-bar-menu">
-                    <ul>
-                        <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
-                        </li>
-                        <li>
-                            <a href="/">WELL+GOOD TALKS</a>
-                        </li>
-                        <li>
-                            <a href="/">WELL+GOOD STUDIO SESSIONS</a>
-                        </li>
-                        <li>
-                            <a href="/">WELL+GOOD RETREATS</a>
-                        </li>
-                        <li>
-                            <a href="/">WELL+GOOD COOKBOOK</a>
-                        </li>
-                    </ul>
-                </div>
-                {/* TODO: REALLY BAD PRACTICE, DIRTY CODE */}
-                <div className="side-bar-footer">
-                    <span>Become an Insider</span>
-                    <NavSubscribeForm apiUrl={apiUrl} />
-                </div>
-                <div className="side-bar-icons">
-                    <a href="/">
-                        <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="/">
-                        <i className="fa-brands fa-pinterest-p"></i>
-                    </a>
-                    <a href="/">
-                        <i className="fa-brands fa-twitter"></i>
-                    </a>
-                    <a href="/">
-                        <i className="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="/">
-                        <i className="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
+            <SideBar />
             {/* actual navbar */}
             <nav className="navbar">
                 <div className="open-side-bar" onClick={handleHamBurgerClick}>
@@ -207,7 +114,7 @@ const Navbar = () => {
                         <Link to="/relationship-tips">RELATIONSHIP TIPS</Link>
                     </li>
                     <li>
-                        <Link to="/entertairment">ENTERTAIRMENT</Link>
+                        <Link to="/entertainment">ENTERTAINMENT</Link>
                     </li>
                 </ul>
 
@@ -219,11 +126,11 @@ const Navbar = () => {
                 </button>
                 <i
                     onClick={handleSearchBar}
-                    className={
+                    className={`search-icon ${
                         searchBar
                             ? "fa-solid fa-xmark"
                             : "fa-solid fa-magnifying-glass"
-                    }
+                    }`}
                 ></i>
                 {/* <div>
                     {searchResults.map((post: any) => (
