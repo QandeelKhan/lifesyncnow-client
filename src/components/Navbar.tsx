@@ -72,8 +72,8 @@ const Navbar = () => {
         >
             {/* HIDDEN SEARCH BAR STARTS HERE */}
             <SearchBar inputRef={inputRef} />
-            {/* HIDDEN SEARCH BAR ENDS HERE */}
             <SideBar />
+            {/* HIDDEN SEARCH BAR ENDS HERE */}
             {/* actual navbar */}
             <nav className="navbar">
                 <div className="open-side-bar" onClick={handleHamBurgerClick}>

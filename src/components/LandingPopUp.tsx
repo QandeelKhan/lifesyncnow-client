@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import SubscribeForm from "./forms/FooterSubscribeForm";
+import FooterSubscribeForm from "./forms/FooterSubscribeForm";
 
 interface SubscribeFormProps {
     apiUrl: string;
 }
 const LandingPopUp = () => {
-    const apiUrl = "http://localhost:8000/api/subscribe/";
+    const apiUrl =
+        process.env.REACT_APP_BASE_URL_DEVELOPMENT ||
+        "http://localhost:8000/api/subscribe/";
     const [isHidden, setIsHidden] = useState(false);
 
     const toggleVisibility = () => {
@@ -35,7 +37,7 @@ const LandingPopUp = () => {
                                 straight to your inbox.{" "}
                             </p>
                         </div>
-                        <SubscribeForm apiUrl={apiUrl} />
+                        <FooterSubscribeForm apiUrl={apiUrl} />
                     </div>
                     <div className="bottom-line">
                         <span>Need Help?</span>

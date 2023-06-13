@@ -6,7 +6,7 @@ interface SubscribeFormProps {
     apiUrl: string;
 }
 
-const SubscribeForm: React.FC<SubscribeFormProps> = ({ apiUrl }) => {
+const FooterSubscribeForm: React.FC<SubscribeFormProps> = ({ apiUrl }) => {
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
@@ -60,4 +60,4 @@ const SubscribeForm: React.FC<SubscribeFormProps> = ({ apiUrl }) => {
     );
 };
 
-export default SubscribeForm;
+export default FooterSubscribeForm;

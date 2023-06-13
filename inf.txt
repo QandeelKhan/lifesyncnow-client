@@ -170,3 +170,38 @@ export const ContactData = [
 ]
 
     
+# brandings:
+symbolize
+1: HeathHive
+2: WellnessZoneX
+3: HealthFlare
+4: FitnessFusion
+5: HealthyHype
+6: WellnessVerse
+7: healthyVerse
+8: healthyHub
+
+our application is single, not the cluster based becuase we needed to use kubernettes and docker-swarm for that, which i have no knowledge for them.
+digitalocean token for life-sync-now: dop_v1_dd66186ffe4d81e9e70f315f78ce677a59c0879c8bce4126f546ede24ae914e8
+
+❯ docker-machine create(rather then "create" we can use "rm --f life-sync-now-server" to remove this machine) \
+        --driver digitalocean \
+        --digitalocean-access-token dop_v1_dd66186ffe4d81e9e70f315f78ce677a59c0879c8bce4126f546ede24ae914e8 \
+        # --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \ (only add this line in case of any error or problem)
+        --digitalocean-image ubuntu-22-10-x64 \
+        life-sync-now-server(as a server name, we can call it whatever);
+after that we can see a droplet created with the name of life-sync-now-server, a droplet on digitalocean means a server.
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, 
+run: docker-machine env life-sync-now-server
+cmd:"docker-machine ls" (to see the available created machines names and ip info on our computer)
+as now we can access the machine ip we can use ssh(secure shell(a protocol to connect with servers)) to connect with our server by opening a secure shell.
+the beauty of docker machine is that we donot have to create the ssh manually and hide all of that complexity of creating and ssh.
+cmd: "docker-machine ssh life-sync-now-server" (so we can simply type this followed to logged-in(connect) to to our machine using ssh, and all of this was setup when we created this docker machine(great job), after loging in into ssh we can type "cd /" and press ls to see all the directories of our ubuntu os)
+to run the production compose file: 
+docker-compose -f docker-compose.prod.yml build
+after doing all the shit mentioned we finally have to run "docker-compose -f docker-compose.prod.yml up -d"
+this will gona build our image on the server we created earlier with the docker-machine.
+"docker-compose -f docker-compose.prod.yml up -d --biuld"
+
+"docker-machine regenerate-certs life-sync-now-server"(sometime require for docker-machine whille deploying because of not connecting to the server, so then aga)
+to run using wsgi: gunicorn OurBlogBackend.wsgi:application

@@ -29,7 +29,6 @@ const SideBar = () => {
             {navVisible && (
                 <div className="sidebar-overlay" onClick={handleCrossClick} />
             )}
-
             <div
                 className={
                     navVisible

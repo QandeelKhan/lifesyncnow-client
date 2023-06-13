@@ -13,6 +13,7 @@ interface props {
 
 const PageTemplate = ({ children }: props) => {
     const [data, setData] = useState<any>([]);
+    const apiUrl = "http://localhost:8000/api/subscribe/";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +34,7 @@ const PageTemplate = ({ children }: props) => {
         <>
             <Navbar />
             <div className="template-children">{children}</div>
-            <NewsletterForm />
+            <NewsletterForm apiUrl={apiUrl} />
             {data.map((myData: any) => (
                 <Footer
                     id={myData.id}
