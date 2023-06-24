@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios("http://localhost:8000/api/terms");
+            const result = await axios("/api/terms");
 
             // Create a new array with all the clauses
             const clausesArr = result.data.reduce((acc: any, item: any) => {

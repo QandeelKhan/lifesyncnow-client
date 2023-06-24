@@ -21,7 +21,8 @@ const PostDetail = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/api/blog/post/${slug}`
+                    `/api/blog/post/${slug}/`
+                    // `http://localhost:8000/api/blog/post/${slug}`
                 );
                 const data = response.data;
                 setPost(data);
@@ -76,7 +77,7 @@ const PostDetail = () => {
                             <div className="post-right-article">
                                 <div className="border-article">
                                     <div className="shop-logo">
-                                        <span>Well Plus Good</span>
+                                        <span>LIFE SYNC NOW</span>
                                         <span>SHOP</span>
                                     </div>
                                     <div className="shop-text">
@@ -253,7 +254,7 @@ export default PostDetail;
 //                     <div className="post-right-article">
 //                         <div className="border-article">
 //                             <div className="shop-logo">
-//                                 <span>Well Plus Good</span>
+//                                 <span>LIFE SYNC NOW</span>
 //                                 <span>SHOP</span>
 //                             </div>
 //                             <div className="shop-text">

@@ -17,7 +17,7 @@ const SearchResults = () => {
     useEffect(() => {
         const fetchSearchResults = async () => {
             const response = await fetch(
-                `http://localhost:8000/api/blog/posts-list?search=${searchQuery}`
+                `/api/blog/posts-list/?search=${searchQuery}`
             );
             const data = await response.json();
             dispatch(setSearchResults(data));

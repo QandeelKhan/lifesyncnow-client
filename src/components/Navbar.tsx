@@ -81,7 +81,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-brand">
                     <Link className="logo-name" to="/">
-                        WELL PLUS GOOD
+                        LIFE SYNC NOW
                     </Link>
                 </div>
                 <button

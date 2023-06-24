@@ -15,19 +15,19 @@ const CookieNotice = () => {
                 </p>
                 <p>
                     PLEASE READ THE FOLLOWING TERMS AND CONDITIONS CAREFULLY.
-                    The www.wellandgoodnyc.com Web site (the “Web Site” or
-                    “www.wellandgoodnyc.com”) is provided by Well + GoodNYC
-                    (“Well + Good”) and/or its affiliates and subsidiaries for
-                    your and others’ personal, non-commercial enjoyment, subject
-                    to the terms of these terms and conditions of use and all
+                    The www.lifesyncnow.com Web site (the “Web Site” or
+                    “www.lifesyncnow.com”) is provided by Well + GoodNYC (“Well
+                    + Good”) and/or its affiliates and subsidiaries for your and
+                    others’ personal, non-commercial enjoyment, subject to the
+                    terms of these terms and conditions of use and all
                     modifications thereto (“Terms and Conditions”), and the
                     rules that may be published from time to time by Well+Good.
                     By using this site, you are deemed to have agreed to these
                     terms and conditions of use. Well+Good may change the Terms
                     and Conditions from time to time and at any time, and
                     without actual notice to you. All such changes to these
-                    Terms and Conditions will appear on www.wellandgoodnyc.com.
-                    By using this site after we post any changes, you agree to
+                    Terms and Conditions will appear on www.lifesyncnow.com. By
+                    using this site after we post any changes, you agree to
                     accept those changes, whether or not you have reviewed them.
                     If at any time you choose not to accept these Terms and
                     Conditions of use, please do not use this site.

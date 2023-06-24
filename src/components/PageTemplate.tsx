@@ -4,40 +4,80 @@ import "./css/page-template.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import NewsletterForm from "./NewsletterForm";
+import { ClipLoader } from "react-spinners"; // Example: Using react-spinners
 
-// TODO: install react dev tools in browser to see the components and props hierarchy
-
-interface props {
+interface Props {
     children: ReactNode;
 }
 
-const PageTemplate = ({ children }: props) => {
-    const [data, setData] = useState<any>([]);
-    const apiUrl = "http://localhost:8000/api/subscribe/";
+const PageTemplate = ({ children }: Props) => {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState("");
+
+    const apiUrl = "/api/subscribe/";
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(
-                    "http://localhost:8000/api/page-templates/"
-                );
+                const response = await axios.get("/api/page-templates/");
                 const data = response.data;
                 setData(data);
+                setIsLoading(false);
             } catch (error) {
                 console.error(error);
+                setIsLoading(false);
+                setError(error as string);
             }
         };
 
         fetchData();
     }, []);
+
+    if (isLoading) {
+        return (
+            <>
+                <Navbar />
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    <ClipLoader
+                        color="#088178"
+                        loading={isLoading}
+                        size={100}
+                    />
+                </div>
+                <div className="template-children">{children}</div>
+                <NewsletterForm apiUrl={apiUrl} />
+            </>
+        );
+    }
+
     return (
         <>
             <Navbar />
+            {error && (
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginTop: "3%",
+                        marginBottom: "3%",
+                    }}
+                >
+                    <h3>oops... No data comes from server</h3>
+                </div>
+            )}
             <div className="template-children">{children}</div>
             <NewsletterForm apiUrl={apiUrl} />
             {data.map((myData: any) => (
                 <Footer
-                    id={myData.id}
+                    key={myData.id}
                     logoName={myData.logo_name}
                     description={myData.logo_description}
                     copyright={myData.copyright}
@@ -46,7 +86,6 @@ const PageTemplate = ({ children }: props) => {
                         <a href={myData.follow_us.facebook_link}>
                             <i className="fab fa-facebook-f"></i>
                         </a>
-
                         <a href={myData.follow_us.twitter_link}>
                             <i className="fab fa-twitter"></i>
                         </a>

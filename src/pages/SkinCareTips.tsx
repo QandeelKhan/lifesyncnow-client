@@ -45,9 +45,7 @@ const SkinCareTips = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(
-                    "http://localhost:8000/api/blog/category/skin-care-tips"
-                );
+                const response = await axios.get("/category/skin-care-tips/");
                 const data = response.data;
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(

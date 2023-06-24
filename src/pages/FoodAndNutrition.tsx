@@ -46,7 +46,9 @@ const SkinCareTips = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "http://localhost:8000/api/blog/category/food-and-nutrition"
+                    // "http://localhost:8000/api/blog/category/food-and-nutrition/"
+                    // "https://lifesyncnow.com/api/blog/category/food-and-nutrition/"
+                    "/api/blog/category/food-and-nutrition/"
                 );
                 const data = response.data;
 

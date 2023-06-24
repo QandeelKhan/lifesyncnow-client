@@ -27,7 +27,7 @@ const RecentCard = ({
                 <img src={cover_image} className="recent-img" alt="Card" />
             </div>
             <div className="recent-body">
-                <a href={`/post/${postSlug}`} className="recent-title">
+                <a href={`/post/${postSlug}/`} className="recent-title">
                     <h3>{title} </h3>
                 </a>
                 <span>

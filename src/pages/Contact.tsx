@@ -8,7 +8,7 @@ const Contact = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/contact-us")
+            .get("/api/contact-us")
             .then((response) => {
                 setContactUs(response.data[0]);
                 setParagraphs(response.data[0].paragraphs);

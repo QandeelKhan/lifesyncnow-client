@@ -45,7 +45,7 @@ const PostTopic = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:8000/api/blog/category/skin-care-tips/${slug}`
+                    `/api/blog/category/skin-care-tips/${slug}`
                 );
                 const data = response.data;
                 setData(data);

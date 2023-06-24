@@ -5,9 +5,10 @@ interface SubscribeFormProps {
     apiUrl: string;
 }
 const LandingPopUp = () => {
-    const apiUrl =
-        process.env.REACT_APP_BASE_URL_DEVELOPMENT ||
-        "http://localhost:8000/api/subscribe/";
+    const apiUrl = "/api/subscribe/";
+    // const apiUrl =
+    //     process.env.REACT_APP_BASE_URL_DEVELOPMENT ||
+    //     "http://localhost:8000/api/subscribe/";
     const [isHidden, setIsHidden] = useState(false);
 
     const toggleVisibility = () => {

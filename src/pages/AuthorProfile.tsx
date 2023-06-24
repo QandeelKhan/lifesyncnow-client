@@ -23,9 +23,7 @@ const AuthorProfile = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(
-                    `http://localhost:8000/api/profile/${slug}/`
-                );
+                const response = await axios.get(`/api/profile/${slug}/`);
                 const data = response.data;
                 setAuthor(data);
             } catch (error) {

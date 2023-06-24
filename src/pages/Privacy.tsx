@@ -11,7 +11,7 @@ const Privacy = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/privacy")
+            .get("/api/privacy")
             .then((response) => {
                 setData(response.data);
                 setPrivacy(response.data[0]);

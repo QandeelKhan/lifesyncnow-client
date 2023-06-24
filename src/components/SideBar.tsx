@@ -12,7 +12,7 @@ import { RootState } from "../redux/store";
 import "../components/css/sidebar.css";
 
 const SideBar = () => {
-    const apiUrl = "http://localhost:8000/api/subscribe/";
+    const apiUrl = "/api/subscribe/";
 
     const { navVisible } = useSelector((state: RootState) => state.events);
 

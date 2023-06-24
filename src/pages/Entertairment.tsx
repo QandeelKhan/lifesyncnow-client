@@ -29,14 +29,12 @@ const Entertainment = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(
-                    "http://localhost:8000/api/blog/posts-list"
-                );
+                const response = await axios.get("/api/blog/posts-list/");
                 const data = response.data;
 
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
-                    (post: any) => post.category_name === "SKIN-CARE TIPS"
+                    (post: any) => post.category_name === "SKIN CARE TIPS"
                 );
                 if (filteredSkinCareTips) {
                     const mostRecentSkinCarePosts = filteredSkinCareTips.filter(
@@ -130,7 +128,6 @@ const Entertainment = () => {
                     </div>
                 </div>
             </PageTemplate>
-            <LandingPopUp />
         </>
     );
 };

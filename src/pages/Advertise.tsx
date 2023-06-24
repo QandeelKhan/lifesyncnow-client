@@ -10,7 +10,8 @@ const Advertise = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/Advertise-With-Well-Plus-Good/")
+            // TODO: THIS BACKEND URL SHOULD BE REPLACED WITH LIFE-SYNC-NOW, TO GET SAFE FROM STRIKE
+            .get("/api/advertise-with-life-sync-now/")
             .then((response) => {
                 setData(response.data);
             })

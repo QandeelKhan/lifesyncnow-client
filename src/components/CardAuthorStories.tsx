@@ -11,7 +11,7 @@ const CardAuthorStories = (props: any) => {
             </div>
             <div className="story-card">
                 <a
-                    href={`/post/${props.postSlug}`}
+                    href={`/post/${props.postSlug}/`}
                     className="store-img-container"
                 >
                     <img
@@ -23,7 +23,7 @@ const CardAuthorStories = (props: any) => {
                 <div className="story-body">
                     <a
                         style={{ display: "block" }}
-                        href={`/post/${props.postSlug}`}
+                        href={`/post/${props.postSlug}/`}
                         className="story-category"
                     >
                         FOUNDATIONS & CONCEALERS
