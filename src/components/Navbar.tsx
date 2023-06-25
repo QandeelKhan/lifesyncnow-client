@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./css/navbar.css";
-import "../components/css/searchbar.css";
+import "./css/searchbar.css";
 import { Link } from "react-router-dom";
 // import SideBarToggle from "./SideBarToggle";
-import "../components/css/sidebar.css";
+import "./css/sidebar.css";
 import {
     setCrossClicked,
     setHamBurgerClicked,

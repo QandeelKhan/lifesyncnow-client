@@ -84,93 +84,10 @@ Here's the steps to do that in the terminal:
     Push the changes to the remote repository: git push
 
 Note: Replace main and backup-branch with the actual names of your branches.
-
-
-# ui dependencies
-#1- font-awesome svg's
-
-# this is how we can implement font-awesome icons inside a component
-# import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-# import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
-# example
-# <FontAwesomeIcon icon={faUserSecret}
-#                         className="fas fa-spin"
-#                         size="xs"
-#                         // size="lg"
-#                         // size="2x"
-#                         // flip="vertical"
-#                         rotation={90}
-# />
-
-
-❯ git pull
-remote: Enumerating objects: 16, done.
-remote: Counting objects: 100% (16/16), done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 10 (delta 8), reused 8 (delta 6), pack-reused 0
-Unpacking objects: 100% (10/10), 1.14 KiB | 44.00 KiB/s, done.
-From https://github.com/QandeelKhan/our-blog-client
-   d3adadc..59a0c37  main       -> origin/main
-hint: You have divergent branches and need to specify how to reconcile them.
-hint: You can do so by running one of the following commands sometime before
-hint: your next pull:
-hint: 
-hint:   git config pull.rebase false  # merge (the default strategy)
-hint:   git config pull.rebase true   # rebase
-hint:   git config pull.ff only       # fast-forward only
-hint: 
-hint: You can replace "git config" with "git config --global" to set a default
-hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-hint: or --ff-only on the command line to override the configured default per
-hint: invocation.
-
-source venv-our-blog-backend/bin/activate
-python3 manage.py runserver
-
+# ---------To push changes from the main branch to the backup branch, 
 sudo fuser -k 8000/tcp
 
-Back-end model for Contact page
-export const ContactData = [
-    {
-        id: 1,
-        title: "This is 1st",
-        paragraphs : [
-            {
-            p1:[
-                {
-                mainheading:"paragraph",
-                maincontent:"Main heading1",
-                stepguide: [],
-                }
-            ],
-            p2:[
-                {
-                mainheading:"paragraph",
-                maincontent:"Main heading1",
-                stepguide: [
-                    {
-                   subheadin: "subheading",
-                   subContent: "sub content",
-                },
-                {
-                    subheadin: "subheading",
-                    subContent: "sub content",
-                 },
-            ],
-            }
-        ],
-            
-           
-        }
-    ],
-        
-      
-    },
-    
-]
-
-    
-# brandings:
+# AVAILABLE BRANDINGS:
 symbolize
 1: HeathHive
 2: WellnessZoneX
@@ -204,8 +121,18 @@ this will gona build our image on the server we created earlier with the docker-
 "docker-compose -f docker-compose.prod.yml up -d --biuld"
 
 "docker-machine regenerate-certs life-sync-now-server"(sometime require for docker-machine whille deploying because of not connecting to the server, so then aga)
-to run using wsgi: gunicorn OurBlogBackend.wsgi:application
-# biggest time wasting problems encounters so far:
-# 1: nginx multi-port/docker containers
-#1: aws s3: always add the bucket policy on the bucket, if using the development environment of django where we have only local http server, that's why the request will be 403 forbiddent to the s3 bucket and assets will not retrieve, this is only problem in development environment only, but it's better to add the policy to accept all requests to not get more errors.
+# SERVE DJANGO THROUGH GUNICRON PROD SERVER:
+1: Correct settings environment to load:
+Make sure to run server on which settings.py like dev.py or the prod.py and set it in the manage.py, wsgi.py, asgi.py file.
+so both reference the same settings environment, i.e OurBlogBackend.settings.dev or OurBlogBackend.settings.prod.
+2: Run guniron to serve django application: "gunicorn OurBlogBackend.wsgi:application"
+
+# BIGGEST TIME WASTING PROBLEMS ENCOUNTERED SO FAR:
+1: AWS S3: 
+Always add the bucket policy on the bucket, if using the development environment of django where we have only local http server, 
+that's why the request will be 403 forbiddent to the s3 bucket and assets will not retrieve, this is only problem in development environment only, 
+but it's better to add the policy to accept all requests to not get more errors.
+2: 
+Decision making and making changes on docker different type of configs with multiple aspects and experiments each times. 
+Every goodness comes with some cost.Don't be over complex everytime.
 

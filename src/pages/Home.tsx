@@ -13,7 +13,7 @@ const Home = (props: any) => {
     return (
         <>
             <Helmet>
-                <title>our-blog-client</title>
+                <title>lifesyncnow-client</title>
                 <meta
                     name="description"
                     content="Welcome to the portfolio of Qandeel Khan, a Full Stack Developer specializing in Python, Django, and React. Browse his projects, skills, and experience."
