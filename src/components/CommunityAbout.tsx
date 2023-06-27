@@ -10,8 +10,8 @@ const CommunityAbout = () => {
                 </div>
                 <div className="community-para">
                     <span>
-                        Without our community, Well+Good would just be words on
-                        a page—it’s you that gives the brand heart and soul.
+                        Without our community, LIFESYNCNOW would just be words
+                        on a page—it’s you that gives the brand heart and soul.
                     </span>
                 </div>
                 <div className="community-features">
@@ -19,9 +19,9 @@ const CommunityAbout = () => {
                         <div className="image">
                             <img src="cummunity-one.jpg" alt="community-pic" />
                         </div>
-                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="first">LIFESYNCNOW PODCAST</span>
                         <span className="second">
-                            Introducing Well+Good's Very First Podcast
+                            Introducing LIFESYNCNOW's Very First Podcast
                         </span>
                         <span className="third">
                             WEDNESDAY, OCTOBER 13TH, 2021
@@ -31,9 +31,9 @@ const CommunityAbout = () => {
                         <div className="image">
                             <img src="community-two.jpg" alt="community-pic" />
                         </div>
-                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="first">LIFESYNCNOW PODCAST</span>
                         <span className="second">
-                            Introducing Well+Good's Very First Podcast
+                            Introducing LIFESYNCNOW's Very First Podcast
                         </span>
                         <span className="third">
                             WEDNESDAY, OCTOBER 13TH, 2021
@@ -46,9 +46,9 @@ const CommunityAbout = () => {
                                 alt="community-pic"
                             />
                         </div>
-                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="first">LIFESYNCNOW PODCAST</span>
                         <span className="second">
-                            Introducing Well+Good's Very First Podcast
+                            Introducing LIFESYNCNOW's Very First Podcast
                         </span>
                         <span className="third">
                             WEDNESDAY, OCTOBER 13TH, 2021
@@ -58,9 +58,9 @@ const CommunityAbout = () => {
                         <div className="image">
                             <img src="community-four.jpg" alt="community-pic" />
                         </div>
-                        <span className="first">WELL+GOOD PODCAST</span>
+                        <span className="first">LIFESYNCNOW PODCAST</span>
                         <span className="second">
-                            Introducing Well+Good's Very First Podcast
+                            Introducing LIFESYNCNOW's Very First Podcast
                         </span>
                         <span className="third">
                             WEDNESDAY, OCTOBER 13TH, 2021

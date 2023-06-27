@@ -31,7 +31,7 @@ const LandingPopUp = () => {
                         ></i>
                     </div>
                     <div className="content">
-                        <h3>Subscribe to Well+Good</h3>
+                        <h3>Subscribe to LIFESYNCNOW</h3>
                         <div className="desc">
                             <p>
                                 Get your daily dose of wellness delivered

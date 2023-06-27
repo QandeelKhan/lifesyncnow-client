@@ -7,7 +7,7 @@ const ThirdAbout = () => {
                 <div className="first-in-main">
                     <div className="left-text">
                         <span>
-                            Well+Good is committed to diversity, equity, and
+                            LIFESYNCNOW is committed to diversity, equity, and
                             inclusion (DEI) in our content and practices.
                         </span>
                     </div>
@@ -23,7 +23,7 @@ const ThirdAbout = () => {
                         <div className="para">
                             <h1>Diverse Perspectives</h1>
                             <span>
-                                Well+Good aims to be a meaningfully diverse,
+                                LIFESYNCNOW aims to be a meaningfully diverse,
                                 inclusive, and welcoming space for all people—on
                                 our team and in our community. We seek to do
                                 this by further diversifying our contributor and
@@ -37,7 +37,7 @@ const ThirdAbout = () => {
                             {" "}
                             <h1>Ongoing Education</h1>
                             <span>
-                                Well+Good aims to be a meaningfully diverse,
+                                LIFESYNCNOW aims to be a meaningfully diverse,
                                 inclusive, and welcoming space for all people—on
                                 our team and in our community. We seek to do
                                 this by further diversifying our contributor and

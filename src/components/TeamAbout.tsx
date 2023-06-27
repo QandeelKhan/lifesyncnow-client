@@ -7,7 +7,7 @@ const TeamAbout = () => {
                 <div className="our-team-left">
                     <h1>OUR TEAM</h1>
                     <span>
-                        Who's who on the content and growth team at Well+Good
+                        Who's who on the content and growth team at LIFESYNCNOW
                     </span>
                     <a href="/">SEE THE MASTHEAD</a>
                 </div>

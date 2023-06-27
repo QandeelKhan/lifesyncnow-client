@@ -27,6 +27,9 @@ const Privacy = () => {
                 {data.map((myData: any) => (
                     <div>
                         <PageMainHeading title={myData.title} />
+                        <div>
+                            <p>{myData.content}</p>
+                        </div>
                         <div className="privacy-page-content">
                             {myData.paragraphs_privacy_policy.map(
                                 (paragraph: any) => (

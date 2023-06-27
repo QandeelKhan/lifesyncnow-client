@@ -82,15 +82,16 @@ const PostDetail = () => {
                                     </div>
                                     <div className="shop-text">
                                         <span>
-                                            With the Well+Good SHOP, our editors
-                                            put their years of know-how to work
-                                            in order to pick products (from skin
-                                            care to self care and beyond)
-                                            they’re betting you’ll love. While
-                                            our editors independently select
-                                            these products, making a purchase
-                                            through our links may earn Well+Good
-                                            a commission. Happy shopping!
+                                            With the LIFESYNCNOW SHOP, our
+                                            editors put their years of know-how
+                                            to work in order to pick products
+                                            (from skin care to self care and
+                                            beyond) they’re betting you’ll love.
+                                            While our editors independently
+                                            select these products, making a
+                                            purchase through our links may earn
+                                            LIFESYNCNOW a commission. Happy
+                                            shopping!
                                             <a href="/">Explore the Shop</a>
                                         </span>
                                     </div>
@@ -191,14 +192,14 @@ const PostDetail = () => {
                                     </span>
                                     <span className="border-tags">
                                         {" "}
-                                        WELL+GOOD SHOP
+                                        LIFESYNCNOW SHOP
                                     </span>
                                 </div>
                                 <div className="foot-text">
                                     <span>
                                         Our editors independently select these
                                         products. Making a purchase through our
-                                        links may earn Well+Good a commission.
+                                        links may earn LIFESYNCNOW a commission.
                                     </span>
                                 </div>
                             </div>
@@ -259,13 +260,13 @@ export default PostDetail;
 //                             </div>
 //                             <div className="shop-text">
 //                                 <span>
-//                                     With the Well+Good SHOP, our editors put
+//                                     With the LIFESYNCNOW SHOP, our editors put
 //                                     their years of know-how to work in order to
 //                                     pick products (from skin care to self care
 //                                     and beyond) they’re betting you’ll love.
 //                                     While our editors independently select these
 //                                     products, making a purchase through our
-//                                     links may earn Well+Good a commission. Happy
+//                                     links may earn LIFESYNCNOW a commission. Happy
 //                                     shopping!<a href="/">Explore the Shop</a>
 //                                 </span>
 //                             </div>
@@ -375,13 +376,13 @@ export default PostDetail;
 //                                 {" "}
 //                                 SKIN-CARE TIPS,
 //                             </span>
-//                             <span className="border-tags"> WELL+GOOD SHOP</span>
+//                             <span className="border-tags"> LIFESYNCNOW SHOP</span>
 //                         </div>
 //                         <div className="foot-text">
 //                             <span>
 //                                 Our editors independently select these products.
 //                                 Making a purchase through our links may earn
-//                                 Well+Good a commission.
+//                                 LIFESYNCNOW a commission.
 //                             </span>
 //                         </div>
 //                     </div>

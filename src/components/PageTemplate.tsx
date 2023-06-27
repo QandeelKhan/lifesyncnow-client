@@ -52,7 +52,30 @@ const PageTemplate = ({ children }: Props) => {
                     />
                 </div>
                 <div className="template-children">{children}</div>
-                <NewsletterForm apiUrl={apiUrl} />
+                {/* <NewsletterForm apiUrl={apiUrl} /> */}
+                <Footer
+                    logoName="LIFE SYNC NOW LOGO"
+                    description="LIFE SYNC NOW BLOG TAGLINE"
+                    copyright="LIFE SYNC NOW COPYRIGHTS"
+                >
+                    <div className="icon">
+                        <a href="facebook.com">
+                            <i className="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="twitter.com">
+                            <i className="fab fa-twitter"></i>
+                        </a>
+                        <a href="instagram.com">
+                            <i className="fab fa-instagram"></i>
+                        </a>
+                        <a href="pinterest.com">
+                            <i className="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="youtube.com">
+                            <i className="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </Footer>
             </>
         );
     }

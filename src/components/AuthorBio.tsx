@@ -135,11 +135,11 @@ export default AuthorBio;
 //                         <h1>{author.full_name}</h1>
 //                         <h5>SENIOR BEAUTY EDITOR</h5>
 //                         <p>
-//                             Zoë Weiner is senior beauty editor at Well+Good,
+//                             Zoë Weiner is senior beauty editor at LIFESYNCNOW,
 //                             where she guides coverage of skin care, hair care,
 //                             cosmetics, and the beauty industry at large. A
 //                             versatile writer and editor, she is also the host of
-//                             Well+Good YouTube series Zoë Tries It All, testing
+//                             LIFESYNCNOW YouTube series Zoë Tries It All, testing
 //                             the latest and greatest wellness experiences, beauty
 //                             products, physical fitness routines, home
 //                             technology, and more. <br />

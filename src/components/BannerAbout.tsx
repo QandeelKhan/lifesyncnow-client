@@ -7,13 +7,13 @@ const BannerAbout = () => {
             <div className="main-banner">
                 {/* <img src="banner-image.jpeg" alt="" /> */}
                 <div className="banner-text">
-                    <span className="banner-first">About Well+Good</span>
+                    <span className="banner-first">About LIFESYNCNOW</span>
                     <span className="banner-second">
                         Wellness for
                         <br /> everyone
                     </span>
                     <span className="banner-third">
-                        Well+Good is your trusted advisor for navigating the
+                        LIFESYNCNOW is your trusted advisor for navigating the
                         wide (and wild) world of wellness. Since our launch in
                         2010, we have set the standard for reporting and
                         trend-spotting on the healthy living beat in order to

@@ -53,19 +53,19 @@ const SideBar = () => {
                 <div className="side-bar-menu">
                     <ul>
                         <li>
-                            <a href="/">WELL+GOOD PODCAST</a>
+                            <a href="/">LIFESYNCNOW PODCAST</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD TALKS</a>
+                            <a href="/">LIFESYNCNOW TALKS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD STUDIO SESSIONS</a>
+                            <a href="/">LIFESYNCNOW STUDIO SESSIONS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD RETREATS</a>
+                            <a href="/">LIFESYNCNOW RETREATS</a>
                         </li>
                         <li>
-                            <a href="/">WELL+GOOD COOKBOOK</a>
+                            <a href="/">LIFESYNCNOW COOKBOOK</a>
                         </li>
                     </ul>
                 </div>

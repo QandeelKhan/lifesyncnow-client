@@ -22,21 +22,21 @@ const RewardSection = () => {
                         <div className="first-reward">
                             <h1>01</h1>
                             <span>
-                                Refer 1 friend get a limited Well+Good sticker
+                                Refer 1 friend get a limited LIFESYNCNOW sticker
                                 pack
                             </span>
                         </div>
                         <div className="first-reward">
                             <h1>02</h1>
                             <span>
-                                Refer 1 friend get a limited Well+Good sticker
+                                Refer 1 friend get a limited LIFESYNCNOW sticker
                                 pack
                             </span>
                         </div>
                         <div className="first-reward">
                             <h1>03</h1>
                             <span>
-                                Refer 1 friend get a limited Well+Good sticker
+                                Refer 1 friend get a limited LIFESYNCNOW sticker
                                 pack
                             </span>
                         </div>

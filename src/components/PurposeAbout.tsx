@@ -13,7 +13,7 @@ const PurposeAbout = () => {
                         </span>
                         <span className="third-text">
                             Sitting at the cross-section of trends, service, and
-                            evidence-based journalism, Well+Good works to
+                            evidence-based journalism, LIFESYNCNOW works to
                             inform, empower, and educate communities and
                             individuals in the many ways your day-to-day impacts
                             your ability to live well. We believe that wellness
