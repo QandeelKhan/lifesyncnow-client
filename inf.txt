@@ -31,8 +31,6 @@ svgr example: npx @svgr/cli -- src/components/icons/UserIcon.svg
 execute python3 script: python3 ./<filename>.py
 
 
-
-
 about project
 we added the object ("browser": {
     "fs": false,
@@ -40,12 +38,6 @@ we added the object ("browser": {
     "os": false
 })  
 to the package.json, to fix typescript v5 while importing fs(file system module) else downgrade to v4 until not fixed in v5
-
-# ---react-helmet---
-# increase seo, by dynamically changing the meta and title tag according to the page
-# Install the library: npm install react-helmet
-# Import the Helmet component in the React component where you want to manage the HTML head information:
-
 -------
 
 Yes, you can store your GitHub username and personal access token as environment variables in your system, and then reference them in your commands. This way, you don't have to type your credentials every time you want to use the GitHub API.
@@ -101,7 +93,7 @@ symbolize
 our application is single, not the cluster based becuase we needed to use kubernettes and docker-swarm for that, which i have no knowledge for them.
 digitalocean token for life-sync-now: dop_v1_dd66186ffe4d81e9e70f315f78ce677a59c0879c8bce4126f546ede24ae914e8
 
-❯ docker-machine create(rather then "create" we can use "rm --f life-sync-now-server" to remove this machine) \
+❯ docker-machine create(rather then "create" we can use "rm --f life-sync-now-server" to remove this machine) \ 
         --driver digitalocean \
         --digitalocean-access-token dop_v1_dd66186ffe4d81e9e70f315f78ce677a59c0879c8bce4126f546ede24ae914e8 \
         # --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \ (only add this line in case of any error or problem)
@@ -127,12 +119,17 @@ Make sure to run server on which settings.py like dev.py or the prod.py and set 
 so both reference the same settings environment, i.e OurBlogBackend.settings.dev or OurBlogBackend.settings.prod.
 2: Run guniron to serve django application: "gunicorn OurBlogBackend.wsgi:application"
 
-# BIGGEST TIME WASTING PROBLEMS ENCOUNTERED SO FAR:
+
+# BIGGEST TIME WASTING PROBLEMS ENCOUNTERED SO FAR THAT TAKES AND RUINED UP SO MANY DAYS WITHOUT ANY BIG REASONS:
 1: AWS S3: 
 Always add the bucket policy on the bucket, if using the development environment of django where we have only local http server, 
 that's why the request will be 403 forbiddent to the s3 bucket and assets will not retrieve, this is only problem in development environment only, 
 but it's better to add the policy to accept all requests to not get more errors.
-2: 
+2:
 Decision making and making changes on docker different type of configs with multiple aspects and experiments each times. 
 Every goodness comes with some cost.Don't be over complex everytime.
-
+3: Sometimes Django cannot resolve the databse host address and gives errors regardles of dns resolving(because of ip of container) like below:
+"RuntimeWarning: Got an error checking a consistent migration history performed for database connection 'default': could not translate host name "db1"" (if we set the host name to db1 or db2 etc whatever it will not resolve it)
+SOLUTOIN:
+The solution i was eneded up, got from stacks overflow somehow, by chance. was to delete the images and volumes related to our services that give error, 
+in my case it was django and postgres images and volumes previously cached some files on server causing the error even thouh i run the services using --build command.
