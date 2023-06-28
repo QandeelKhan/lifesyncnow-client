@@ -30,11 +30,10 @@ const PageTemplate = ({ children }: Props) => {
                 setError(error as string);
             }
         };
-
         fetchData();
     }, []);
 
-    if (isLoading) {
+    if (isLoading || error) {
         return (
             <>
                 <Navbar />
@@ -52,7 +51,7 @@ const PageTemplate = ({ children }: Props) => {
                     />
                 </div>
                 <div className="template-children">{children}</div>
-                {/* <NewsletterForm apiUrl={apiUrl} /> */}
+                <NewsletterForm apiUrl={apiUrl} />
                 <Footer
                     logoName="LIFE SYNC NOW LOGO"
                     description="LIFE SYNC NOW BLOG TAGLINE"

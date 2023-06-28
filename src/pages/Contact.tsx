@@ -2,27 +2,55 @@ import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate";
 import "../components/css/contact.css";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 const Contact = () => {
     const [contactUs, setContactUs] = useState<any>({});
     const [paragraphs, setParagraphs] = useState<any>([]);
+    const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios
-            .get("/api/contact-us")
-            .then((response) => {
-                setContactUs(response.data[0]);
-                setParagraphs(response.data[0].paragraphs);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("/api/contact-us/");
+                const contactUsData = response.data[0];
+                setContactUs(contactUsData);
+                const paragraphsData = response.data[0].paragraphs;
+                setParagraphs(paragraphsData);
+                setIsLoading(false);
+            } catch (error) {
+                console.error(error);
+                setIsLoading(false);
+                setError(error as string);
+            }
+        };
+        fetchData();
     }, []);
+
+    if (isLoading || error) {
+        return (
+            <>
+                <PageTemplate>
+                    <div className="contact-main-container">
+                        <div className="contact-heading">
+                            <h1>Contact Us</h1>
+                        </div>
+
+                        <div className="contact-content">
+                            <ClipLoader
+                                color="#088178"
+                                loading={isLoading}
+                                size={100}
+                            />
+                        </div>
+                    </div>
+                </PageTemplate>
+            </>
+        );
+    }
 
     return (
         <PageTemplate>
-            {/* {console.log({ contactUs }, "this is claue data")} */}
-            {/* {console.log({ paragraphs }, "this is data")} */}
-            {/* {console.log({ subParagraphs }, "this is data")} */}
             <div className="contact-main-container">
                 <div className="contact-heading">
                     <h1>{contactUs.title}</h1>
