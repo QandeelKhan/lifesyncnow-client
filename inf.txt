@@ -116,8 +116,8 @@ this will gona build our image on the server we created earlier with the docker-
 # SERVE DJANGO THROUGH GUNICRON PROD SERVER:
 1: Correct settings environment to load:
 Make sure to run server on which settings.py like dev.py or the prod.py and set it in the manage.py, wsgi.py, asgi.py file.
-so both reference the same settings environment, i.e OurBlogBackend.settings.dev or OurBlogBackend.settings.prod.
-2: Run guniron to serve django application: "gunicorn OurBlogBackend.wsgi:application"
+so both reference the same settings environment, i.e LifeSyncNowBackend.settings.dev or LifeSyncNowBackend.settings.prod.
+2: Run guniron to serve django application: "gunicorn LifeSyncNowBackend.wsgi:application"
 
 
 # BIGGEST TIME WASTING PROBLEMS ENCOUNTERED SO FAR THAT TAKES AND RUINED UP SO MANY DAYS WITHOUT ANY BIG REASONS:
