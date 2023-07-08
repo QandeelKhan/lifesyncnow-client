@@ -12,120 +12,103 @@
     line-height: 33px;
     letter-spacing: 0;
     padding: 10px;
-
 }
 .privacy-page-content > p >span{
     font-weight: bold;
     font-size: 19px;
     color: #353333;
-
-
-
 }
 .privacy-page-content > ul{
-    
     font-size: 16px;
     color: #353333;
     line-height: 33px;
     margin-left: 33px;
-
 }
 .privacy-page-content > ul >li{
- 
     font-size: 19px;
     color: #353333;
-
-
-
 }
 .privacy-page-content > ul >li> span>a{
-
     color: #353333;
-
 }
 .privacy-page-content > ul >li> span{
     font-weight: bold;
     color: #353333;
-
 }
 
-.privacy-page-content>table{
-    margin: 5px;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: left;
-
-}
-
-.privacy-page-content>table >thead> tr> td{
+.privacy-page-content>.privacy-table > tbody> tr> td{
     border: 1px solid #ccc;
     padding: 18px;
-    text-align: left;
-    font-weight: 700;
+    text-align: center;
     color: #353333;
-
-    
 }
-.privacy-page-content>table > tbody> tr> td{
+
+/* .privacy-page-content img > .centered-single {
+    display: none;
+} */
+.privacy-page-content p > img.centered-single {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .privacy-page-content p {
+    text-align: center;
+}
+.privacy-page-content p img.centered-multiple {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+} */
+/* .privacy-page-content ck-content img.centered-single {
+    display: none;
+} */
+/* .privacy-page-content>table > tbody> tr> td{
     border: 1px solid #ccc;
     padding: 18px;
-    text-align: left;
+    text-align: center;
     color: #353333;
-
-
-    
-}
-@media (max-width: 768px) {
+} */
+/* .privacy-page-content>table > tbody> tr> td{
+    border: 1px solid #ccc;
+    padding: 18px;
+    text-align: center;
+    color: #353333;
+} */
+/* @media (max-width: 768px) {
     .privacy-page-content>table >thead> tr{
         display: flex;
+        text-align: center;
         flex-direction: column;
         margin-bottom: 22px;
-
-
-        
     }
     .privacy-page-content>table>tbody> tr{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
-
-        
     }
-    
-   
-  }
-    
+} */
 
 @media(max-width:477px){
     .ml{
         margin-left: 0;
         font-size: 18px;
-    
     }
     .privacy-page-content >ul > li{
         margin-left: 34px;
-       
-    
     }
     .marker{
         margin-left: 0;
-    
     }
-    .privacy-page-content>table >thead> tr{
+    /* .privacy-page-content>table >thead> tr{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
-
-
-        
     }
-    
     .privacy-page-content>table>tbody> tr{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
-
-        
-    }
-    
+    } */
 }

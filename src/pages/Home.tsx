@@ -1,13 +1,6 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import "../components/css/home.css";
-import FeaturedCard from "../components/FeaturedCard";
-import OlderCard from "../components/OlderCard";
-import RecentCard from "../components/RecentCard";
-import SectionHeading from "../components/SectionHeading";
-import { FeaturedData, recentData } from "../data";
 import PageTemplate from "../components/PageTemplate";
-import PostDetail from "./PostDetail";
 
 const Home = (props: any) => {
     return (
@@ -16,11 +9,11 @@ const Home = (props: any) => {
                 <title>lifesyncnow-client</title>
                 <meta
                     name="description"
-                    content="Welcome to the portfolio of Qandeel Khan, a Full Stack Developer specializing in Python, Django, and React. Browse his projects, skills, and experience."
+                    content="Welcome to the portfolio of Qandeel Khan, a Full Stack Developer specializing in Python, Django, and React. Browse his projects, skills, and experience.he's also known as qandeel baloch with the name of pakistani model"
                 />
                 <meta
                     name="keywords"
-                    content="Qandeel Khan, Full Stack Developer, Python, Django, React, Portfolio, Projects, Skills, Experience"
+                    content="Qandeel Khan, Full Stack Developer, Python, Django, React, Portfolio, Projects, Skills, Experience,qandeel baloch"
                 />
                 <meta name="author" content="Qandeel Khan" />
                 <meta name="robots" content="index,follow" />

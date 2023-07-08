@@ -4,7 +4,7 @@ import "../components/css/contact.css";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";
 const Contact = () => {
-    const [contactUs, setContactUs] = useState<any>({});
+    const [Pages, setPages] = useState<any>({});
     const [paragraphs, setParagraphs] = useState<any>([]);
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
@@ -13,8 +13,8 @@ const Contact = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get("/api/contact-us/");
-                const contactUsData = response.data[0];
-                setContactUs(contactUsData);
+                const PagesData = response.data[0];
+                setPages(PagesData);
                 const paragraphsData = response.data[0].paragraphs;
                 setParagraphs(paragraphsData);
                 setIsLoading(false);
@@ -53,7 +53,7 @@ const Contact = () => {
         <PageTemplate>
             <div className="contact-main-container">
                 <div className="contact-heading">
-                    <h1>{contactUs.title}</h1>
+                    <h1>{Pages.title}</h1>
                 </div>
                 {/* TODO: correct it incase no data is comming from backend */}
                 {paragraphs.map((paragraph: any) => (
