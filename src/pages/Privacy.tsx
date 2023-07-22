@@ -14,8 +14,8 @@ import { Helmet } from "react-helmet";
 // ---------3RD PARTY IMPORTS----------
 
 // ---------INTERNAL IMPORTS----------
-import PageTemplate from "../components/PageTemplate";
-import PageMainHeading from "../components/PageMainHeading";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
+import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import "../components/css/privacy.css";
 // ---------INTERNAL IMPORTS----------
 

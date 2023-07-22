@@ -1,14 +1,14 @@
 import React from "react";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import "../components/css/about.css";
-import PurposeAbout from "../components/PurposeAbout";
-import ThirdAbout from "../components/ThirdAbout";
-import BelieveAbout from "../components/BelieveAbout";
-import TeamAbout from "../components/TeamAbout";
-import CommunityAbout from "../components/CommunityAbout";
+import PurposeAbout from "../components/About/PurposeAbout";
+import ThirdAbout from "../components/About/ThirdAbout";
+import BelieveAbout from "../components/About/BelieveAbout";
+import TeamAbout from "../components/About/TeamAbout";
+import CommunityAbout from "../components/About/CommunityAbout";
 import RewardSection from "../components/RewardSection";
-import ReachAbout from "../components/ReachAbout";
-import BannerAbout from "../components/BannerAbout";
+import ReachAbout from "../components/About/ReachAbout";
+import BannerAbout from "../components/About/BannerAbout";
 const About = () => {
     return (
         <PageTemplate>

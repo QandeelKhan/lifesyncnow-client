@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactData } from "../data";
+import { ContactData } from "../data/data";
 import "./css/blogpostCard.css";
 const firstObject = ContactData[0];
 const paragraphs = firstObject.paragraphs;

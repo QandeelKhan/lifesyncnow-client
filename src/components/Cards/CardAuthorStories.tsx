@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/cardauthorstories.css";
+import "../css/cardauthorstories.css";
 
 const CardAuthorStories = (props: any) => {
     return (

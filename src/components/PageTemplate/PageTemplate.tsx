@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
-import "./css/page-template.css";
+import "../css/page-template.css";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
-import NewsletterForm from "./NewsletterForm";
+import Navbar from "../Navbar";
+import NewsletterForm from "../NewsletterForm";
 import { ClipLoader } from "react-spinners"; // Example: Using react-spinners
 
 interface Props {
@@ -20,7 +20,10 @@ const PageTemplate = ({ children }: Props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("/api/page-templates/");
+                // const response = await axios.get("/api/page-templates/");
+                const response = await axios.get(
+                    "http://127.0.0.1/api/page-templates"
+                );
                 const data = response.data;
                 setData(data);
                 setIsLoading(false);

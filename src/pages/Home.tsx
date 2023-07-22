@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import "../components/css/home.css";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 
 const Home = (props: any) => {
     return (

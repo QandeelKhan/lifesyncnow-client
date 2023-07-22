@@ -50,9 +50,9 @@
 
 // new implementation: testing phase
 import { useSelector } from "react-redux";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { RootState } from "../redux/store";
-import CardAuthorStories from "../components/CardAuthorStories";
+import CardAuthorStories from "../components/Cards/CardAuthorStories";
 import { setSearchResults } from "../redux/reducers/eventsSlice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";

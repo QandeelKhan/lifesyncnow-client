@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import "../components/css/contact.css";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";

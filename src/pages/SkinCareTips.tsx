@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useRef, useState } from "react";
 import "../components/css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
-import HeaderBanner from "../components/HeaderBanner";
-import OlderCard from "../components/OlderCard";
-import RecentCard from "../components/RecentCard";
+import HeaderBanner from "../components/PageTemplate/HeaderBanner";
+import OlderCard from "../components/Cards/OlderCard";
+import RecentCard from "../components/Cards/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import axios from "axios";
-import PageTemplate from "../components/PageTemplate";
-import { setSelectedPost } from "../redux/dataSlice";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import PageMainHeading from "../components/PageMainHeading";
+import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
 import "../components/css/subcategory.css";
+import ProgressBar from "../components/ProgressBars/ProgressBar";
 const SkinCareTips = () => {
     const subcategory = [
         "ACNE CARE",
@@ -25,27 +24,27 @@ const SkinCareTips = () => {
         "FACE OILS",
         "MOISTURIZER",
         "NATURAL ACNE TREATMENT",
-        "  SERUMS",
+        "SERUMS",
         "SUMMER SKIN CARE",
         "SUNSCREEN",
         "WINTER SKIN CARE",
     ];
 
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
-    const [skinCareTips, setSkinCareTips] = useState([]);
     // const [topics, setTopics] = useState<any>([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
-    const [topicSlug, setTopicSlug] = useState([]);
-    const [data, setData] = useState<any>([]);
     const [topics, setTopics] = useState<any[]>([]);
-
-    const dispatch = useDispatch();
-
+    const [isDataFetched, setIsDataFetched] = useState(false); // Track whether data has been fetched
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("/category/skin-care-tips/");
+                // const response = await axios.get("/category/skin-care-tips/");
+                const response = await axios.get(
+                    // "http://localhost:8000/api/blog/category/skin-care-tips/"
+                    "http://127.0.0.1/api/blog/posts-list"
+                );
+
                 const data = response.data;
                 // Filter posts based on most_recent_posts, older_post, and featured_posts fields
                 const filteredSkinCareTips = data.filter(
@@ -72,7 +71,6 @@ const SkinCareTips = () => {
                 }
 
                 // Update state with filtered data
-                setSkinCareTips(filteredSkinCareTips);
 
                 // getting topic array of objects
                 // setTopics(data[0]);
@@ -86,17 +84,9 @@ const SkinCareTips = () => {
                         slug: topicSlugs[index],
                     })
                 );
-
+                // Data fetching is complete, so set the flag to true
+                setIsDataFetched(true);
                 setTopics(extractedTopics);
-
-                // topics.forEach((topicName: any) => {
-                //     if (!topics.includes(topicName.topic_name)) {
-                //         setTopics((prevTopics: any) => [
-                //             ...prevTopics,
-                //             topicName.topic_name,
-                //         ]);
-                //     }
-                // });
             } catch (error) {
                 console.error(error);
             }
@@ -114,13 +104,10 @@ const SkinCareTips = () => {
         navigate(`/post/${selectedPost.slug}`);
         // dispatch(setSelectedPost(post));
     };
-    // const handleNavigate = (post: any) => {
-    //     navigate(`/post/${post.slug}`);
-
-    // };
 
     return (
         <PageTemplate>
+            {isDataFetched ? <ProgressBar /> : null}
             <PageMainHeading title="SKIN CARE TIPS" />
             {/* <SubCategory categories={topics} slug={topicSlug} /> */}
             <div className="sub-category-container">
@@ -136,16 +123,12 @@ const SkinCareTips = () => {
                     ))}
                 </div>
             </div>
-
-            {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
-            {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
-            {/* {console.log(skinCareTips)} */}
-            {/* {console.log(mostRecentPosts)} */}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-container ">
-                    {featuredPosts.map((feature: any) => (
+                    {featuredPosts.map((feature: any, index) => (
                         <FeaturedCard
+                            key={index}
                             cover_image={feature.cover_image}
                             title={feature.title}
                             subTitle={feature.subTitle}
@@ -168,8 +151,9 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Older Post" />
                 <div className="older-container">
-                    {olderPosts.map((older: any) => (
+                    {olderPosts.map((older: any, index) => (
                         <OlderCard
+                            key={index}
                             cover_image={older.cover_image}
                             title={older.title}
                             authorSlug={older.author.user_slug}
@@ -181,4 +165,4 @@ const SkinCareTips = () => {
     );
 };
 
-export default SkinCareTips;
+export default React.memo(SkinCareTips);

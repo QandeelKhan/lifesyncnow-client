@@ -1,8 +1,8 @@
 import React from "react";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import "../components/css/cookieNotice.css";
-import PageMainHeading from "../components/PageMainHeading";
-import { TabelData } from "../data";
+import PageMainHeading from "../components/PageTemplate/PageMainHeading";
+import { TabelData } from "../data/data";
 
 const CookieNotice = () => {
     return (

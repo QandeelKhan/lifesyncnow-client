@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/pagemainheading.css";
+import "../css/pagemainheading.css";
 const PageMainHeading = (props: any) => {
     return (
         <>

@@ -1,6 +1,6 @@
 import React from "react";
 import NavSubscribeForm from "./forms/NavSubscribeForm";
-import { SidebarData } from "./sideBarData";
+import { SidebarData } from "../data/sideBarData";
 import { useDispatch } from "react-redux";
 import {
     setCrossClicked,

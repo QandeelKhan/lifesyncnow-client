@@ -6,6 +6,7 @@ import authReducer from "./features/authSlice";
 import { userAuthApi } from "./services/userAuthApi";
 import orderReducer from "./features/orderSlice";
 import ordersReducer from "./features/ordersSlice";
+import taskIdReducer from "./taskSlice";
 
 export const store = configureStore({
     reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
         auth: authReducer,
         order: orderReducer,
         orders: ordersReducer,
+        taskId: taskIdReducer,
     },
     // middleware for rtkquery
     middleware: (getDefaultMiddleware) =>

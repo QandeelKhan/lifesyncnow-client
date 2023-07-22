@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../components/css/post-detail.css";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { RootState } from "../redux/store";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ const PostDetail = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `/api/blog/post/${slug}/`
+                    `http://127.0.0.1/api/blog/post/${slug}/`
                     // `http://localhost:8000/api/blog/post/${slug}`
                 );
                 const data = response.data;

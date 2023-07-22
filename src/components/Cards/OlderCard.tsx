@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/olderCard.css";
+import "../css/olderCard.css";
 
 interface olderCardprops {
     cover_image: string;

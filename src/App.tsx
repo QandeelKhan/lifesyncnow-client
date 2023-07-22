@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
-import Registration from "./pages/auth/Registration";
-import Login from "./pages/auth/Login";
+import Registration from "./pages/Auth/Registration";
+import Login from "./pages/Auth/Login";
 import SkinCareTips from "./pages/SkinCareTips";
 import FoodAndNutrition from "./pages/FoodAndNutrition";
 import HolisticTreatment from "./pages/HolisticTreatment";
@@ -21,12 +21,14 @@ import AuthorProfile from "./pages/AuthorProfile";
 import PostTopic from "./pages/PostTopic";
 import SearchResults from "./pages/SearchResult";
 import Advertise from "./pages/Advertise";
+import Playground from "./pages/Playground";
 
 function App() {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route path="/playground" element={<Playground />} />
                     <Route index element={<Home />} />
                     <Route path="/skin-care-tips" element={<SkinCareTips />} />
                     {/* <Route path="/post-detail" element={<PostDetail />} /> */}

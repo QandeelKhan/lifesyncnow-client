@@ -4,11 +4,11 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import AuthorBio from "../components/AuthorBio";
-import CardAuthorStories from "../components/CardAuthorStories";
-import Footer from "../components/Footer";
+import CardAuthorStories from "../components/Cards/CardAuthorStories";
+import Footer from "../components/PageTemplate/Footer";
 import Navbar from "../components/Navbar";
 import NewsletterForm from "../components/NewsletterForm";
-import PageTemplate from "../components/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { RootState } from "../redux/store";
 
 const AuthorProfile = () => {

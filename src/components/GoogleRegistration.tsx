@@ -2,7 +2,7 @@ import React, { BaseSyntheticEvent, useState } from "react";
 // import { useHistory } from "react-router-dom";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from "reactjs-social-login";
-import RemainingForm from "./RemainingForm";
+import RemainingForm from "./forms/RemainingForm";
 import { useRegisterUserMutation } from "../redux/services/userAuthApi";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";

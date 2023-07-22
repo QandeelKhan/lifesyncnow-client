@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../components/css/termsAndConditions.css";
-import PageMainHeading from "../components/PageMainHeading";
-import PageTemplate from "../components/PageTemplate";
+import PageMainHeading from "../components/PageTemplate/PageMainHeading";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
