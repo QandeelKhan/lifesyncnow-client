@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../components/css/post-detail.css";
+import "../css/post-detail.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -199,7 +199,7 @@ export default PostDetail;
 //
 // import React from "react";
 // import { useSelector } from "react-redux";
-// import "../components/css/post-detail.css";
+// import "../css/post-detail.css";
 // import { RootState } from "../redux/store";
 
 // const PostDetail = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import "../components/css/cookieNotice.css";
+import "../css/cookieNotice.css";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import { TabelData } from "../DummyData/data";
 

@@ -14,7 +14,7 @@ import { Helmet } from "react-helmet";
 // ---------INTERNAL IMPORTS----------
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
-import "../components/css/privacy.css";
+import "../css/privacy.css";
 // ---------INTERNAL IMPORTS----------
 
 const Privacy = () => {

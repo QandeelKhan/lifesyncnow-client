@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./css/newsletterForm.css";
+import "../css/newsletterForm.css";
 import axios from "axios";
 
 interface SubscribeFormProps {

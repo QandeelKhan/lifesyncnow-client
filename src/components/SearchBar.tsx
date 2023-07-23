@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSearchBar, setSearchQuery } from "../redux/reducers/eventsSlice";
-import "./css/searchbar.css";
+import "../css/searchbar.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 

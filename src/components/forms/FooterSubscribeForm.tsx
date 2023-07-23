@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/footer-subscribe-form.css";
+import ".../css/footer-subscribe-form.css";
 
 interface SubscribeFormProps {
     apiUrl: string;

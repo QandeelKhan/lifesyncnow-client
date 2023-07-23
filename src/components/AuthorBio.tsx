@@ -1,4 +1,4 @@
-import "./css/authorbio.css";
+import "../css/authorbio.css";
 
 const AuthorBio = (props: any) => {
     return (

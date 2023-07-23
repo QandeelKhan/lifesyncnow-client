@@ -1,6 +1,6 @@
 import React from "react";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import "../components/css/about.css";
+import "../css/about.css";
 import PurposeAbout from "../components/About/PurposeAbout";
 import ThirdAbout from "../components/About/ThirdAbout";
 import BelieveAbout from "../components/About/BelieveAbout";

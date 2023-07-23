@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import "../components/css/advertise.css";
+import "../css/advertise.css";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import axios from "axios";
 const Advertise = () => {

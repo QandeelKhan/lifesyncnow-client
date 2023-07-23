@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../components/css/skinCareTips.css";
+import "../css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
 import OlderCard from "../components/Cards/OlderCard";
 import RecentCard from "../components/Cards/RecentCard";
@@ -7,7 +7,7 @@ import SectionHeading from "../components/SectionHeading";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
-import "../components/css/subcategory.css";
+import "../css/subcategory.css";
 const SkinCareTips = () => {
     const subcategory = [
         "ACNE CARE",

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../components/css/skinCareTips.css";
+import "../css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
 import HeaderBanner from "../components/PageTemplate/HeaderBanner";
 import OlderCard from "../components/Cards/OlderCard";
@@ -12,7 +12,7 @@ import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import SubCategory from "../components/SubCategory";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
-import "../components/css/subcategory.css";
+import "../css/subcategory.css";
 import ProgressBar from "../components/ProgressBars/ProgressBar";
 const SkinCareTips = () => {
     const subcategory = [

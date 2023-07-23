@@ -1,4 +1,4 @@
-import "../css/recentCard.css";
+import "../../css/recentCard.css";
 
 interface recentCardProps {
     cover_image: string;

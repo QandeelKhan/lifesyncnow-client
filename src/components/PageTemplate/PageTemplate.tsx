@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { ReactNode, useEffect, useState } from "react";
-import "../css/page-template.css";
+import "../../css/page-template.css";
 import Footer from "./Footer";
 import Navbar from "../Navbar";
 import NewsletterForm from "../NewsletterForm";

@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/subcategory.css";
+import "../css/subcategory.css";
 
 // TODO: create the interface (on your own!)
 const SubCategory = (props: any) => {

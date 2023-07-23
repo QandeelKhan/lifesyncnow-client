@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import "../components/css/skinCareTips.css";
+import "../css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
 import HeaderBanner from "../components/PageTemplate/HeaderBanner";
 import OlderCard from "../components/Cards/OlderCard";

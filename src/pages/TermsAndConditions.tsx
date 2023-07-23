@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../components/css/termsAndConditions.css";
+import "../css/termsAndConditions.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import axios from "axios";
 

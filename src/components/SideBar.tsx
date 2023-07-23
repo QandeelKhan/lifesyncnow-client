@@ -9,7 +9,7 @@ import {
 } from "../redux/reducers/eventsSlice";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import "./css/sidebar.css";
+import "../css/sidebar.css";
 
 const SideBar = () => {
     const apiUrl = "/api/subscribe/";

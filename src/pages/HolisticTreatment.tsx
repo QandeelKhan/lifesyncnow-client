@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../components/css/skinCareTips.css";
+import "../css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
 import OlderCard from "../components/Cards/OlderCard";
 import RecentCard from "../components/Cards/RecentCard";

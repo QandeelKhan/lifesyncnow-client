@@ -1,4 +1,4 @@
-import "./css/featuredCard.css";
+import "../css/featuredCard.css";
 interface featureCardprops {
     cover_image: string;
     title: string;

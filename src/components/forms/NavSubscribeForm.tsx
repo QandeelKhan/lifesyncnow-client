@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/side-nav-subscribe-form.css";
+import "../../css/side-nav-subscribe-form.css";
 
 interface SubscribeFormProps {
     apiUrl: string;
