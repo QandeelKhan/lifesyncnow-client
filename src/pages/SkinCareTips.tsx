@@ -1,17 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
-import HeaderBanner from "../components/PageTemplate/HeaderBanner";
 import OlderCard from "../components/Cards/OlderCard";
 import RecentCard from "../components/Cards/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import SubCategory from "../components/SubCategory";
-import { RootState } from "../redux/store";
-import { useSelector } from "react-redux";
 import "../css/subcategory.css";
 import ProgressBar from "../components/ProgressBars/ProgressBar";
 const SkinCareTips = () => {
@@ -69,9 +65,6 @@ const SkinCareTips = () => {
                     );
                     setFeaturedPosts(filteredFeaturedPosts);
                 }
-
-                // Update state with filtered data
-
                 // getting topic array of objects
                 // setTopics(data[0]);
                 const topicsData = data[0]?.topics_name || [];
@@ -91,19 +84,8 @@ const SkinCareTips = () => {
                 console.error(error);
             }
         };
-
         fetchData();
     }, []);
-    const navigate = useNavigate();
-
-    const selectedPost = useSelector(
-        (state: RootState) => state.data.selectedPost
-    );
-
-    const handleNavigate = (post: any) => {
-        navigate(`/post/${selectedPost.slug}`);
-        // dispatch(setSelectedPost(post));
-    };
 
     return (
         <PageTemplate>

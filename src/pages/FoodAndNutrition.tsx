@@ -9,21 +9,6 @@ import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
 import "../css/subcategory.css";
 const SkinCareTips = () => {
-    const subcategory = [
-        "ACNE CARE",
-        "BEAUTY WEEKS",
-        "BODY CARE",
-        "DEAR DERM",
-        "EXFOLIATORS",
-        "FACE OILS",
-        "MOISTURIZER",
-        "NATURAL ACNE TREATMENT",
-        "SERUMS",
-        "SUMMER SKIN CARE",
-        "SUNSCREEN",
-        "WINTER SKIN CARE",
-    ];
-
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
     // const [topics, setTopics] = useState<any>([]);
     const [olderPosts, setOlderPosts] = useState([]);
