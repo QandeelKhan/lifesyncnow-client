@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 // ---------3RD PARTY IMPORTS----------
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 // prism-c needs to be loaded before prism-cpp to work theme for the cpp code snippet
 import Prism from "prismjs";
 import "prismjs/components/prism-c"; // Language

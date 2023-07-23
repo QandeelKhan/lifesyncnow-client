@@ -69,7 +69,7 @@ const SearchResults = () => {
         const fetchSearchResults = async () => {
             try {
                 const response = await fetch(
-                    `/api/blog/posts-list/?search=${searchQuery}`
+                    `http://127.0.0.1/api/blog/posts-list/?search=${searchQuery}/`
                 );
                 if (!response.ok) {
                     throw new Error(
@@ -84,11 +84,11 @@ const SearchResults = () => {
             }
         };
         fetchSearchResults();
-    }, [searchQuery]);
+    }, [dispatch, searchQuery]);
 
     let content;
     if (searchResults.length > 0) {
-        content = searchResults.map((post: any) => (
+        content = searchResults.map((post: any, index) => (
             <CardAuthorStories
                 firstName={post.author.first_name}
                 postTitle={post.title}
@@ -97,6 +97,7 @@ const SearchResults = () => {
                 authorImage={post.author.profile_image}
                 postSlug={post.slug}
                 userSlug={post.author.user_slug}
+                key={index}
             />
         ));
     } else if (searchQuery) {

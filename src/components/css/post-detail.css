@@ -51,7 +51,7 @@
     max-width: 1000px;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     gap: 50px;
     /* flex-wrap: wrap; */
 }
@@ -175,7 +175,7 @@
     width: 100%;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     gap: 20px;
     padding: 50px;
     background-color: #f9f5f2;

@@ -1,29 +1,21 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AuthorBio from "../components/AuthorBio";
 import CardAuthorStories from "../components/Cards/CardAuthorStories";
 import Footer from "../components/PageTemplate/Footer";
 import Navbar from "../components/Navbar";
-import NewsletterForm from "../components/NewsletterForm";
-import PageTemplate from "../components/PageTemplate/PageTemplate";
-import { RootState } from "../redux/store";
 
 const AuthorProfile = () => {
-    const selectedPost = useSelector(
-        (state: RootState) => state.data.selectedPost
-    );
-
     const [author, setAuthor] = useState<any>(null);
     const { slug } = useParams();
-    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`/api/profile/${slug}/`);
+                const response = await axios.get(
+                    `http://127.0.0.1/api/profile/${slug}/`
+                );
                 const data = response.data;
                 setAuthor(data);
             } catch (error) {
@@ -32,7 +24,7 @@ const AuthorProfile = () => {
         };
 
         fetchData();
-    }, []);
+    }, [slug]);
     return (
         <>
             <Navbar />
@@ -46,8 +38,9 @@ const AuthorProfile = () => {
                         instagramAccount={author.instagram_acc}
                         twitterAccount={author.twitter_acc}
                     />
-                    {author.related_posts.map((post: any) => (
+                    {author.related_posts.map((post: any, index: any) => (
                         <CardAuthorStories
+                            key={index}
                             firstName={author.first_name}
                             postTitle={post.title}
                             postImage={post.cover_image}

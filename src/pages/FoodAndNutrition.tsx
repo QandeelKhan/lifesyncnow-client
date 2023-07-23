@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import "../components/css/skinCareTips.css";
 import FeaturedCard from "../components/FeaturedCard";
-import HeaderBanner from "../components/PageTemplate/HeaderBanner";
 import OlderCard from "../components/Cards/OlderCard";
 import RecentCard from "../components/Cards/RecentCard";
 import SectionHeading from "../components/SectionHeading";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import { setSelectedPost } from "../redux/dataSlice";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import PageMainHeading from "../components/PageTemplate/PageMainHeading";
-import SubCategory from "../components/SubCategory";
-import { RootState } from "../redux/store";
-import { useSelector } from "react-redux";
 import "../components/css/subcategory.css";
 const SkinCareTips = () => {
     const subcategory = [
@@ -25,30 +18,23 @@ const SkinCareTips = () => {
         "FACE OILS",
         "MOISTURIZER",
         "NATURAL ACNE TREATMENT",
-        "  SERUMS",
+        "SERUMS",
         "SUMMER SKIN CARE",
         "SUNSCREEN",
         "WINTER SKIN CARE",
     ];
 
     const [mostRecentPosts, setMostRecentPosts] = useState([]);
-    const [skinCareTips, setSkinCareTips] = useState([]);
     // const [topics, setTopics] = useState<any>([]);
     const [olderPosts, setOlderPosts] = useState([]);
     const [featuredPosts, setFeaturedPosts] = useState([]);
-    const [topicSlug, setTopicSlug] = useState([]);
-    const [data, setData] = useState<any>([]);
     const [topics, setTopics] = useState<any[]>([]);
-
-    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    // "http://localhost:8000/api/blog/category/food-and-nutrition/"
-                    // "https://lifesyncnow.com/api/blog/category/food-and-nutrition/"
-                    "/api/blog/category/food-and-nutrition/"
+                    "http://127.0.0.1/api/blog/category/food-and-nutrition/"
                 );
                 const data = response.data;
 
@@ -82,7 +68,6 @@ const SkinCareTips = () => {
                 }
 
                 // Update state with filtered data
-                setSkinCareTips(filteredSkinCareTips);
 
                 // getting topic array of objects
                 // setTopics(data[0]);
@@ -98,15 +83,6 @@ const SkinCareTips = () => {
                 );
 
                 setTopics(extractedTopics);
-
-                // topics.forEach((topicName: any) => {
-                //     if (!topics.includes(topicName.topic_name)) {
-                //         setTopics((prevTopics: any) => [
-                //             ...prevTopics,
-                //             topicName.topic_name,
-                //         ]);
-                //     }
-                // });
             } catch (error) {
                 console.error(error);
             }
@@ -114,19 +90,9 @@ const SkinCareTips = () => {
 
         fetchData();
     }, []);
-    const navigate = useNavigate();
 
-    const selectedPost = useSelector(
-        (state: RootState) => state.data.selectedPost
-    );
-
-    const handleNavigate = (post: any) => {
-        navigate(`/post/${selectedPost.slug}`);
-        // dispatch(setSelectedPost(post));
-    };
     // const handleNavigate = (post: any) => {
     //     navigate(`/post/${post.slug}`);
-
     // };
 
     return (
@@ -146,11 +112,6 @@ const SkinCareTips = () => {
                     ))}
                 </div>
             </div>
-
-            {/* {console.log(`most recent posts: ${mostRecentPosts}`)} */}
-            {/* {console.log(`skin care tips: ${skinCareTips}`)} */}
-            {/* {console.log(skinCareTips)} */}
-            {/* {console.log(mostRecentPosts)} */}
             <div className="home-container">
                 <SectionHeading heading="Featured" />
                 <div className="featured-container ">
@@ -178,8 +139,9 @@ const SkinCareTips = () => {
                 </div>
                 <SectionHeading heading="Older Post" />
                 <div className="older-container">
-                    {olderPosts.map((older: any) => (
+                    {olderPosts.map((older: any, index) => (
                         <OlderCard
+                            key={older.id}
                             cover_image={older.cover_image}
                             title={older.title}
                             authorSlug={older.author.user_slug}

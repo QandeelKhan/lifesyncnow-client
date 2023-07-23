@@ -206,7 +206,7 @@
     width: 60%;
 }
 .first-in-main .left-text {
-    text-align: start;
+    text-align: left;
 }
 .first-in-main .left-text,
 .right-pic {
@@ -233,7 +233,7 @@
 }
 .three-paras {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     gap: 40px;
     padding: 0px 100px;
@@ -300,14 +300,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 .right-points-container {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 .point {
     display: flex;
@@ -454,7 +454,7 @@
 .community-features .ist {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 10px;
     width: 260px;
@@ -521,7 +521,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     gap: 100px;
 }
 .reaches-container .ist {
@@ -582,7 +582,7 @@
 .reward-container .right-side {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     color: white;
     padding: 0px 125px;
@@ -641,7 +641,7 @@
     .reward-container .right-side {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         padding: 0px 125px;
         border: none;

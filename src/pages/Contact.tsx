@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import "../components/css/contact.css";
 import axios from "axios";

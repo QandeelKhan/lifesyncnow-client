@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import { CssBaseline } from "@mui/material";
 import { Outlet, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
-// import {
-//     setGearOpen,
-//     setNavVisible,
-//     setSideBarVisible,
-// } from "../redux/reducers/eventsSlice";
 
 const Layout: React.FC = () => {
-    const [showContent, setShowContent] = useState(false);
     const location: any = useLocation();
     const [key, setKey] = useState(0);
 
@@ -21,9 +13,7 @@ const Layout: React.FC = () => {
     // };
 
     useEffect(() => {
-        setTimeout(() => {
-            setShowContent(true);
-        }, 2000);
+        setTimeout(() => {}, 2000);
     }, []);
 
     useEffect(() => {

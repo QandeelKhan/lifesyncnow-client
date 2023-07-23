@@ -6,7 +6,7 @@ import HeaderBanner from "../components/PageTemplate/HeaderBanner";
 import OlderCard from "../components/Cards/OlderCard";
 import RecentCard from "../components/Cards/RecentCard";
 import SectionHeading from "../components/SectionHeading";
-import { FeaturedData, OlderData, recentData } from "../data/data";
+import { FeaturedData, OlderData, recentData } from "../DummyData/data";
 import axios from "axios";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import { setSelectedPost } from "../redux/dataSlice";

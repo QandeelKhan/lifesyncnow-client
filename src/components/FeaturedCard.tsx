@@ -1,4 +1,3 @@
-import React from "react";
 import "./css/featuredCard.css";
 interface featureCardprops {
     cover_image: string;
@@ -19,7 +18,7 @@ const FeaturedCard = ({
                     <img
                         src={cover_image}
                         className="featured-img"
-                        alt="featured-img"
+                        alt="featured-post"
                     />
                 </div>
                 <div className="featured-body">

@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../components/css/post-detail.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import { RootState } from "../redux/store";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setSelectedPost } from "../redux/dataSlice";
 import axios from "axios";
 
 const PostDetail = () => {
     const [post, setPost] = useState<any>(null);
-    const selectedPost = useSelector(
-        (state: RootState) => state.data.selectedPost
-    );
     const { slug } = useParams();
-    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -32,7 +24,7 @@ const PostDetail = () => {
         };
 
         fetchData();
-    }, []);
+    }, [slug]);
 
     const formattedText = post?.content?.replace(/\n/g, "<br />");
     return (
@@ -44,19 +36,8 @@ const PostDetail = () => {
                 </div>
                 {post !== null && (
                     <div className="second-post-container">
-                        <span className="main-post-heading">
-                            I Replaced My Entire Multi-Step Skin-Care Routine
-                            <br /> With This 5-in-1 Moisturizer, and Caring for
-                            My
-                            <br /> Complexion Has Never Been Quicker
-                        </span>
+                        <span className="main-post-heading">{post.title}</span>
                         <div className="detail-user-name">
-                            {/* {post.paragraphs.map((paragraph: any) => (
-                                <div key={paragraph.id}>
-                                    <h3>{paragraph.paragraph_title}</h3>
-                                    <p>{paragraph.paragraph_content}</p>
-                                </div>
-                            ))} */}
                             <img
                                 src={post.author.profile_image}
                                 alt="post author"
@@ -105,7 +86,7 @@ const PostDetail = () => {
                                     <div className="post-mid-image">
                                         <img
                                             src="post-mid-iamge.jpeg"
-                                            alt="mid-image"
+                                            alt="mid"
                                         />
                                     </div>
                                 </div>
