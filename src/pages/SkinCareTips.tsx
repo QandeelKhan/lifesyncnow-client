@@ -38,7 +38,8 @@ const SkinCareTips = () => {
                 // const response = await axios.get("/category/skin-care-tips/");
                 const response = await axios.get(
                     // "http://localhost:8000/api/blog/category/skin-care-tips/"
-                    "http://127.0.0.1/api/blog/posts-list"
+                    // "http://127.0.0.1/api/blog/posts-list"
+                    "/api/blog/posts-list"
                 );
 
                 const data = response.data;
